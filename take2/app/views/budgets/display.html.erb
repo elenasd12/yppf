@@ -1,4 +1,124 @@
-<h1><center>Display Budget</center></h1>
+<h1><center>Budget</center></h1>
 
+<p id="notice"><%= notice %></p>
+
+<h2>Income</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Income</th>
+      <th>Income Type</th>
+      <th>Value</th>
+      <th>Frequency</th>
+      <th>Day rec</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr>
+        <td><%= income.userid %></td>
+        <td><%= income.income %></td>
+        <td><%= income.incometype %></td>
+        <td><%= income.value %></td>
+        <td><%= income.frequency %></td>
+        <td><%= income.day_rec %></td>
+        <td><%= income.month %></td>
+        <td><%= income.year %></td>
+        <td><%= link_to 'Show', income %></td>
+        <td><%= link_to 'Edit', edit_income_path(income) %></td>
+        <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Income', new_income_path %>
+<br>
+
+<h2>Expenses</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Income</th>
+      <th>Income Type</th>
+      <th>Value</th>
+      <th>Frequency</th>
+      <th>Day rec</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |income| %>
+      <tr>
+        <td><%= income.userid %></td>
+        <td><%= income.income %></td>
+        <td><%= income.incometype %></td>
+        <td><%= income.value %></td>
+        <td><%= income.frequency %></td>
+        <td><%= income.day_rec %></td>
+        <td><%= income.month %></td>
+        <td><%= income.year %></td>
+        <td><%= link_to 'Show', income %></td>
+        <td><%= link_to 'Edit', edit_income_path(income) %></td>
+        <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>
+<br>
+
+
+<h2>Bills</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Income</th>
+      <th>Income Type</th>
+      <th>Value</th>
+      <th>Frequency</th>
+      <th>Day rec</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |income| %>
+      <tr>
+        <td><%= income.userid %></td>
+        <td><%= income.income %></td>
+        <td><%= income.incometype %></td>
+        <td><%= income.value %></td>
+        <td><%= income.frequency %></td>
+        <td><%= income.day_rec %></td>
+        <td><%= income.month %></td>
+        <td><%= income.year %></td>
+        <td><%= link_to 'Show', income %></td>
+        <td><%= link_to 'Edit', edit_income_path(income) %></td>
+        <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Bill', new_bill_path %>
+<br>
 
 <center><%= link_to 'Back to Dashboard', dashboard_new_path %></center>
