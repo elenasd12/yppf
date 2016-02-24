@@ -1,3 +1,4 @@
+
 <%= form_for(@income) do |f| %>
   <% if @income.errors.any? %>
     <div id="error_explanation">
@@ -11,16 +12,16 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :userid %><br>
     <%= f.text_area :userid %>
-  </div>
+  </div> -->
   <div class="field">
-    <%= f.label :income %><br>
+    <%= f.label 'Income title' %><br>
     <%= f.text_area :income %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
+    <%= f.label 'Type: (weekly, biweekly)' %><br>
     <%= f.text_area :type %>
   </div>
   <div class="field">
@@ -32,7 +33,7 @@
     <%= f.text_area :frequency %>
   </div>
   <div class="field">
-    <%= f.label :day_rec %><br>
+    <%= f.label 'Day Received' %><br>
     <%= f.number_field :day_rec %>
   </div>
   <div class="field">
