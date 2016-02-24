@@ -3,7 +3,7 @@ class CreateIncomes < ActiveRecord::Migration
     create_table :incomes do |t|
       t.text :userid
       t.text :income
-      t.text :type
+      t.text :incometype
       t.decimal :value
       t.text :frequency
       t.integer :day_rec
