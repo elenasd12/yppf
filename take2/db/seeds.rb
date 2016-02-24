@@ -10,30 +10,14 @@ Expense.delete_all
 Income.delete_all
 
 5.times do
-  Bill.create(userid: "Eden", expenseid: Faker::Lorem.word, day_month: Faker::Number.number(2), month: Faker::Number.number(1), year: Faker::Number.number(4))
+  Bill.create(userid: "Eden", expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.number(1), year: Faker::Number.number(4))
 end
-# 
-# 5.times do
-#   Expense.create(expenseid: Faker:: Lorem.word, userid: "Eden", expensei)
-# end
-#
-# t.text     "expenseid"
-# t.text     "userid"
-# t.text     "expensetype"
-# t.text     "frequency"
-# t.decimal  "projvalue"
-# t.decimal  "actvalue"
-# t.integer  "percent"
-# t.integer  "month"
-# t.integer  "year"
+
+5.times do
+  Expense.create(expenseid: Faker:: Commerce.department, userid: "Eden", expensetype: Faker:: Lorem.word, frequency: "biweekly", projvalue: Faker:: Commerce.price, actvalue: Faker:: Commerce.price, percent: Faker:: Number.number(2), month: Faker:: Number.number(1), year: Faker:: Number.number(4))
+end
 
 
-# (1..10).each do
-#   Person.create(name: Faker::Name.name,
-#     dob: Faker::Date.between(30.years.ago, 10.years.ago),
-#     gender: ['f', 'm'].sample, zipcode: Faker::Address.zip)
-#   end
-#
-# 3.times do
-#   Registration.create(person: Person.all.sample, event: Event.all.sample)
-# end
+5.times do
+  Income.create(userid: "Eden", income: "Money", incometype: "salary", value: Faker:: Number.number, frequency: "biweekly", day_rec: Faker:: Number.number(2), month: Faker:: Number.number(1), year: Faker:: Number.number(4))
+end
