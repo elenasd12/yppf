@@ -1,0 +1,53 @@
+<%= form_for(@expense) do |f| %>
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+      <% @expense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expenseid %><br>
+    <%= f.text_area :expenseid %>
+  </div>
+  <div class="field">
+    <%= f.label :userid %><br>
+    <%= f.text_area :userid %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_area :type %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency %><br>
+    <%= f.text_area :frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :projvalue %><br>
+    <%= f.text_field :projvalue %>
+  </div>
+  <div class="field">
+    <%= f.label :actvalue %><br>
+    <%= f.text_field :actvalue %>
+  </div>
+  <div class="field">
+    <%= f.label :percent %><br>
+    <%= f.number_field :percent %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.number_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

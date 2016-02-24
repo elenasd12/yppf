@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @bill.userid %>
+</p>
+
+<p>
+  <strong>Expenseid:</strong>
+  <%= @bill.expenseid %>
+</p>
+
+<p>
+  <strong>Day month:</strong>
+  <%= @bill.day_month %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @bill.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @bill.year %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

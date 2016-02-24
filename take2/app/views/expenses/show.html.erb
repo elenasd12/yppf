@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expenseid:</strong>
+  <%= @expense.expenseid %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @expense.userid %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @expense.type %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @expense.frequency %>
+</p>
+
+<p>
+  <strong>Projvalue:</strong>
+  <%= @expense.projvalue %>
+</p>
+
+<p>
+  <strong>Actvalue:</strong>
+  <%= @expense.actvalue %>
+</p>
+
+<p>
+  <strong>Percent:</strong>
+  <%= @expense.percent %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @expense.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @expense.year %>
+</p>
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>
