@@ -3,7 +3,7 @@ class CreateExpenses < ActiveRecord::Migration
     create_table :expenses do |t|
       t.text :expenseid
       t.text :userid
-      t.text :type
+      t.text :expensetype
       t.text :frequency
       t.decimal :projvalue
       t.decimal :actvalue
