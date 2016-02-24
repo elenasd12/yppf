@@ -1,5 +1,5 @@
 class RenameExType < ActiveRecord::Migration
   def change
-    rename_column :expenses, :expense_type, :expensetype
+    rename_column :expenses, :type, :expensetype
   end
 end
