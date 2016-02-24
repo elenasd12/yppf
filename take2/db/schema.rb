@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224165224) do
+ActiveRecord::Schema.define(version: 20160224165938) do
 
   create_table "bills", force: :cascade do |t|
     t.text     "userid"
@@ -26,28 +26,28 @@ ActiveRecord::Schema.define(version: 20160224165224) do
   create_table "expenses", force: :cascade do |t|
     t.text     "expenseid"
     t.text     "userid"
-    t.text     "expense_type"
+    t.text     "expensetype"
     t.text     "frequency"
     t.decimal  "projvalue"
     t.decimal  "actvalue"
     t.integer  "percent"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "incomes", force: :cascade do |t|
     t.text     "userid"
     t.text     "income"
-    t.text     "income_type"
+    t.text     "incometype"
     t.decimal  "value"
     t.text     "frequency"
     t.integer  "day_rec"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
