@@ -14,7 +14,7 @@ class BillTest < ActiveSupport::TestCase
   end
 
   test "bill dates must be positive" do
-    bill = Bill.new(day_month: -1, month: -1, year: 0)
+    bill = Bill.new(day_month: -1, month: -1, year: -1)
     assert bill.invalid?
     assert_equal ["day, month, and year must be greater than or equal to 1"],bill.errors[:year]
    # assert_equal "day, month, and year must be greater than or equal to 1"
@@ -26,5 +26,5 @@ class BillTest < ActiveSupport::TestCase
     assert_equal ["year must be four digits"],bill.errors[:year]
    # assert_equal "year must be four digits"
   end
-  
+
 end

@@ -10,10 +10,10 @@ class IncomeTest < ActiveSupport::TestCase
     income.value = -1
     assert income.invalid?
     # test invalid with 0
-    income.value = 0
-    assert income.invalid?
+    # income.value = 0
+    # assert income.invalid?
     # test valid with positive number
-    income.actvalue = 1
+    income.value = 1
     assert income.valid?
   end
 
