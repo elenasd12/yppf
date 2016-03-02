@@ -1,0 +1,1241 @@
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateIncomes (20160224010036)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "incomes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "userid" text, "income" text, "incometype" text, "value" decimal, "frequency" text, "day_rec" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010036"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateBills (20160224010235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "bills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "userid" text, "expenseid" text, "day_month" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010235"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateExpenses (20160224010314)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "expenses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "expenseid" text, "userid" text, "expensetype" text, "frequency" text, "projvalue" decimal, "actvalue" decimal, "percent" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010314"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateUsers (20160224010325)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" text, "email" text, "password" text, "state" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010325"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "bills"
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "expenses"[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "incomes"
+  [1m[36mSQL (1.4ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Computers & Jewelery"], ["day_month", 40], ["month", 8], ["year", 1907], ["created_at", "2016-02-25 18:29:04.101473"], ["updated_at", "2016-02-25 18:29:04.101473"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["expenseid", "Music"], ["day_month", 51], ["month", 2], ["year", 1215], ["created_at", "2016-02-25 18:29:04.108621"], ["updated_at", "2016-02-25 18:29:04.108621"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Beauty"], ["day_month", 45], ["month", 4], ["year", 4465], ["created_at", "2016-02-25 18:29:04.111724"], ["updated_at", "2016-02-25 18:29:04.111724"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["expenseid", "Health"], ["day_month", 50], ["month", 9], ["year", 5516], ["created_at", "2016-02-25 18:29:04.114926"], ["updated_at", "2016-02-25 18:29:04.114926"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Music & Clothing"], ["day_month", 97], ["month", 3], ["year", 1038], ["created_at", "2016-02-25 18:29:04.117955"], ["updated_at", "2016-02-25 18:29:04.117955"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "sofia_crooks@barrowsmraz.biz"], ["password", "336xSe67E"], ["state", "UT"], ["created_at", "2016-02-25 18:29:04.130966"], ["updated_at", "2016-02-25 18:29:04.130966"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user", "Eden"], ["email", "mya@runolfon.biz"], ["password", "QkJgA7QhZ"], ["state", "NJ"], ["created_at", "2016-02-25 18:29:04.135374"], ["updated_at", "2016-02-25 18:29:04.135374"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "garett.cormier@ornziemann.com"], ["password", "60K9AgZ4O"], ["state", "IL"], ["created_at", "2016-02-25 18:29:04.139342"], ["updated_at", "2016-02-25 18:29:04.139342"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user", "Eden"], ["email", "ludwig@krajcikemmerich.co"], ["password", "UtQjFpMoJ"], ["state", "KY"], ["created_at", "2016-02-25 18:29:04.142807"], ["updated_at", "2016-02-25 18:29:04.142807"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "dayne_lubowitz@mayer.org"], ["password", "VbMtKzOo"], ["state", "IL"], ["created_at", "2016-02-25 18:29:04.146817"], ["updated_at", "2016-02-25 18:29:04.146817"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Jewelery"], ["userid", "Eden"], ["expensetype", "ea"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 74.58], ["percent", 66], ["month", 4], ["year", 9001], ["created_at", "2016-02-25 18:29:04.160666"], ["updated_at", "2016-02-25 18:29:04.160666"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expenseid", "Movies, Clothing & Games"], ["userid", "Eden"], ["expensetype", "tempora"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 78.93], ["percent", 49], ["month", 7], ["year", 3034], ["created_at", "2016-02-25 18:29:04.165230"], ["updated_at", "2016-02-25 18:29:04.165230"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Electronics & Baby"], ["userid", "Eden"], ["expensetype", "illum"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 49.22], ["percent", 16], ["month", 4], ["year", 6645], ["created_at", "2016-02-25 18:29:04.168614"], ["updated_at", "2016-02-25 18:29:04.168614"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expenseid", "Music, Movies & Tools"], ["userid", "Eden"], ["expensetype", "repellat"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 41.45], ["percent", 64], ["month", 8], ["year", 8766], ["created_at", "2016-02-25 18:29:04.171927"], ["updated_at", "2016-02-25 18:29:04.171927"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Grocery"], ["userid", "Eden"], ["expensetype", "id"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 88.92], ["percent", 34], ["month", 9], ["year", 6313], ["created_at", "2016-02-25 18:29:04.175705"], ["updated_at", "2016-02-25 18:29:04.175705"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 52], ["month", 8], ["year", 4595], ["created_at", "2016-02-25 18:29:04.185996"], ["updated_at", "2016-02-25 18:29:04.185996"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 34], ["month", 6], ["year", 6444], ["created_at", "2016-02-25 18:29:04.189437"], ["updated_at", "2016-02-25 18:29:04.189437"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 38], ["month", 7], ["year", 6692], ["created_at", "2016-02-25 18:29:04.192790"], ["updated_at", "2016-02-25 18:29:04.192790"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 97], ["month", 6], ["year", 6615], ["created_at", "2016-02-25 18:29:04.195913"], ["updated_at", "2016-02-25 18:29:04.195913"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 23], ["month", 6], ["year", 2533], ["created_at", "2016-02-25 18:29:04.199291"], ["updated_at", "2016-02-25 18:29:04.199291"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-25 13:29:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 2135ms (Views: 2122.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-cf9cca1cc19d9529f874a4cdc3404f63a4e9ca40b6f22373b7c7d45172ca8f4d.css?body=1" for 127.0.0.1 at 2016-02-25 13:29:40 -0500
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-25 13:29:42 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-02-25 13:29:44 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-02-25 13:29:45 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (505.2ms)
+  Rendered incomes/new.html.erb within layouts/application (512.1ms)
+Completed 200 OK in 568ms (Views: 550.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-25 13:29:49 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-25 13:29:50 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mIncome Load (0.8ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.8ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.5ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 107ms (Views: 95.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-25 13:30:08 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 73ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-02-25 14:00:46 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 124ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-02-25 14:00:47 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (20.0ms)
+  Rendered incomes/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 81ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-25 14:00:51 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-25 14:00:52 -0500
+Processing by BudgetsController#display as HTML
+  [1m[36mIncome Load (2.0ms)[0m  [1mSELECT "incomes".* FROM "incomes"[0m
+  [1m[35mExpense Load (0.3ms)[0m  SELECT "expenses".* FROM "expenses"
+  [1m[36mBill Load (0.3ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered budgets/display.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 94ms (Views: 89.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-25 14:01:21 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-25 14:02:07 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mIncome Load (0.2ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.2ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-28 11:55:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 406ms (Views: 393.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/scaffolds.self-cf9cca1cc19d9529f874a4cdc3404f63a4e9ca40b6f22373b7c7d45172ca8f4d.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-28 11:55:18 -0500
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-28 11:55:21 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-02-28 11:55:23 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-02-28 11:55:24 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (526.2ms)
+  Rendered incomes/new.html.erb within layouts/application (536.3ms)
+Completed 200 OK in 634ms (Views: 583.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-28 11:55:29 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-28 11:55:31 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mIncome Load (7.9ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.7ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.7ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 91ms (Views: 77.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2016-02-28 11:55:37 -0500
+Processing by BillsController#new as HTML
+  Rendered bills/_form.html.erb (3.5ms)
+  Rendered bills/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 102ms (Views: 100.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-28 11:55:41 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-28 11:55:45 -0500
+Processing by BudgetsController#display as HTML
+  [1m[36mIncome Load (0.4ms)[0m  [1mSELECT "incomes".* FROM "incomes"[0m
+  [1m[35mExpense Load (0.2ms)[0m  SELECT "expenses".* FROM "expenses"
+  [1m[36mBill Load (0.2ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered budgets/display.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/expenses/1" for 127.0.0.1 at 2016-02-28 11:55:48 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExpense Load (0.3ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered expenses/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 74ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/expenses" for 127.0.0.1 at 2016-02-28 11:55:51 -0500
+Processing by ExpensesController#index as HTML
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  Rendered expenses/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-28 11:55:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-02-28 11:55:58 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-02-28 11:55:58 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mIncome Load (0.2ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.2ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 57ms (Views: 55.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/expenses/1" for 127.0.0.1 at 2016-02-28 11:56:44 -0500
+Processing by ExpensesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ix0+JNKgKdixDmB57UVA5/rFHmSbsG4/E+NEJSxHpPFwD+HOfVpHwCPpFRpxBD2cquSdUm4UGL1Lmjvf90TLcg==", "id"=>"1"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "expenses" WHERE "expenses"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/expenses
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/expenses" for 127.0.0.1 at 2016-02-28 11:56:44 -0500
+Processing by ExpensesController#index as HTML
+  [1m[36mExpense Load (0.4ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  Rendered expenses/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 11:26:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 480ms (Views: 464.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/scaffolds.self-cf9cca1cc19d9529f874a4cdc3404f63a4e9ca40b6f22373b7c7d45172ca8f4d.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:35 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:26:36 -0500
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:26:37 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 11:26:39 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:26:39 -0500
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms)
+
+ArgumentError - Unknown validator: 'ActvalueValidator':
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:120:in `rescue in block in validates'
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:117:in `block in validates'
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:113:in `validates'
+  app/models/expense.rb:3:in `<class:Expense>'
+  app/models/expense.rb:1:in `<top (required)>'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:354:in `require_or_load'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:494:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  app/controllers/expenses_controller.rb:17:in `new'
+  actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:26:40 -0500
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ArgumentError - Unknown validator: 'ActvalueValidator':
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:120:in `rescue in block in validates'
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:117:in `block in validates'
+  activemodel (4.2.5.1) lib/active_model/validations/validates.rb:113:in `validates'
+  app/models/expense.rb:3:in `<class:Expense>'
+  app/models/expense.rb:1:in `<top (required)>'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:354:in `require_or_load'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:494:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  app/controllers/expenses_controller.rb:17:in `new'
+  actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/0ecbb3ec98d41bb8/variables" for 127.0.0.1 at 2016-03-02 11:26:40 -0500
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:27:02 -0500
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError - syntax error, unexpected '{', expecting keyword_end
+  validates :projvalue, :actvalue {greater_than_or_equal_to: 0.01}
+                                   ^
+/Users/Elena/Dropbox/cosi166b_elenasd/github/yppf/app/models/expense.rb:4: syntax error, unexpected '{', expecting keyword_end
+  validates :percent, :month, :year {greater_than_or_equal_to: 0}
+                                     ^:
+  app/models/expense.rb:3:in `'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:354:in `require_or_load'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:494:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  app/controllers/expenses_controller.rb:17:in `new'
+  actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/f388cbf7939e0100/variables" for 127.0.0.1 at 2016-03-02 11:27:02 -0500
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:27:18 -0500
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError - syntax error, unexpected '{', expecting keyword_end
+  validates :projvalue, :actvalue {greater_than_or_equal_to: 0.01}
+                                   ^:
+  app/models/expense.rb:3:in `'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:354:in `require_or_load'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:494:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
+  activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+  app/controllers/expenses_controller.rb:17:in `new'
+  actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/d4b4b71d521dd499/variables" for 127.0.0.1 at 2016-03-02 11:27:19 -0500
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:28:41 -0500
+Processing by ExpensesController#new as HTML
+  Rendered expenses/_form.html.erb (535.6ms)
+  Rendered expenses/new.html.erb within layouts/application (548.8ms)
+Completed 200 OK in 629ms (Views: 617.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/scaffolds.self-cf9cca1cc19d9529f874a4cdc3404f63a4e9ca40b6f22373b7c7d45172ca8f4d.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:28:42 -0500
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 11:29:58 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck2sEJ8V+LMOS1KzRfqlnYneuLEkoniRg7fl6kkmm/rQyaduupJtkCWrIQgGt7Hj9DQtV9zW6XQiVccnpI06nw==", "expense"=>{"expensetype"=>"rent", "frequency"=>"weekly", "projvalue"=>"40.0", "actvalue"=>"-4.0", "percent"=>"4", "month"=>"4", "year"=>"4"}, "commit"=>"Create Expense"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered expenses/_form.html.erb (8.1ms)
+  Rendered expenses/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 11:30:26 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck2sEJ8V+LMOS1KzRfqlnYneuLEkoniRg7fl6kkmm/rQyaduupJtkCWrIQgGt7Hj9DQtV9zW6XQiVccnpI06nw==", "expense"=>{"expensetype"=>"rent", "frequency"=>"weekly", "projvalue"=>"40.0", "actvalue"=>"12", "percent"=>"-4", "month"=>"4", "year"=>"4"}, "commit"=>"Create Expense"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered expenses/_form.html.erb (4.7ms)
+  Rendered expenses/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 67ms (Views: 51.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 11:30:54 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck2sEJ8V+LMOS1KzRfqlnYneuLEkoniRg7fl6kkmm/rQyaduupJtkCWrIQgGt7Hj9DQtV9zW6XQiVccnpI06nw==", "expense"=>{"expensetype"=>"rent", "frequency"=>"weekly", "projvalue"=>"40.0", "actvalue"=>"12", "percent"=>"-4", "month"=>"4", "year"=>"4"}, "commit"=>"Create Expense"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered expenses/_form.html.erb (5.4ms)
+  Rendered expenses/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 11:31:32 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck2sEJ8V+LMOS1KzRfqlnYneuLEkoniRg7fl6kkmm/rQyaduupJtkCWrIQgGt7Hj9DQtV9zW6XQiVccnpI06nw==", "expense"=>{"expensetype"=>"rent", "frequency"=>"weekly", "projvalue"=>"40.0", "actvalue"=>"12", "percent"=>"-4", "month"=>"4", "year"=>"4"}, "commit"=>"Create Expense"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered expenses/_form.html.erb (5.4ms)
+  Rendered expenses/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/expenses" for 127.0.0.1 at 2016-03-02 11:32:56 -0500
+Processing by ExpensesController#index as HTML
+  [1m[35mExpense Load (8.0ms)[0m  SELECT "expenses".* FROM "expenses"
+  Rendered expenses/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 67ms (Views: 55.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:32:58 -0500
+Processing by ExpensesController#new as HTML
+  Rendered expenses/_form.html.erb (5.2ms)
+  Rendered expenses/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 11:33:09 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OrthM1CrxVdfV2IkfP7IKu/CBEerevxoT7tUbBTLq/vgP2pNdSxQdHS3EZ8/s9xUkiiRoVMObY3uWXah+WAKng==", "expense"=>{"expensetype"=>"hi", "frequency"=>"hi", "projvalue"=>"2", "actvalue"=>"2", "percent"=>"2", "month"=>"2", "year"=>"2"}, "commit"=>"Create Expense"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "expenses" ("expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expensetype", "hi"], ["frequency", "hi"], ["projvalue", 2.0], ["actvalue", 2.0], ["percent", 2], ["month", 2], ["year", 2], ["created_at", "2016-03-02 16:33:09.686586"], ["updated_at", "2016-03-02 16:33:09.686586"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/expenses/6
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/expenses/6" for 127.0.0.1 at 2016-03-02 11:33:09 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mExpense Load (0.4ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered expenses/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 78ms (Views: 62.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/expenses/6/edit" for 127.0.0.1 at 2016-03-02 11:33:11 -0500
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered expenses/_form.html.erb (4.9ms)
+  Rendered expenses/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/expenses/6" for 127.0.0.1 at 2016-03-02 11:33:14 -0500
+Processing by ExpensesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"etTG2bqcN2URo3OImZXPyag4XEnuhLkZVc/YC7w4i5SgUM2nnxuiRjpDADPa2Nu31dLJrxbwKPz0LfrGUZMq8Q==", "expense"=>{"expensetype"=>"hi", "frequency"=>"hi", "projvalue"=>"2.0", "actvalue"=>"0", "percent"=>"2", "month"=>"2", "year"=>"2"}, "commit"=>"Update Expense", "id"=>"6"}
+  [1m[35mExpense Load (0.2ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "expenses" SET "actvalue" = ?, "updated_at" = ? WHERE "expenses"."id" = ?  [["actvalue", 0.0], ["updated_at", "2016-03-02 16:33:14.431111"], ["id", 6]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/expenses/6
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/expenses/6" for 127.0.0.1 at 2016-03-02 11:33:14 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mExpense Load (0.2ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered expenses/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/expenses" for 127.0.0.1 at 2016-03-02 11:33:15 -0500
+Processing by ExpensesController#index as HTML
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  Rendered expenses/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 11:33:16 -0500
+Processing by ExpensesController#new as HTML
+  Rendered expenses/_form.html.erb (5.1ms)
+  Rendered expenses/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/expenses/6/edit" for 127.0.0.1 at 2016-03-02 11:33:22 -0500
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered expenses/_form.html.erb (5.8ms)
+  Rendered expenses/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/expenses/6" for 127.0.0.1 at 2016-03-02 11:33:30 -0500
+Processing by ExpensesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M388ufRLEKDLxV7FyJHuHa7G5ipDR7uU/nneokT6NPLp+zfH0cyFg+AlLX6L3Ppj0yxzzLszKnFfm/xvqVGVlw==", "expense"=>{"expensetype"=>"hi", "frequency"=>"hi", "projvalue"=>"2.0", "actvalue"=>"4", "percent"=>"2", "month"=>"-2", "year"=>"2"}, "commit"=>"Update Expense", "id"=>"6"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered expenses/_form.html.erb (6.2ms)
+  Rendered expenses/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 73ms (Views: 67.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 11:33:36 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/scaffolds.self-cf9cca1cc19d9529f874a4cdc3404f63a4e9ca40b6f22373b7c7d45172ca8f4d.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:45:56 -0500
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:45:57 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 11:45:59 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 11:46:01 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (4.7ms)
+  Rendered incomes/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 68ms (Views: 49.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 11:46:11 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x21ekOEJOK9mkf4B7a5KGpyEVqfY4lFrSyuEGCGW/EYd6VXuxI6tjE1xjbqu415k4W7DQSCWwI7qyabVzD1dIw==", "income"=>{"income"=>"hi", "incometype"=>"hi", "value"=>"50", "frequency"=>"hi", "day_rec"=>"4", "month"=>"5", "year"=>"100"}, "commit"=>"Create Income"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered incomes/_form.html.erb (6.8ms)
+  Rendered incomes/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 11:48:04 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:48:05 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 11:48:07 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 11:48:09 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (4.5ms)
+  Rendered incomes/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 86ms (Views: 75.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 11:48:28 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/wz6F6LS18hsWgT0NVtiKTOux2hC91ibjWB+0AjkhCUliPFph1VC60e6d092FnZXTkRSjrqDyX4sglwd5U8lQA==", "income"=>{"income"=>"hi", "incometype"=>"hi", "value"=>"5", "frequency"=>"hi", "day_rec"=>"4", "month"=>"2", "year"=>"100"}, "commit"=>"Create Income"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered incomes/_form.html.erb (7.2ms)
+  Rendered incomes/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 11:49:31 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXOL9Pk/vh/ZmcniseGEyKviEpLMOfDUQc1kLWg5lzB394CK3LgrPPJ5ulnyrJC21giHdDRNYTHgL0bghZI2VQ==", "income"=>{"income"=>"hi", "incometype"=>"hi", "value"=>"5", "frequency"=>"hi", "day_rec"=>"4", "month"=>"2", "year"=>"100"}, "commit"=>"Create Income"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered incomes/_form.html.erb (6.7ms)
+  Rendered incomes/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 75ms (Views: 57.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 11:49:42 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:49:43 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 11:49:44 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 11:49:45 -0500
+Processing by IncomesController#new as HTML
+  Rendered incomes/_form.html.erb (6.2ms)
+  Rendered incomes/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 82ms (Views: 66.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 11:49:54 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ILKKKYg8zY+70rBV34A+m3xnHTGpVDOs+TCHHcUJeef6NoFXrbtYrJAyw+6czSrlAY2I11EgoklY0qXQKKLYgg==", "income"=>{"income"=>"hi", "incometype"=>"hi", "value"=>"4", "frequency"=>"hi", "day_rec"=>"3", "month"=>"3", "year"=>"100"}, "commit"=>"Create Income"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered incomes/_form.html.erb (5.7ms)
+  Rendered incomes/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.2ms)
