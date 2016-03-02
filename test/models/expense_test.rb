@@ -11,7 +11,7 @@ class ExpenseTest < ActiveSupport::TestCase
     assert expense.invalid?
     # test invalid with 0
     expense.actvalue = 0
-    assert product.invalid?
+    assert expense.invalid?
     # test valid with positive number
     expense.actvalue = 1
     assert expense.valid?

@@ -3,7 +3,7 @@
 one:
   userid: MyText
   income: MyText
-  type: MyText
+  incometype: MyText
   value: 9.99
   frequency: MyText
   day_rec: 1
@@ -13,7 +13,7 @@ one:
 two:
   userid: MyText
   income: MyText
-  type: MyText
+  incometype: MyText
   value: 9.99
   frequency: MyText
   day_rec: 1

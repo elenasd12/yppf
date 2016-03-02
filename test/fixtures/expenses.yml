@@ -3,7 +3,7 @@
 one:
   expenseid: MyText
   userid: MyText
-  type: MyText
+  expensetype: MyText
   frequency: MyText
   projvalue: 9.99
   actvalue: 9.99
@@ -14,7 +14,7 @@ one:
 two:
   expenseid: MyText
   userid: MyText
-  type: MyText
+  expensetype: MyText
   frequency: MyText
   projvalue: 9.99
   actvalue: 9.99
