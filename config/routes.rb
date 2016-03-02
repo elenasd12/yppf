@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'welcome/index'
 
   resources :users
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'welcome#index'
+  #root to: 'pages#index'
 
   get 'dashboard/new' => 'dashboard#new'
   get 'datas/add' => 'datas#add'
