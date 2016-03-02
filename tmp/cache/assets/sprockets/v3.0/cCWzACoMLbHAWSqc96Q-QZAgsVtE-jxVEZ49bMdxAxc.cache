@@ -1,2 +1,6 @@
 [o:Set:
+<<<<<<< HEAD
 @hash{	I"environment-version:ETTI"environment-paths;TTI"Lprocessors:type=text/css&file_type=text/css&engines=.scss&pipeline=self;TTI"6file-digest://app/assets/stylesheets/welcome.scss;TT
+=======
+@hash}	I"environment-version:ETTI"environment-paths;TTI"Lprocessors:type=text/css&file_type=text/css&engines=.scss&pipeline=self;TTI"6file-digest://app/assets/stylesheets/welcome.scss;TTF
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6

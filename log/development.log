@@ -1,10 +1,69 @@
+<<<<<<< HEAD
   [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
   [1m[35m (0.5ms)[0m  select sqlite_version(*)
   [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+=======
+
+
+Started GET "/incomes" for 127.0.0.1 at 2016-03-02 11:11:18 -0500
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.5.1) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/0aa3a9bbf8a01e12/variables" for 127.0.0.1 at 2016-03-02 11:11:18 -0500
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to CreateIncomes (20160224010036)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.5ms)[0m  CREATE TABLE "incomes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "userid" text, "income" text, "incometype" text, "value" decimal, "frequency" text, "day_rec" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+<<<<<<< HEAD
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010036"]]
   [1m[35m (0.9ms)[0m  commit transaction
 Migrating to CreateBills (20160224010235)
@@ -461,6 +520,664 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   activemodel (4.2.5.1) lib/active_model/validations/validates.rb:113:in `validates'
   app/models/expense.rb:3:in `<class:Expense>'
   app/models/expense.rb:1:in `<top (required)>'
+=======
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010036"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateBills (20160224010235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "bills" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "userid" text, "expenseid" text, "day_month" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010235"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateExpenses (20160224010314)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "expenses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "expenseid" text, "userid" text, "expensetype" text, "frequency" text, "projvalue" decimal, "actvalue" decimal, "percent" integer, "month" integer, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010314"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateUsers (20160224010325)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" text, "email" text, "password" text, "state" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224010325"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "bills"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "expenses"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "incomes"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Shoes"], ["day_month", 66], ["month", 0], ["year", 5539], ["created_at", "2016-03-02 16:11:38.369048"], ["updated_at", "2016-03-02 16:11:38.369048"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["expenseid", "Electronics & Outdoors"], ["day_month", 11], ["month", 8], ["year", 8624], ["created_at", "2016-03-02 16:11:38.373437"], ["updated_at", "2016-03-02 16:11:38.373437"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Grocery"], ["day_month", 65], ["month", 9], ["year", 8226], ["created_at", "2016-03-02 16:11:38.375529"], ["updated_at", "2016-03-02 16:11:38.375529"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["expenseid", "Garden, Outdoors & Computers"], ["day_month", 73], ["month", 3], ["year", 7602], ["created_at", "2016-03-02 16:11:38.377623"], ["updated_at", "2016-03-02 16:11:38.377623"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["expenseid", "Kids, Outdoors & Music"], ["day_month", 69], ["month", 1], ["year", 6477], ["created_at", "2016-03-02 16:11:38.379827"], ["updated_at", "2016-03-02 16:11:38.379827"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "brandy@wyman.net"], ["password", "C2IeYqM5N"], ["state", "PA"], ["created_at", "2016-03-02 16:11:38.386436"], ["updated_at", "2016-03-02 16:11:38.386436"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user", "Eden"], ["email", "timmothy_goldner@funk.io"], ["password", "KxRt8eF6Q"], ["state", "KY"], ["created_at", "2016-03-02 16:11:38.389179"], ["updated_at", "2016-03-02 16:11:38.389179"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "dora@cummerata.org"], ["password", "XlZpRlM28"], ["state", "SD"], ["created_at", "2016-03-02 16:11:38.391358"], ["updated_at", "2016-03-02 16:11:38.391358"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user", "Eden"], ["email", "elmo@langoshsimonis.net"], ["password", "BwM9966q3"], ["state", "OK"], ["created_at", "2016-03-02 16:11:38.393456"], ["updated_at", "2016-03-02 16:11:38.393456"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user", "email", "password", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user", "Eden"], ["email", "brennan.hoeger@rempel.biz"], ["password", "S5GwS4Tt"], ["state", "WA"], ["created_at", "2016-03-02 16:11:38.395941"], ["updated_at", "2016-03-02 16:11:38.395941"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Computers & Clothing"], ["userid", "Eden"], ["expensetype", "architecto"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 56.39], ["percent", 14], ["month", 1], ["year", 9197], ["created_at", "2016-03-02 16:11:38.406581"], ["updated_at", "2016-03-02 16:11:38.406581"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expenseid", "Music & Health"], ["userid", "Eden"], ["expensetype", "iure"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 79.79], ["percent", 98], ["month", 2], ["year", 1977], ["created_at", "2016-03-02 16:11:38.410735"], ["updated_at", "2016-03-02 16:11:38.410735"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Shoes & Garden"], ["userid", "Eden"], ["expensetype", "suscipit"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 23.85], ["percent", 70], ["month", 7], ["year", 1332], ["created_at", "2016-03-02 16:11:38.414189"], ["updated_at", "2016-03-02 16:11:38.414189"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expenseid", "Books & Beauty"], ["userid", "Eden"], ["expensetype", "magnam"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 58.08], ["percent", 34], ["month", 0], ["year", 8839], ["created_at", "2016-03-02 16:11:38.417109"], ["updated_at", "2016-03-02 16:11:38.417109"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expenseid", "Games"], ["userid", "Eden"], ["expensetype", "officiis"], ["frequency", "biweekly"], ["projvalue", 0.1], ["actvalue", 47.05], ["percent", 32], ["month", 5], ["year", 1737], ["created_at", "2016-03-02 16:11:38.419403"], ["updated_at", "2016-03-02 16:11:38.419403"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 84], ["month", 9], ["year", 1112], ["created_at", "2016-03-02 16:11:38.429633"], ["updated_at", "2016-03-02 16:11:38.429633"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 79], ["month", 8], ["year", 1301], ["created_at", "2016-03-02 16:11:38.433793"], ["updated_at", "2016-03-02 16:11:38.433793"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 78], ["month", 4], ["year", 5378], ["created_at", "2016-03-02 16:11:38.436724"], ["updated_at", "2016-03-02 16:11:38.436724"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 15], ["month", 6], ["year", 1192], ["created_at", "2016-03-02 16:11:38.438896"], ["updated_at", "2016-03-02 16:11:38.438896"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["userid", "Eden"], ["income", "Money"], ["incometype", "salary"], ["value", 0.0], ["frequency", "biweekly"], ["day_rec", 64], ["month", 9], ["year", 8523], ["created_at", "2016-03-02 16:11:38.441106"], ["updated_at", "2016-03-02 16:11:38.441106"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/incomes" for 127.0.0.1 at 2016-03-02 11:11:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncomesController#index as HTML
+  [1m[35mIncome Load (0.3ms)[0m  SELECT "incomes".* FROM "incomes"
+  Rendered incomes/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 1823ms (Views: 1804.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2016-03-02 11:16:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/welcome"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (356.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (411.1ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 11:16:01 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 11:16:01 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 55ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:16:03 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 11:16:06 -0500
+Processing by DatasController#add as HTML
+  Rendered datas/add.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2016-03-02 11:16:07 -0500
+Processing by BillsController#new as HTML
+  Rendered bills/_form.html.erb (9.4ms)
+  Rendered bills/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 50ms (Views: 41.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:16:14 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v7rdebJ1Ax/Bhax+OKXLox2uD6OoFG719zSpLpPcXzJYRZYVsF7c9X18sCg+Av4wFOyhWpu3JcSiZ81IEzJDXg==", "bill"=>{"expenseid"=>"nf", "day_month"=>"", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered bills/_form.html.erb (4.8ms)
+  Rendered bills/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:18:08 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtfCVHux1SlewMhLknw38JnMQAU8YS2BRFMx26fcQcDVKIk4eZoKw+I51B2U2wJjkI7u/A/CZrARAFW9JzJdrA==", "bill"=>{"expenseid"=>"nf", "day_month"=>"", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered bills/_form.html.erb (5.3ms)
+  Rendered bills/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 54ms (Views: 42.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:20:29 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtfCVHux1SlewMhLknw38JnMQAU8YS2BRFMx26fcQcDVKIk4eZoKw+I51B2U2wJjkI7u/A/CZrARAFW9JzJdrA==", "bill"=>{"expenseid"=>"nf", "day_month"=>"", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered bills/_form.html.erb (3.7ms)
+  Rendered bills/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 58ms (Views: 46.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:30 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:20:55 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtfCVHux1SlewMhLknw38JnMQAU8YS2BRFMx26fcQcDVKIk4eZoKw+I51B2U2wJjkI7u/A/CZrARAFW9JzJdrA==", "bill"=>{"expenseid"=>"nf", "day_month"=>"", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered bills/_form.html.erb (3.9ms)
+  Rendered bills/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 50ms (Views: 39.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:20:56 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:23:15 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqAr/QsivbY5WolpxUhTBzkpc7gUj/xEMjZaxctgaxB9X2CRCQliXIWjlT/D72aUMGvdQScst3VnZT6jS453fA==", "bill"=>{"expenseid"=>"nf", "day_month"=>"3", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered bills/_form.html.erb (3.0ms)
+  Rendered bills/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqAr/QsivbY5WolpxUhTBzkpc7gUj/xEMjZaxctgaxB9X2CRCQliXIWjlT/D72aUMGvdQScst3VnZT6jS453fA==", "bill"=>{"expenseid"=>"nf", "day_month"=>"3", "month"=>"8", "year"=>"1888"}, "commit"=>"Create Bill"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "bills" ("expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["expenseid", "nf"], ["day_month", 3], ["month", 8], ["year", 1888], ["created_at", "2016-03-02 16:23:27.214619"], ["updated_at", "2016-03-02 16:23:27.214619"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/bills/6
+Completed 302 Found in 21ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/bills/6" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mBill Load (0.3ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered bills/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 52ms (Views: 37.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:23:27 -0500
+
+
+Started GET "/bills" for 127.0.0.1 at 2016-03-02 11:23:33 -0500
+Processing by BillsController#index as HTML
+  [1m[36mBill Load (0.3ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered bills/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 11:23:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:23:40 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:32:55 -0500
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 11:32:57 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mIncome Load (0.3ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.2ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 71ms (Views: 64.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 11:33:00 -0500
+Processing by DashboardController#new as HTML
+  Rendered dashboard/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 11:33:02 -0500
+Processing by BudgetsController#display as HTML
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT "incomes".* FROM "incomes"[0m
+  [1m[35mExpense Load (0.1ms)[0m  SELECT "expenses".* FROM "expenses"
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered budgets/display.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2016-03-02 11:33:03 -0500
+Processing by BillsController#new as HTML
+  Rendered bills/_form.html.erb (2.8ms)
+  Rendered bills/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:33:12 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAf5Fkel9gSSYxG4kwPYzlSg3+YQ4tqB94dgSKOZsRVT+LJ6RY4p7i6aDe6VpO1dXeJxHyNBkbCi1AQuI3eteQ==", "bill"=>{"expenseid"=>"eden", "day_month"=>"-1", "month"=>"-1", "year"=>"-1"}, "commit"=>"Create Bill"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered bills/_form.html.erb (3.8ms)
+  Rendered bills/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAf5Fkel9gSSYxG4kwPYzlSg3+YQ4tqB94dgSKOZsRVT+LJ6RY4p7i6aDe6VpO1dXeJxHyNBkbCi1AQuI3eteQ==", "bill"=>{"expenseid"=>"eden", "day_month"=>"-1", "month"=>"-1", "year"=>"-1"}, "commit"=>"Create Bill"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered bills/_form.html.erb (4.4ms)
+  Rendered bills/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 60ms (Views: 47.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:39:53 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:40:30 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAf5Fkel9gSSYxG4kwPYzlSg3+YQ4tqB94dgSKOZsRVT+LJ6RY4p7i6aDe6VpO1dXeJxHyNBkbCi1AQuI3eteQ==", "bill"=>{"expenseid"=>"eden", "day_month"=>"-1", "month"=>"-1", "year"=>"-1"}, "commit"=>"Create Bill"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting '}'
+      message: "should be between 1900 and today's year"
+             ^
+/Users/Eshoshan/Desktop/yppf/app/models/bill.rb:12: syntax error, unexpected '}', expecting keyword_end
+    },
+     ^:
+  app/models/bill.rb:11:in `'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
@@ -469,7 +1186,11 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+<<<<<<< HEAD
   app/controllers/expenses_controller.rb:17:in `new'
+=======
+  app/controllers/bills_controller.rb:27:in `create'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
   actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
   actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
@@ -500,7 +1221,11 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
   rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -542,6 +1267,7 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
@@ -558,6 +1284,29 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   activemodel (4.2.5.1) lib/active_model/validations/validates.rb:113:in `validates'
   app/models/expense.rb:3:in `<class:Expense>'
   app/models/expense.rb:1:in `<top (required)>'
+=======
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/16bf644337071d9a/variables" for 127.0.0.1 at 2016-03-02 11:40:30 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:40:39 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAf5Fkel9gSSYxG4kwPYzlSg3+YQ4tqB94dgSKOZsRVT+LJ6RY4p7i6aDe6VpO1dXeJxHyNBkbCi1AQuI3eteQ==", "bill"=>{"expenseid"=>"eden", "day_month"=>"-1", "month"=>"-1", "year"=>"-1"}, "commit"=>"Create Bill"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting '}'
+      message: "should be between 1900 and todays year"
+             ^
+/Users/Eshoshan/Desktop/yppf/app/models/bill.rb:12: syntax error, unexpected '}', expecting keyword_end
+    },
+     ^:
+  app/models/bill.rb:11:in `'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:457:in `block in load_file'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:647:in `new_constants_in'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:456:in `load_file'
@@ -566,7 +1315,11 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:526:in `load_missing_constant'
   activesupport (4.2.5.1) lib/active_support/dependencies.rb:184:in `const_missing'
+<<<<<<< HEAD
   app/controllers/expenses_controller.rb:17:in `new'
+=======
+  app/controllers/bills_controller.rb:27:in `create'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   actionpack (4.2.5.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
   actionpack (4.2.5.1) lib/abstract_controller/base.rb:198:in `process_action'
   actionpack (4.2.5.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
@@ -597,7 +1350,11 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   actionpack (4.2.5.1) lib/action_dispatch/journey/router.rb:30:in `serve'
   actionpack (4.2.5.1) lib/action_dispatch/routing/route_set.rb:815:in `call'
   rack (1.6.4) lib/rack/etag.rb:24:in `call'
+<<<<<<< HEAD
   rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+=======
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
   rack (1.6.4) lib/rack/head.rb:13:in `call'
   actionpack (4.2.5.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
   actionpack (4.2.5.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
@@ -639,6 +1396,7 @@ ArgumentError - Unknown validator: 'ActvalueValidator':
   rack (1.6.4) lib/rack/lock.rb:17:in `call'
   rack (1.6.4) lib/rack/content_length.rb:15:in `call'
   rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
@@ -1239,3 +1997,106 @@ Processing by IncomesController#create as HTML
   Rendered incomes/_form.html.erb (5.7ms)
   Rendered incomes/new.html.erb within layouts/application (7.1ms)
 Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+=======
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/4ed585bd275c79ed/variables" for 127.0.0.1 at 2016-03-02 11:40:39 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tAf5Fkel9gSSYxG4kwPYzlSg3+YQ4tqB94dgSKOZsRVT+LJ6RY4p7i6aDe6VpO1dXeJxHyNBkbCi1AQuI3eteQ==", "bill"=>{"expenseid"=>"eden", "day_month"=>"-1", "month"=>"-1", "year"=>"-1"}, "commit"=>"Create Bill"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered bills/_form.html.erb (4.0ms)
+  Rendered bills/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 56ms (Views: 43.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-03-02 11:40:54 -0500
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 11:41:11 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iYRlpUW9YWPX70KqGiPrjLzesOflxDjQ62TMuWOgxi5uey7JR5a+iWsWXvwchN4ftZweHtZnc+G+N6jf407aQg==", "bill"=>{"expenseid"=>"eden", "day_month"=>"1", "month"=>"1", "year"=>"2016"}, "commit"=>"Create Bill"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bills" ("expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["expenseid", "eden"], ["day_month", 1], ["month", 1], ["year", 2016], ["created_at", "2016-03-02 16:41:11.670327"], ["updated_at", "2016-03-02 16:41:11.670327"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/bills/7
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/bills/7" for 127.0.0.1 at 2016-03-02 11:41:11 -0500
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBill Load (0.2ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered bills/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 54.9ms | ActiveRecord: 0.2ms)
+>>>>>>> ce8aaa8bedaaa6e0bbf1281b59647b57c11d88f6
