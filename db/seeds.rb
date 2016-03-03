@@ -10,13 +10,17 @@ Expense.delete_all
 Income.delete_all
 User.delete_all
 
+User.create(user: "Eden", email: "shoshan.eden@gmail.com", password: "brandeis16", state: "MA")
+
+
 5.times do
   Bill.create(userid: "Eden", expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.number(1), year: Faker::Number.number(4))
 end
 
-5.times do
-  User.create(user: "Eden", email: Faker::Internet.email, password: Faker::Internet.password, state: Faker::Address.state_abbr)
-end
+# 5.times do
+#   User.create(user: "Eden", email: Faker::Internet.email, password: Faker::Internet.password, state: Faker::Address.state_abbr)
+# end
+
 
 
 5.times do

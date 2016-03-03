@@ -1,6 +1,11 @@
+
 <h1><center>Budget</center></h1>
 
 <p id="notice"><%= notice %></p>
+
+<%= pie_chart Expense.group(:expensetype, :month, :year).sum(:projvalue)%>
+<!-- <%=pie_chart Income.group(:incometype, :month, :year).sum(:value)%> -->
+
 
 <h2>Income</h2>
 
@@ -15,7 +20,7 @@
       <th>Day Received</th>
       <th>Month</th>
       <th>Year</th>
-      <th colspan="5"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -46,12 +51,13 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>Userid</th>
-      <th>Income</th>
-      <th>Income Type</th>
-      <th>Value</th>
+      <th>Expense</th>
+      <th>User</th>
+      <th>Type</th>
       <th>Frequency</th>
-      <th>Day rec</th>
+      <th>Projected Value</th>
+      <th>Actual Value</th>
+      <th>Percent </th>
       <th>Month</th>
       <th>Year</th>
       <th colspan="3"></th>
@@ -87,12 +93,12 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>Userid</th>
+      <th>User</th>
       <th>Income</th>
-      <th>Income Type</th>
+      <th>Type</th>
       <th>Value</th>
       <th>Frequency</th>
-      <th>Day rec</th>
+      <th>Day Received</th>
       <th>Month</th>
       <th>Year</th>
       <th colspan="3"></th>
@@ -112,11 +118,13 @@
         <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 <br>
 
 <%= link_to 'New Bill', new_bill_path %>
 <br>
+
 
 <center><%= link_to 'Back to Dashboard', dashboard_new_path %></center>
