@@ -2,5 +2,12 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @income %> |
-<%= link_to 'Back', incomes_path %>
+<%= link_to 'Show', @income %> 
+
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>

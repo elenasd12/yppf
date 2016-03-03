@@ -4359,3 +4359,59 @@ IncomeTest: test_0002_year must be positive
 IncomeTest: test_0001_income fields must be positive
 ----------------------------------------------------
   [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:44:01', '2016-03-02 21:44:01', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'shoshan.eden@gmail.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction

@@ -3,4 +3,11 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @expense %> |
-<%= link_to 'Back', expenses_path %>
+
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>

@@ -373,3 +373,1002 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.html.erb (5.6ms)
   Rendered devise/sessions/new.html.erb within layouts/application (10.6ms)
 Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:39:08 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 16:39:08 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:39:09 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 16:39:09 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:39:10 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 16:39:10 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 16:39:12 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 16:39:12 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/income" for 127.0.0.1 at 2016-03-02 16:39:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/welcome/income"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.4ms)
+
+
+Started GET "/welcome/income" for 127.0.0.1 at 2016-03-02 16:39:13 -0500
+
+ActionController::RoutingError (No route matches [GET] "/welcome/income"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/Cellar/ruby/2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 16:39:18 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 16:39:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 66ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-03-02 16:42:01 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-02 16:42:14 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pnISsdo549Gv4cVOlyMKPNLrSj2HunM7zPdvGdOMhddBjVnd2BI8OxMY2RiRhD+v26nkxLQZOAqZpAt/U2KZuw==", "user"=>{"name"=>"Eden Shoshan", "email"=>"shoshan.eden@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'shoshan.eden@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "shoshan.eden@gmail.com"], ["encrypted_password", "$2a$10$N8dN2PFfjnyrKumzFX8DQOekDRk6URi2bYhXiLHnn5Dx.selY/74y"], ["name", "Eden Shoshan"], ["created_at", "2016-03-02 21:42:14.237564"], ["updated_at", "2016-03-02 21:42:14.237564"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-03-02 21:42:14.241067"], ["current_sign_in_at", "2016-03-02 21:42:14.241067"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-03-02 21:42:14.241630"], ["id", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 128ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 16:42:14 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2016-03-02 16:42:23 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 16:42:27 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 16:42:37 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 97ms (Views: 94.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 16:42:43 -0500
+Processing by DatasController#add as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 16:42:46 -0500
+Processing by IncomesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered incomes/_form.html.erb (9.2ms)
+  Rendered incomes/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 93ms (Views: 69.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 16:43:10 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y0AKXgCGol6deQnWXUfeyoUeU14zA5gj9ZFW04AaPe0sv0EyAq19tCGAFYBb4OtZjFz9pwCg0xKgwjK1APQhgQ==", "income"=>{"income"=>"WOrk", "incometype"=>"weekly", "value"=>"5,000", "frequency"=>"1", "day_rec"=>"1", "month"=>"3", "year"=>"2016"}, "commit"=>"Create Income"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered incomes/_form.html.erb (4.6ms)
+  Rendered incomes/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 16:43:21 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KjU+7LGgRZ/DdPnqb4i58IR8ep/2HFDpOpZvb9ls2JrNynWAs4uadX+N5bxpL4xjjT7UZsW/G9hvxQsJWYLE9g==", "income"=>{"income"=>"WOrk", "incometype"=>"weekly", "value"=>"5000", "frequency"=>"1", "day_rec"=>"1", "month"=>"3", "year"=>"2016"}, "commit"=>"Create Income"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "incomes" ("income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["income", "WOrk"], ["incometype", "weekly"], ["value", 5000.0], ["frequency", "1"], ["day_rec", 1], ["month", 3], ["year", 2016], ["created_at", "2016-03-02 21:43:21.487402"], ["updated_at", "2016-03-02 21:43:21.487402"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/incomes/1
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/incomes/1" for 127.0.0.1 at 2016-03-02 16:43:21 -0500
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIncome Load (0.5ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered incomes/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 113ms (Views: 102.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 16:43:26 -0500
+Processing by IncomesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered incomes/_form.html.erb (15.2ms)
+  Rendered incomes/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 132ms (Views: 126.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 16:43:29 -0500
+Processing by ExpensesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/_form.html.erb (5.6ms)
+  Rendered expenses/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 85ms (Views: 69.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2016-03-02 16:43:32 -0500
+Processing by BillsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered bills/_form.html.erb (3.8ms)
+  Rendered bills/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 67ms (Views: 58.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 16:43:34 -0500
+Processing by DashboardController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 16:43:36 -0500
+Processing by BudgetsController#display as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mIncome Load (0.2ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.4ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.1ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 16:43:40 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:13:11 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 110ms (Views: 87.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-03-02 18:13:14 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uMUp1l5aS2jArk21w4qHqc5XTwp0X0KmP8MiG1TZ4gJfOmK6XHGUgnxXUePFLbI6xxXh80f8CZdqkEZ91Df+bg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:13:14 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 72ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:13:18 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 18:13:23 -0500
+Processing by DashboardController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:23 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:27 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:13:27 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:27 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 99ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 18:13:30 -0500
+Processing by ExpensesController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:13:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 103ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-02 18:15:31 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EdtT4XXGbMBn7GzpR8jBaGr9GK/gzbn7KajPK0garCPu+0TXxD98Ksouk9VfRVE4WBg+ZV/fj7gMWN/eRh7Xvw==", "user"=>{"email"=>"shoshan.eden@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "shoshan.eden@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-03-02 23:15:31.082726"], ["sign_in_count", 2], ["updated_at", "2016-03-02 23:15:31.083459"], ["id", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/expenses/new
+Completed 302 Found in 83ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 18:15:31 -0500
+Processing by ExpensesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/_form.html.erb (7.0ms)
+  Rendered expenses/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:15:37 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 18:15:39 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 18:16:17 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 20:22:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 150ms (Views: 132.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:22:53 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 20:24:46 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:46 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/application.self-1b5e67a6da578f711e267f44b387763a19f7e6cbbb0a2afa29930084d76e802b.css?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-03-02 20:24:47 -0500
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:24:48 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:24:49 -0500
+Processing by DatasController#add as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 20:24:51 -0500
+Processing by ExpensesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered expenses/_form.html.erb (5.7ms)
+  Rendered expenses/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 20:25:02 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ1gV32PTpiL5Fqx9rtpJn9+ixXEaE2Yv1eo/GFHGYTe4XUNW0AM9ADgJQhwdD6CT+CNjG/ONRdY0BUpbqzd3A==", "expense"=>{"expensetype"=>"fm", "frequency"=>"jf", "projvalue"=>"20", "actvalue"=>"30", "percent"=>"30", "month"=>"1", "year"=>"1999"}, "commit"=>"Create Expense"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "expenses" ("expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["expensetype", "fm"], ["frequency", "jf"], ["projvalue", 20.0], ["actvalue", 30.0], ["percent", 30], ["month", 1], ["year", 1999], ["created_at", "2016-03-03 01:25:02.055617"], ["updated_at", "2016-03-03 01:25:02.055617"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/expenses/1
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/expenses/1" for 127.0.0.1 at 2016-03-02 20:25:02 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExpense Load (0.2ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 77ms (Views: 74.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 20:25:03 -0500
+Processing by ExpensesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/_form.html.erb (4.1ms)
+  Rendered expenses/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/expenses/1" for 127.0.0.1 at 2016-03-02 20:25:13 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/expenses/1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/application.self-1b5e67a6da578f711e267f44b387763a19f7e6cbbb0a2afa29930084d76e802b.css?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-03-02 20:25:42 -0500
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 20:25:57 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BgSFYPGF5EONhR43bBJmE/D+N/qhv71k7+iE/eNz9BGteJA610qmLwaBYY7q3TG3wGAxYwoZxesIbzko7JgwSQ==", "expense"=>{"expensetype"=>"h", "frequency"=>"h", "projvalue"=>"999", "actvalue"=>"8", "percent"=>"8", "month"=>"1", "year"=>"1999"}, "commit"=>"Create Expense"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "expenses" ("expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expensetype", "h"], ["frequency", "h"], ["projvalue", 999.0], ["actvalue", 8.0], ["percent", 8], ["month", 1], ["year", 1999], ["created_at", "2016-03-03 01:25:57.392903"], ["updated_at", "2016-03-03 01:25:57.392903"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/expenses/2
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/expenses/2" for 127.0.0.1 at 2016-03-02 20:25:57 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+Processing by DatasController#add as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/budgets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/expenses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/incomes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/datas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/dashboard.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/scaffolds.self-34caa606a22153944514ae739ca366e71b2c6a4119f472d94f51c100b840c34c.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/application.self-1b5e67a6da578f711e267f44b387763a19f7e6cbbb0a2afa29930084d76e802b.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/budgets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/datas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/dashboard.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/expenses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/incomes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for 127.0.0.1 at 2016-03-02 20:26:40 -0500
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 20:26:41 -0500
+Processing by ExpensesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/_form.html.erb (3.1ms)
+  Rendered expenses/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 20:26:49 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/o9EUFbH8tLGvA9fxs3I7n+8hA3U1MsGVYpZO0UE2ZZV81EKcAiwvk24cOZAAp9KTyKClH9ys4myDeTuSu8dzg==", "expense"=>{"expensetype"=>"hi", "frequency"=>"hi", "projvalue"=>"8", "actvalue"=>"8", "percent"=>"8", "month"=>"8", "year"=>"1988"}, "commit"=>"Create Expense"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "expenses" ("expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expensetype", "hi"], ["frequency", "hi"], ["projvalue", 8.0], ["actvalue", 8.0], ["percent", 8], ["month", 8], ["year", 1988], ["created_at", "2016-03-03 01:26:49.904940"], ["updated_at", "2016-03-03 01:26:49.904940"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/expenses/3
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/expenses/3" for 127.0.0.1 at 2016-03-02 20:26:49 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:26:51 -0500
+Processing by DatasController#add as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 20:29:26 -0500
+Processing by IncomesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered incomes/_form.html.erb (3.6ms)
+  Rendered incomes/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 20:29:38 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XdGq/gvTI/W9UUX3jrBK6kZI5NJ1JE+4kQ6sSwbw7vX2rb+kLRxhmTZVOk4Ifx1OdtbiS96CNzd2iRGeCRsqrQ==", "income"=>{"income"=>"j", "incometype"=>"j", "value"=>"8", "frequency"=>"8", "day_rec"=>"8", "month"=>"12", "year"=>"1999"}, "commit"=>"Create Income"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "incomes" ("income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["income", "j"], ["incometype", "j"], ["value", 8.0], ["frequency", "8"], ["day_rec", 8], ["month", 12], ["year", 1999], ["created_at", "2016-03-03 01:29:38.194095"], ["updated_at", "2016-03-03 01:29:38.194095"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/incomes/2
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/incomes/2" for 127.0.0.1 at 2016-03-02 20:29:38 -0500
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIncome Load (0.2ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered incomes/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:29:39 -0500
+Processing by DatasController#add as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/expenses/new" for 127.0.0.1 at 2016-03-02 20:29:41 -0500
+Processing by ExpensesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/_form.html.erb (3.3ms)
+  Rendered expenses/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/expenses" for 127.0.0.1 at 2016-03-02 20:29:55 -0500
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v0ZNQEV3ewudnoNDP5Y16D6zD3jbNFllZcAFFoMt9VgUOlgaY7g5Zxaa/Pq5WWJMDi0J4XCSIeqCR7jDjMYxAA==", "expense"=>{"expensetype"=>"h8i", "frequency"=>"hi", "projvalue"=>"2", "actvalue"=>"8", "percent"=>"8", "month"=>"12", "year"=>"1988"}, "commit"=>"Create Expense"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "expenses" ("expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["expensetype", "h8i"], ["frequency", "hi"], ["projvalue", 2.0], ["actvalue", 8.0], ["percent", 8], ["month", 12], ["year", 1988], ["created_at", "2016-03-03 01:29:55.975509"], ["updated_at", "2016-03-03 01:29:55.975509"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/expenses/4
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/expenses/4" for 127.0.0.1 at 2016-03-02 20:29:55 -0500
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered expenses/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:29:58 -0500
+Processing by DatasController#add as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2016-03-02 20:29:59 -0500
+Processing by BillsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered bills/_form.html.erb (2.4ms)
+  Rendered bills/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2016-03-02 20:30:10 -0500
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zrPF01IwEJFC3DykQFvylKh71KTlYNZKQKqfV0GTt9hlz9CJdP9S/cnYQx3GlKUwmOXSPU7GrsWnLSKCTnhzgA==", "bill"=>{"expenseid"=>"hi", "day_month"=>"10", "month"=>"10", "year"=>"1999"}, "commit"=>"Create Bill"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bills" ("expenseid", "day_month", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["expenseid", "hi"], ["day_month", 10], ["month", 10], ["year", 1999], ["created_at", "2016-03-03 01:30:10.503496"], ["updated_at", "2016-03-03 01:30:10.503496"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/bills/1
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2016-03-02 20:30:10 -0500
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBill Load (0.2ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered bills/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:30:11 -0500
+Processing by DatasController#add as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:30:13 -0500
+Processing by DashboardController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 20:30:15 -0500
+Processing by BudgetsController#display as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mIncome Load (0.2ms)[0m  SELECT "incomes".* FROM "incomes"
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT "expenses".* FROM "expenses"[0m
+  [1m[35mBill Load (0.1ms)[0m  SELECT "bills".* FROM "bills"
+  Rendered budgets/display.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:30:19 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2016-03-02 20:30:20 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:30:22 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 20:30:23 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT "incomes".* FROM "incomes"[0m
+  [1m[35mExpense Load (0.2ms)[0m  SELECT "expenses".* FROM "expenses"
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered budgets/display.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 20:30:25 -0500
+Processing by IncomesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered incomes/_form.html.erb (3.8ms)
+  Rendered incomes/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/incomes/new" for 127.0.0.1 at 2016-03-02 20:30:31 -0500
+Processing by IncomesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered incomes/_form.html.erb (3.3ms)
+  Rendered incomes/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/incomes" for 127.0.0.1 at 2016-03-02 20:30:40 -0500
+Processing by IncomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ds8k0rEqqNm3A9p1JwnaDMyd0IeJoLjeITxDMRDom7mlszGIl+XqtTwHpcyhxo2o/APWHiIGwFHGu/7kHwNf4Q==", "income"=>{"income"=>"hi", "incometype"=>"hi", "value"=>"8", "frequency"=>"8", "day_rec"=>"8", "month"=>"12", "year"=>"1999"}, "commit"=>"Create Income"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "incomes" ("income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["income", "hi"], ["incometype", "hi"], ["value", 8.0], ["frequency", "8"], ["day_rec", 8], ["month", 12], ["year", 1999], ["created_at", "2016-03-03 01:30:40.523924"], ["updated_at", "2016-03-03 01:30:40.523924"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/incomes/3
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/incomes/3" for 127.0.0.1 at 2016-03-02 20:30:40 -0500
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mIncome Load (0.2ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered incomes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 70ms (Views: 65.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/datas/add" for 127.0.0.1 at 2016-03-02 20:30:42 -0500
+Processing by DatasController#add as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered datas/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard/new" for 127.0.0.1 at 2016-03-02 20:30:47 -0500
+Processing by DashboardController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered dashboard/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/budgets/display" for 127.0.0.1 at 2016-03-02 20:30:49 -0500
+Processing by BudgetsController#display as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT "incomes".* FROM "incomes"[0m
+  [1m[35mExpense Load (0.2ms)[0m  SELECT "expenses".* FROM "expenses"
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT "bills".* FROM "bills"[0m
+  Rendered budgets/display.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.5ms)
