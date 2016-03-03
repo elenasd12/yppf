@@ -1,3 +1,4 @@
+#this is the test class
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
