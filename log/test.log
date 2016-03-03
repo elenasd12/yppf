@@ -2464,3 +2464,1189 @@ ExpenseTest: test_0001_expense fields must be positive
 ExpenseTest: test_0002_year must be positive
 --------------------------------------------
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:22:30', '2016-03-02 21:22:30', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm@mm.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm@mm.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (46.5ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:25:22', '2016-03-02 21:25:22', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (12.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:27:54', '2016-03-02 21:27:54', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:29:08', '2016-03-02 21:29:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (38.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+WelcomeControllerTest: test_0001_should get index
+-------------------------------------------------
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+IncomesControllerTest: test_0005_should get edit
+------------------------------------------------
+  [1m[35mIncome Load (0.2ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncome Load (0.6ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+IncomesControllerTest: test_0002_should get new
+-----------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------
+IncomesControllerTest: test_0004_should show income
+---------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+IncomesControllerTest: test_0006_should update income
+-----------------------------------------------------
+  [1m[36mIncome Load (0.2ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+IncomesControllerTest: test_0007_should destroy income
+------------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "incomes"[0m
+Processing by IncomesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+IncomesControllerTest: test_0001_should get index
+-------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+IncomesControllerTest: test_0003_should create income
+-----------------------------------------------------
+  [1m[35mIncome Load (0.2ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "incomes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillsControllerTest: test_0004_should show bill
+-----------------------------------------------
+  [1m[35mBill Load (0.2ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillsControllerTest: test_0003_should create bill
+-------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bills"[0m
+Processing by BillsController#create as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillsControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#index as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+BillsControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mBill Load (0.0ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+BillsControllerTest: test_0007_should destroy bill
+--------------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "bills"
+Processing by BillsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+BillsControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#new as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------
+BillsControllerTest: test_0006_should update bill
+-------------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#update as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}, "id"=>"980190962"}
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UsersControllerTest: test_0004_should show user
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------
+UsersControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0003_should create user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0006_should update user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+UsersControllerTest: test_0007_should destroy user
+--------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UsersControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+UsersControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+ExpensesControllerTest: test_0001_should get index
+--------------------------------------------------
+  [1m[35mExpense Load (0.2ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExpensesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------------
+ExpensesControllerTest: test_0003_should create expense
+-------------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "expenses"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ExpensesControllerTest: test_0004_should show expense
+-----------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------
+ExpensesControllerTest: test_0006_should update expense
+-------------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+ExpensesControllerTest: test_0002_should get new
+------------------------------------------------
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------
+ExpensesControllerTest: test_0005_should get edit
+-------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------------
+ExpensesControllerTest: test_0007_should destroy expense
+--------------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "expenses"
+Processing by ExpensesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:30:12', '2016-03-02 21:30:12', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+ExpensesControllerTest: test_0001_should get index
+--------------------------------------------------
+  [1m[35mExpense Load (0.7ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExpensesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+ExpensesControllerTest: test_0004_should show expense
+-----------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------
+ExpensesControllerTest: test_0006_should update expense
+-------------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+ExpensesControllerTest: test_0007_should destroy expense
+--------------------------------------------------------
+  [1m[35mExpense Load (0.3ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "expenses"[0m
+Processing by ExpensesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------
+ExpensesControllerTest: test_0002_should get new
+------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+ExpensesControllerTest: test_0005_should get edit
+-------------------------------------------------
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+ExpensesControllerTest: test_0003_should create expense
+-------------------------------------------------------
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "expenses"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillsControllerTest: test_0003_should create bill
+-------------------------------------------------
+  [1m[35mBill Load (0.2ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bills"[0m
+Processing by BillsController#create as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillsControllerTest: test_0006_should update bill
+-------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#update as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}, "id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+BillsControllerTest: test_0007_should destroy bill
+--------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bills"[0m
+Processing by BillsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+BillsControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+BillsControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------------
+BillsControllerTest: test_0004_should show bill
+-----------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------
+BillsControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+IncomesControllerTest: test_0002_should get new
+-----------------------------------------------
+  [1m[36mIncome Load (0.2ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+IncomesControllerTest: test_0005_should get edit
+------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+IncomesControllerTest: test_0006_should update income
+-----------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------------------
+IncomesControllerTest: test_0007_should destroy income
+------------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "incomes"
+Processing by IncomesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+IncomesControllerTest: test_0003_should create income
+-----------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "incomes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+IncomesControllerTest: test_0001_should get index
+-------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------
+IncomesControllerTest: test_0004_should show income
+---------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UsersControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+UsersControllerTest: test_0004_should show user
+-----------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UsersControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+UsersControllerTest: test_0007_should destroy user
+--------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0006_should update user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0003_should create user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+UsersControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:39:18', '2016-03-02 21:39:18', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+BillsControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[35mBill Load (0.3ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#new as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+BillsControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by BillsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillsControllerTest: test_0004_should show bill
+-----------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+BillsControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillsControllerTest: test_0006_should update bill
+-------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by BillsController#update as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}, "id"=>"980190962"}
+  [1m[36mBill Load (0.1ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillsControllerTest: test_0003_should create bill
+-------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bills"[0m
+Processing by BillsController#create as HTML
+  Parameters: {"bill"=>{"day_month"=>"1", "expenseid"=>"MyText", "month"=>"1", "userid"=>"MyText", "year"=>"1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+BillsControllerTest: test_0007_should destroy bill
+--------------------------------------------------
+  [1m[35mBill Load (0.1ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "bills"[0m
+Processing by BillsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mBill Load (0.0ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+UsersControllerTest: test_0001_should get index
+-----------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UsersControllerTest: test_0002_should get new
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------
+UsersControllerTest: test_0005_should get edit
+----------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------------
+UsersControllerTest: test_0004_should show user
+-----------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------
+UsersControllerTest: test_0007_should destroy user
+--------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0003_should create user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UsersControllerTest: test_0006_should update user
+-------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"email"=>"mojirsamimi@brandeis.com", "password"=>"[FILTERED]", "state"=>"nil", "user"=>"nil"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------
+UserTest: test_0002_user should be instance of user
+---------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------
+UserTest: test_0003_user's required attributes must not be empty
+----------------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------------
+ExpensesControllerTest: test_0003_should create expense
+-------------------------------------------------------
+  [1m[36mExpense Load (0.2ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "expenses"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------------------
+ExpensesControllerTest: test_0004_should show expense
+-----------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+ExpensesControllerTest: test_0001_should get index
+--------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+ExpensesControllerTest: test_0002_should get new
+------------------------------------------------
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExpensesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------
+ExpensesControllerTest: test_0005_should get edit
+-------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------
+ExpensesControllerTest: test_0006_should update expense
+-------------------------------------------------------
+  [1m[36mExpense Load (0.1ms)[0m  [1mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------
+ExpensesControllerTest: test_0007_should destroy expense
+--------------------------------------------------------
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "expenses"[0m
+Processing by ExpensesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExpense Load (0.1ms)[0m  SELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+IncomesControllerTest: test_0007_should destroy income
+------------------------------------------------------
+  [1m[36mIncome Load (0.7ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "incomes"
+Processing by IncomesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+IncomesControllerTest: test_0002_should get new
+-----------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------------------
+IncomesControllerTest: test_0003_should create income
+-----------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "incomes"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------------
+IncomesControllerTest: test_0001_should get index
+-------------------------------------------------
+  [1m[36mIncome Load (0.2ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------
+IncomesControllerTest: test_0004_should show income
+---------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by IncomesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+IncomesControllerTest: test_0006_should update income
+-----------------------------------------------------
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------
+IncomesControllerTest: test_0005_should get edit
+------------------------------------------------
+  [1m[36mIncome Load (0.1ms)[0m  [1mSELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by IncomesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mIncome Load (0.1ms)[0m  SELECT  "incomes".* FROM "incomes" WHERE "incomes"."id" = ? LIMIT 1  [["id", 980190962]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "incomes"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "incomes" ("userid", "income", "incometype", "value", "frequency", "day_rec", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 9.99, 'MyText', 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "expenses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "expenses" ("expenseid", "userid", "expensetype", "frequency", "projvalue", "actvalue", "percent", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 'MyText', 'MyText', 9.99, 9.99, 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "bills"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "bills" ("userid", "expenseid", "day_month", "month", "year", "created_at", "updated_at", "id") VALUES ('MyText', 'MyText', 1, 1, 1, '2016-03-02 21:39:26', '2016-03-02 21:39:26', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "user", "email", "password", "state", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "name") VALUES (1, 'nil', 'mojirsamimi@brandeis.com', 'nil', 'nil', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO', 'nil', 'nil', 'nil', 1, 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', 'Wed, 02 Mar 2016 20:01:17 UTC +00:00', '127.0.0.1', '127.0.0.1', 'Mojir')[0m
+  [1m[35m (14.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+IncomeTest: test_0002_year must be positive
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+IncomeTest: test_0001_income fields must be positive
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------
+BillTest: test_0001_bill attributes must not be empty
+-----------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+BillTest: test_0002_bill dates must be positive
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+BillTest: test_0003_bill year must be four digits
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExpenseTest: test_0001_expense fields must be positive
+------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ExpenseTest: test_0002_year must be positive
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_0001_user's email should be valid
+------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mmm' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------
+UserTest: test_0003_user's required attributes must not be empty
+----------------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------
+UserTest: test_0002_user should be instance of user
+---------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
