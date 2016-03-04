@@ -12,7 +12,6 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>User</th>
       <th>Income</th>
       <th>Type</th>
       <th>Value</th>
@@ -27,7 +26,6 @@
   <tbody>
     <% @incomes.each do |income| %>
       <tr>
-        <td><%= income.userid %></td>
         <td><%= income.income %></td>
         <td><%= income.incometype %></td>
         <td><%= income.value %></td>
@@ -52,7 +50,6 @@
   <thead>
     <tr>
       <th>Expense</th>
-      <th>User</th>
       <th>Type</th>
       <th>Frequency</th>
       <th>Projected Value</th>
@@ -68,7 +65,6 @@
     <% @expenses.each do |expense| %>
       <tr>
         <td><%= expense.expenseid %></td>
-        <td><%= expense.userid %></td>
         <td><%= expense.expensetype %></td>
         <td><%= expense.frequency %></td>
         <td><%= expense.projvalue %></td>
@@ -93,7 +89,6 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>User</th>
       <th>Income</th>
       <th>Type</th>
       <th>Value</th>
@@ -108,7 +103,6 @@
   <tbody>
     <% @bills.each do |bill| %>
       <tr>
-        <td><%= bill.userid %></td>
         <td><%= bill.expenseid %></td>
         <td><%= bill.day_month %></td>
         <td><%= bill.month %></td>

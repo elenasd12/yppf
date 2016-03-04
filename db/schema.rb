@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302161822) do
+ActiveRecord::Schema.define(version: 20160303194714) do
 
   create_table "bills", force: :cascade do |t|
-    t.text     "userid"
     t.text     "expenseid"
     t.integer  "day_month"
     t.integer  "month"
     t.integer  "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "bills", ["user_id"], name: "index_bills_on_user_id"
 
   create_table "expenses", force: :cascade do |t|
     t.text     "expenseid"
-    t.text     "userid"
     t.text     "expensetype"
     t.text     "frequency"
     t.decimal  "projvalue"
@@ -35,10 +36,12 @@ ActiveRecord::Schema.define(version: 20160302161822) do
     t.integer  "year"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
+  add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
+
   create_table "incomes", force: :cascade do |t|
-    t.text     "userid"
     t.text     "income"
     t.text     "incometype"
     t.decimal  "value"
@@ -48,7 +51,10 @@ ActiveRecord::Schema.define(version: 20160302161822) do
     t.integer  "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.text     "user"

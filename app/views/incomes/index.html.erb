@@ -28,14 +28,9 @@
         <td><%= income.day_rec %></td>
         <td><%= income.month %></td>
         <td><%= income.year %></td>
-        <td><%= link_to 'Show', income %></td>
-        <td><%= link_to 'Edit', edit_income_path(income) %></td>
-        <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Income', new_income_path %>
