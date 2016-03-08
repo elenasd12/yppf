@@ -11,36 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :expensetype %><br>
-    <%= f.collection_select :expensetype, Expense::TYPE, :to_s, :to_s,
-       :include_blank => true %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label "Type" %><br>
+      <%= f.collection_select :expensetype, Expense::TYPE, :to_s, :to_s,
+         :include_blank => true %>
+    </div>
+    <div class="col-md-1">
+      <%= f.label :frequency %><br>
+      <%= f.collection_select :frequency, Expense::FREQUENCY, :to_s, :to_s,
+         :include_blank => true %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label 'Expected Value' %><br>
+      <%= f.text_field :projvalue %>
+    </div>
+    <!-- <div class="col-md-2">
+      <%= f.label 'Actual Value' %><br>
+      <%= f.text_field :actvalue %>
+    </div> -->
+    <div class="col-md-2">
+      <%= f.label :percent %><br>
+      <%= f.number_field :percent %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :month %><br>
+      <%= f.number_field :month %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :year %><br>
+      <%= f.number_field :year %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :frequency %><br>
-    <%= f.collection_select :frequency, Expense::FREQUENCY, :to_s, :to_s,
-       :include_blank => true %>
-  </div>
-  <div class="field">
-    <%= f.label 'Projected Value' %><br>
-    <%= f.text_field :projvalue %>
-  </div>
-  <div class="field">
-    <%= f.label 'Actual Value' %><br>
-    <%= f.text_field :actvalue %>
-  </div>
-  <div class="field">
-    <%= f.label :percent %><br>
-    <%= f.number_field :percent %>
-  </div>
-  <div class="field">
-    <%= f.label :month %><br>
-    <%= f.number_field :month %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
-  </div>
+  <h1></h1>
   <div class="actions">
     <%= f.submit %>
   </div>
