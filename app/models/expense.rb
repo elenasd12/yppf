@@ -14,4 +14,5 @@ class Expense < ActiveRecord::Base
     }
 
   FREQUENCY = ['fixed', 'variable']
+  TYPE = ['Rent', 'Electric', 'Heat', 'TV', 'Internet', 'Groceries', 'Eating Out', 'Entertainment', 'Clothing', 'Transportation']
 end
