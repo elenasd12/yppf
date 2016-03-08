@@ -12,4 +12,7 @@ class Income < ActiveRecord::Base
       with: /(19|20)\d{2}/i,
       message: "should be in proper format"
     }
+
+  TYPE = ['salary', 'hourly']
+  FREQUENCY = ['biweekly', 'monthly', 'one-time']
 end

@@ -12,4 +12,6 @@ class Expense < ActiveRecord::Base
       with: /(19|20)\d{2}/i,
       message: "should be in proper format"
     }
+
+  FREQUENCY = ['fixed', 'variable']
 end

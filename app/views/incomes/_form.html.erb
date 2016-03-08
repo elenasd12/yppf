@@ -17,16 +17,18 @@
     <%= f.text_area :income %>
   </div>
   <div class="field">
-    <%= f.label 'Income Type: (Salary, Hourly)' %><br>
-    <%= f.text_area :incometype %>
+    <%= f.label 'Income Type:' %><br>
+    <%= f.collection_select :incometype, Income::TYPE, :to_s, :to_s,
+       :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :value %><br>
     <%= f.text_field :value %>
   </div>
   <div class="field">
-    <%= f.label 'Frequency: (Biweekly, weekly)' %><br>
-    <%= f.text_area :frequency %>
+    <%= f.label 'Frequency:' %><br>
+    <%= f.collection_select :frequency, Income::FREQUENCY, :to_s, :to_s,
+       :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label 'Day Received' %><br>
