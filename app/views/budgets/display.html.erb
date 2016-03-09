@@ -33,7 +33,6 @@
         <td><%= income.day_rec %></td>
         <td><%= income.month %></td>
         <td><%= income.year %></td>
-        <td><%= link_to 'Show', income %></td>
         <td><%= link_to 'Edit', edit_income_path(income) %></td>
         <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -72,7 +71,6 @@
         <td><%= expense.percent %></td>
         <td><%= expense.month %></td>
         <td><%= expense.year %></td>
-        <td><%= link_to 'Show', expense %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -107,7 +105,6 @@
         <td><%= bill.day_month %></td>
         <td><%= bill.month %></td>
         <td><%= bill.year %></td>
-        <td><%= link_to 'Show', bill %></td>
         <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
         <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

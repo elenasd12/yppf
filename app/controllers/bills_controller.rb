@@ -26,6 +26,9 @@ class BillsController < ApplicationController
   # POST /bills.json
   def create
     @bill = Bill.new(bill_params)
+    if user_signed_in?
+      @bill.user_id = current_user.id
+    end
 
     respond_to do |format|
       if @bill.save
@@ -70,6 +73,6 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-      params.require(:bill).permit(:userid, :expenseid, :day_month, :month, :year)
+      params.require(:bill).permit(:user_id, :expenseid, :day_month, :month, :year)
     end
 end

@@ -25,6 +25,10 @@ before_action :authenticate_user!
   # POST /incomes.json
   def create
     @income = Income.new(income_params)
+    if user_signed_in?
+      @income.user_id = current_user.id
+    end
+
 
     respond_to do |format|
       if @income.save
@@ -69,6 +73,6 @@ before_action :authenticate_user!
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:userid, :income, :incometype, :value, :frequency, :day_rec, :month, :year)
+      params.require(:income).permit(:user_id, :income, :incometype, :value, :frequency, :day_rec, :month, :year)
     end
 end

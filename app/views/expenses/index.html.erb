@@ -22,7 +22,7 @@
     <% @expenses.each do |expense| %>
       <tr>
         <td><%= expense.expenseid %></td>
-        <td><%= expense.userid %></td>
+        <td><%= expense.user_id %></td>
         <td><%= expense.expensetype %></td>
         <td><%= expense.frequency %></td>
         <td><%= expense.projvalue %></td>
@@ -36,3 +36,10 @@
 </table>
 
 <br>
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>

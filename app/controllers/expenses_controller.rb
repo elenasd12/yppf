@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
-before_action :authenticate_user!
+  before_action :authenticate_user!
   # GET /expenses
   # GET /expenses.json
   def index
@@ -25,6 +25,9 @@ before_action :authenticate_user!
   # POST /expenses.json
   def create
     @expense = Expense.new(expense_params)
+    if user_signed_in?
+      @expense.user_id = current_user.id
+    end
 
     respond_to do |format|
       if @expense.save
@@ -69,6 +72,6 @@ before_action :authenticate_user!
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:expenseid, :userid, :expensetype, :frequency, :projvalue, :actvalue, :percent, :month, :year)
+      params.require(:expense).permit(:expenseid, :user_id, :expensetype, :frequency, :projvalue, :actvalue, :percent, :month, :year)
     end
 end
