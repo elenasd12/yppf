@@ -18,7 +18,7 @@
 #
 #   test "should create bill" do
 #     assert_difference('Bill.count') do
-#       post :create, bill: { day_month: @bill.day_month, expenseid: @bill.expenseid, month: @bill.month, userid: @bill.userid, year: @bill.year }
+#       post :create, bill: { day_month: @bill.day_month, expenseid: @bill.expenseid, month: @bill.month, user_id: @bill.user_id, year: @bill.year }
 #     end
 #
 #     assert_redirected_to bill_path(assigns(:bill))
@@ -35,7 +35,7 @@
 #   end
 #
 #   test "should update bill" do
-#     patch :update, id: @bill, bill: { day_month: @bill.day_month, expenseid: @bill.expenseid, month: @bill.month, userid: @bill.userid, year: @bill.year }
+#     patch :update, id: @bill, bill: { day_month: @bill.day_month, expenseid: @bill.expenseid, month: @bill.month, user_id: @bill.user_id, year: @bill.year }
 #     assert_redirected_to bill_path(assigns(:bill))
 #   end
 #

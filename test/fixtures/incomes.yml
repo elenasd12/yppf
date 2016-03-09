@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  userid: MyText
+  user_id: MyText
   income: MyText
   incometype: MyText
   value: 9.99
@@ -11,7 +11,7 @@ one:
   year: 1
 
 two:
-  userid: MyText
+  user_id: MyText
   income: MyText
   incometype: MyText
   value: 9.99

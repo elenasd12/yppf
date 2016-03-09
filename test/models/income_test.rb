@@ -5,7 +5,7 @@ class IncomeTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "income fields must be positive" do
-    income = Income.new(userid: "elena", income: "money", incometype: "salary", value: 100.00, frequency: "monthly", day_rec: 10, month: 3, year: 2016)
+    income = Income.new(user_id: "elena", income: "money", incometype: "salary", value: 100.00, frequency: "monthly", day_rec: 10, month: 3, year: 2016)
     # test invalid with negative number
     income.value = -1
     assert income.invalid?
@@ -18,7 +18,7 @@ class IncomeTest < ActiveSupport::TestCase
   end
 
   test "year must be positive" do
-    income = Income.new(userid: "elena", income: "money", incometype: "salary", value: 100.00, frequency: "monthly", day_rec: 10, month: 3, year: -1)
+    income = Income.new(user_id: "elena", income: "money", incometype: "salary", value: 100.00, frequency: "monthly", day_rec: 10, month: 3, year: -1)
 
     assert income.invalid?
 

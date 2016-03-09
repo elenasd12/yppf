@@ -18,7 +18,7 @@
 #
 #   test "should create expense" do
 #     assert_difference('Expense.count') do
-#       post :create, expense: { actvalue: @expense.actvalue, expenseid: @expense.expenseid, frequency: @expense.frequency, month: @expense.month, percent: @expense.percent, projvalue: @expense.projvalue, type: @expense.type, userid: @expense.userid, year: @expense.year }
+#       post :create, expense: { actvalue: @expense.actvalue, expenseid: @expense.expenseid, frequency: @expense.frequency, month: @expense.month, percent: @expense.percent, projvalue: @expense.projvalue, type: @expense.type, user_id: @expense.user_id, year: @expense.year }
 #     end
 #
 #     assert_redirected_to expense_path(assigns(:expense))
@@ -35,7 +35,7 @@
 #   end
 #
 #   test "should update expense" do
-#     patch :update, id: @expense, expense: { actvalue: @expense.actvalue, expenseid: @expense.expenseid, frequency: @expense.frequency, month: @expense.month, percent: @expense.percent, projvalue: @expense.projvalue, type: @expense.type, userid: @expense.userid, year: @expense.year }
+#     patch :update, id: @expense, expense: { actvalue: @expense.actvalue, expenseid: @expense.expenseid, frequency: @expense.frequency, month: @expense.month, percent: @expense.percent, projvalue: @expense.projvalue, type: @expense.type, user_id: @expense.user_id, year: @expense.year }
 #     assert_redirected_to expense_path(assigns(:expense))
 #   end
 #
