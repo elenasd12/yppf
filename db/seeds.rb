@@ -17,7 +17,7 @@ User.create(email: "yppf2016@gmail.com", state: "MA", name: "YPPF", password: 'b
 end
 
 5.times do
-  Expense.create(expenseid: Faker::Commerce.department, user_id: 1, expensetype: Faker::Lorem.word, frequency: "biweekly", projvalue: 0.1, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: Faker::Number.number(1), year: Faker::Number.between(from = 1901, to=2016))
+  Expense.create(expenseid: Faker::Commerce.department, user_id: 1, expensetype: Faker::Lorem.word, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: Faker::Number.number(1), year: Faker::Number.between(from = 1901, to=2016))
 end
 
 5.times do
