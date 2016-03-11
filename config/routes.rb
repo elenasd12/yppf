@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  resources :users 
+  resources :users
   resources :expenses
   resources :bills
   resources :incomes
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'expenses/new' => 'expenses#new'
   get 'bills/new' => 'bills#new'
   get 'budgets/display' => 'budgets#display'
+  get 'calendar/new' => 'calendar#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
