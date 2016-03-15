@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require chartkick
 //= require_tree .
 
 //= require jquery.turbolinks
