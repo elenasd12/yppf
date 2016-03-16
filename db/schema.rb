@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306014939) do
+ActiveRecord::Schema.define(version: 20160303194714) do
 
   create_table "bills", force: :cascade do |t|
     t.text     "expenseid"
@@ -57,11 +57,12 @@ ActiveRecord::Schema.define(version: 20160306014939) do
   add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
 
   create_table "users", force: :cascade do |t|
+    t.text     "user"
     t.text     "email"
+    t.text     "password"
     t.text     "state"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160306014939) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
