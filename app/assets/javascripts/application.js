@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
+//= require jquery-ui
+//= require jquery.turbolinks
 //= require chartkick
 //= require_tree .
 
-//= require jquery.turbolinks
+
 //= require bootstrap/dropdown

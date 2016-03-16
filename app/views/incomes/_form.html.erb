@@ -29,21 +29,51 @@
       <%= f.collection_select :frequency, Income::FREQUENCY, :to_s, :to_s,
          :include_blank => true %>
     </div>
-    <div class="col-md-2">
-      <%= f.label 'Day Received' %><br>
-      <%= f.number_field :day_rec %>
-    </div>
-    <div class="col-md-2">
-      <%= f.label :month %><br>
-      <%= f.number_field :month %>
-    </div>
-    <div class="col-md-2">
-      <%= f.label :year %><br>
-      <%= f.number_field :year %>
+    <%= f.hidden_field :day_rec, :id => "date"%>
+    <%= f.hidden_field :month, :id => "month"%>
+    <%= f.hidden_field :year, :id => "year"%>
+    <div class ="col-md-2">
+      <p> Date Selection </p>
+      <!-- <div class="left"> -->
+        <input type="text" id="selection">
+      <!-- </div> -->
+
+      <script>
+      $(document).ready(function() {
+          $("#selection").datepicker();
+          $("button").click(function() {
+          	  var selection = $("#selection").val();
+              var res = selection.split("/");
+              var month = res[0].split("0");
+              if (month.length == 2){
+                 month = month[1];
+               }
+               else{
+                 month = res[0];
+               }
+              var date = res[1].split("0");
+              if (date.length == 2){
+                 date = date[1];
+               }
+               else{
+                 date = res[1];
+               }
+               $('#date').val(date);
+               $('#month').val(month);
+               $('#year').val(res[2]);
+              // if (departing === "") {
+              //   alert("Please select departing and returning dates.");
+              // } else {
+              //   confirm("Would you like to go to on " + month + "/" + date + "/" + res[2]);
+              // }
+          });
+      });
+      </script>
     </div>
   </div>
   <h1></h1>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <button style="border-color:transparent; background-color:transparent; position:relative; left:-8px">
+      <%= f.submit%>
+    </button>
 <% end %>

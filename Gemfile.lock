@@ -81,8 +81,6 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
-    css3-progress-bar-rails (0.5.0)
-      rails (>= 3.1)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -234,13 +232,13 @@ DEPENDENCIES
   byebug
   chartkick
   coffee-rails (~> 4.1.0)
-  css3-progress-bar-rails
   devise (= 3.4.1)
   faker
   hirb
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   minitest-spec-rails
   pg
   pry-rails
