@@ -47,6 +47,9 @@
 <b>Total income for <%=@get_month_year%>: $<%=sum%></b>
 <br>
 
+<% sumProj = 0 %>
+<% sumAct = 0 %>
+
 <% @expenses.each do |expense| %>
   <%= "#{expense.expenseid} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
     <% if ((expense.actvalue / expense.projvalue) * 100) > 75 %>
@@ -65,16 +68,22 @@
         </div>
       </div>
     <% end %>
+    <% sumProj = sumProj + expense.projvalue %>
+    <% sumAct = sumAct + expense.actvalue %>
 <% end %>
 
-<br>
+<%= "Total Expenditure - #{((sumAct / sumProj) * 100).to_i}% of monthly budget used" %>
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=sumAct%>" aria-valuemin="0" aria-valuemax="<%=sumProj%>" style="width: <%= (sumAct / sumProj) * 100 %>%">
+  </div>
+</div>
 
-<div class="progress" aria-valuemax="252.95">
+<!-- <div class="progress" aria-valuemax="252.95">
   <% @expenses.each do |expense| %>
     <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= expense.actvalue %>%">
     </div>
   <% end %>
-</div>
+</div> -->
 
 <h2>Expenses</h2>
 <table style = "width:100%">
