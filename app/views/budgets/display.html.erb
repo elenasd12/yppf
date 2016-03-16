@@ -3,9 +3,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= pie_chart Expense.group(:expensetype, :month, :year).sum(:projvalue)%>
+<!-- <%= pie_chart Expense.group(:expensetype, :month, :year).sum(:projvalue)%> -->
 <!-- <%=pie_chart Income.group(:incometype, :month, :year).sum(:value)%> -->
-
 
 <h2>Income</h2>
 
@@ -43,6 +42,36 @@
 <br>
 <%= link_to 'New Income', new_income_path %>
 <br>
+<br>
+
+<% @expenses.each do |expense| %>
+  <%= "#{expense.expenseid} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
+    <% if ((expense.actvalue / expense.projvalue) * 100) > 75 %>
+      <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
+        </div>
+      </div>
+    <% elsif ((expense.actvalue / expense.projvalue) * 100) > 50%>
+      <div class="progress">
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
+        </div>
+      </div>
+    <% else %>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<br>
+
+<div class="progress" aria-valuemax="252.95">
+  <% @expenses.each do |expense| %>
+    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= expense.actvalue %>%">
+    </div>
+  <% end %>
+</div>
 
 <h2>Expenses</h2>
 <table style = "width:100%">
