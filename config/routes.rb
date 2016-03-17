@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'calendar/new' => 'calendar#new'
 
   get 'compare/new' => 'compare#new'
+  post 'compare/create' => 'compare#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
