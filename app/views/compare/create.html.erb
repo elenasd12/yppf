@@ -2,22 +2,19 @@
 
 <h1>Listing Compare</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Month</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class = "row">
+  <div class = "col-md-6">
+    <%= bar_chart @month1 %>
+    <%= bar_chart @month2 %>
 
-  <tbody>
-
+  </div>
+  <div class="col-md-6">
     <%=pie_chart @month1%>
     <%=pie_chart @month2%>
-  </tbody>
-</table>
+  </div>
+  <br>
+</div>
 
-<br>
 <button onclick="goBack()">Back</button>
 
 <script>

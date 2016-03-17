@@ -17,10 +17,6 @@
 
       <%= f.submit %>
     <% end %>
-
-
-
-
     <!-- <%= label_tag 'Month 1' %><br>
     <%= collection_select(:post, nil, Expense.select(:month, :year).group(:month, :year).order(:year).reverse_order, :id, :combined_value)  %> -->
   </div>
@@ -30,8 +26,9 @@
 </div>
 
 
-<!-- <u1>
-  <% if @month1.nil? %>
+
+<u1>
+  <% if @month1.nil?  && @month2.nil?%>
   <div class = "row">
     <div class = "col-md-4">
     </div>
@@ -43,14 +40,14 @@
 
   <% else %>
   <div class = "row">
-    <div class = "col-md-4">
+    <div class = "col-md-6">
+      <%= column_chart @month1 %>
     </div>
-    <div class="col-md-4">
-      <%= pie_chart @month1%>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
+      <%=pie_chart @month1%>
+      <%=pie_chart @month2%>
     </div>
     <br>
     </div>
   <%end%>
-</u1> -->
+</u1>
