@@ -47,36 +47,21 @@
 <b>Total income for <%=@get_month_year%>: $<%=sum%></b>
 <br>
 
-<% sumProj = 0 %>
-<% sumAct = 0 %>
-
 <% @expenses.each do |expense| %>
   <%= "#{expense.expenseid} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
-    <% if ((expense.actvalue / expense.projvalue) * 100) > 75 %>
-      <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
-        </div>
-      </div>
-    <% elsif ((expense.actvalue / expense.projvalue) * 100) > 50%>
-      <div class="progress">
-        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
-        </div>
-      </div>
-    <% else %>
-      <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
-        </div>
-      </div>
-    <% end %>
-    <% sumProj = sumProj + expense.projvalue %>
-    <% sumAct = sumAct + expense.actvalue %>
+  <div class="progress">
+    <div class="progress-bar <%= get_progress_type((expense.actvalue / expense.projvalue) * 100) %>" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
+    </div>
+  </div>
 <% end %>
 
-<%= "Total Expenditure - #{((sumAct / sumProj) * 100).to_i}% of monthly budget used" %>
+<%= get_total_expenditure_message(Date.today.month, Date.today.year) %>
 <div class="progress">
-  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=sumAct%>" aria-valuemin="0" aria-valuemax="<%=sumProj%>" style="width: <%= (sumAct / sumProj) * 100 %>%">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=@expenses[0].actvalue_sum(Date.today.month,Date.today.year)%>" aria-valuemin="0" aria-valuemax="<%=@expenses[0].projvalue_sum(Date.today.month,Date.today.year)%>" style="width: <%= get_total_expenditure(Date.today.month, Date.today.year)%>%">
   </div>
 </div>
+
+
 
 <!-- <div class="progress" aria-valuemax="252.95">
   <% @expenses.each do |expense| %>

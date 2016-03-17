@@ -39,7 +39,7 @@
       <script>
       $(document).ready(function() {
           $("#selection").datepicker();
-          $("button").click(function() {
+          $("#submission").click(function() {
           	  var selection = $("#selection").val();
               var res = selection.split("/");
               var month = res[0].split("0");
@@ -71,7 +71,7 @@
   </div>
   <h1></h1>
 
-    <button style="border-color:transparent; background-color:transparent; position:relative; left:-8px">
-      <%= f.submit%>
-    </button>
+  <button type="submit" id="submission">
+    Create Income
+  </button>
 <% end %>
