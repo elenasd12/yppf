@@ -10,7 +10,7 @@ module ExpensesHelper
   end
 
   def get_total_expenditure_message(month, year)
-    if @expenses == nil
+    if @expenses[0] == nil
       return "You have not uploaded sufficient data to make calculations for this month"
     else
       projected = @expenses[0].projvalue_sum(month, year)
@@ -23,7 +23,7 @@ module ExpensesHelper
   end
 
   def get_total_expenditure(month, year)
-    if @expenses == nil
+    if @expenses[0] == nil
       return 0
     else
       projected = @expenses[0].projvalue_sum(month, year)
@@ -35,4 +35,22 @@ module ExpensesHelper
       end
     end
   end
+
+  def get_actvalue(month, year)
+    if @expenses[0] == nil
+      return 0
+    else
+      return @expenses[0].actvalue_sum(month,year)
+    end
+  end
+
+
+  def get_projvalue(month, year)
+    if @expenses[0] == nil
+      return 0
+    else
+      return @expenses[0].projvalue_sum(today.year)
+    end
+  end
+
 end

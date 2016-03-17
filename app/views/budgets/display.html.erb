@@ -57,7 +57,7 @@
 
 <%= get_total_expenditure_message(Date.today.month, Date.today.year) %>
 <div class="progress">
-  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%=@expenses[0].actvalue_sum(Date.today.month,Date.today.year)%>" aria-valuemin="0" aria-valuemax="<%=@expenses[0].projvalue_sum(Date.today.month,Date.today.year)%>" style="width: <%= get_total_expenditure(Date.today.month, Date.today.year)%>%">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= get_actvalue(Date.today.month, Date.today.year)%>" aria-valuemin="0" aria-valuemax="<%=get_projvalue(Date.today.month, Date.today.year)%>" style="width: <%= get_total_expenditure(Date.today.month, Date.today.year)%>%">
   </div>
 </div>
 
