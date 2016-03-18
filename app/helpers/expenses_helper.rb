@@ -49,7 +49,7 @@ module ExpensesHelper
     if @expenses[0] == nil
       return 0
     else
-      return @expenses[0].projvalue_sum(today.year)
+      return @expenses[0].projvalue_sum(month,year)
     end
   end
 
