@@ -2,7 +2,7 @@ class CompareController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    array = Expense.select(:month, :year).group(:month)
+    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month)
     @months = []
     array.each { |a|
       e = [MONTHS[a.month]+' '+a.year.to_s, a.month]
@@ -17,8 +17,8 @@ class CompareController < ApplicationController
     @month2select = params[:month2select]
 
     # queries for initial pie chart and bar chart with expenses for each month
-    @month1expenses = Expense.where(month: @month1select.to_i).group(:expensetype).sum(:projvalue)
-    @month2expenses = Expense.where(month: @month2select.to_i).group(:expensetype).sum(:projvalue)
+    @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expensetype).sum(:projvalue)
+    @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expensetype).sum(:projvalue)
     @category = ""
 
     # all the expense types for both months
@@ -34,8 +34,8 @@ class CompareController < ApplicationController
       @selectedtypes.append(x)
 
       # queries to find values for expense type x
-      month1query = Expense.where(month: @month1select.to_i).where(expensetype: x)
-      month2query = Expense.where(month: @month2select.to_i).where(expensetype: x)
+      month1query = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).where(expensetype: x)
+      month2query = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).where(expensetype: x)
 
       # if no expense type x for month 1
       if month1query.empty?

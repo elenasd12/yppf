@@ -16,6 +16,7 @@
       <%= f.text_area :expenseid %>
     </div>
 
+    <%= f.hidden_field :user_id, :id => current_user.id %>
     <%= f.hidden_field :day_month, :id => "date"%>
     <%= f.hidden_field :month, :id => "month"%>
     <%= f.hidden_field :year, :id => "year"%>

@@ -5,9 +5,68 @@
 </head>
 
 
-<h1>Trend</h1>
+<center><h1>Spending Trends over <%=Date.today.year%></h1></center>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div class="row vertical-align">
+  <div class="col-md-5">
+    <div class = "panel panel-default">
+      <div class = "panel-body">
+        <h4>Top 3 Expenses for <%=Date.today.year %> are:</h4>
+
+        <div class = "row">
+          <%key = @x.keys[0]%>
+          <%value = @x.values[0]%>
+          <div class = "well vertical-align">
+            <div class = "col-md-3">
+              <b><%=key.to_s%></b>
+            </div>
+            <div class = "col-md-3">
+              $<%= value.to_f %>/year
+            </div>
+            <div class = "col-md-6">
+              <%=((value.to_f/@total)*100).round(2)%>% of all spending
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <%key = @x.keys[1]%>
+          <%value = @x.values[1]%>
+          <div class = "well vertical-align">
+            <div class = "col-md-3">
+              <b><%=key.to_s%></b>
+            </div>
+            <div class = "col-md-3">
+              $<%= value.to_f %>/year
+            </div>
+            <div class = "col-md-6">
+              <%=((value.to_f/@total)*100).round(2)%>% of all spending
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <%key = @x.keys[2]%>
+          <%value = @x.values[2]%>
+          <div class = "well vertical-align">
+            <div class = "col-md-3">
+              <b><%=key.to_s%></b>
+            </div>
+            <div class = "col-md-3">
+              $<%= value.to_f %>/year
+            </div>
+            <div class = "col-md-6">
+              <%=((value.to_f/@total)*100).round(2)%>% of all spending
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  </div>
+
+</div>
 
 <button onclick="goBack()">Back</button>
 
