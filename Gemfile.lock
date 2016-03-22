@@ -239,6 +239,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  json
   minitest-spec-rails
   pg
   pry-rails
