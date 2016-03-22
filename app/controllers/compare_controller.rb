@@ -1,9 +1,11 @@
 class CompareController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    array = Expense.select(:month).group(:month)
+    array = Expense.select(:month, :year).group(:month)
     @months = []
     array.each { |a|
-      e = [a.month]
+      e = [MONTHS[a.month]+' '+a.year.to_s, a.month]
       @months.append(e)
     }
     @compare = ""

@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   resources :bills
   resources :incomes
 
-  get 'welcome/index'
-  root 'welcome#index'
+  root 'dashboard#new'
   #root to: 'pages#index'
 
   get 'dashboard/new' => 'dashboard#new'

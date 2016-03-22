@@ -9,13 +9,12 @@
 
 <div class = "row">
   <div class = "col-md-6">
-    <%= bar_chart @month1expenses %>
-    <%= bar_chart @month2expenses %>
-
+    <center><b><%= @month1name %></b></center>
+    <center><%=pie_chart @month1expenses%></center>
   </div>
   <div class="col-md-6">
-    <%=pie_chart @month1%>
-    <%=pie_chart @month2%>
+    <center><b><%= @month2name %></b></center>
+    <center><%=pie_chart @month2expenses%></center>
   </div>
   <br>
 </div>
