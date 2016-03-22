@@ -19,6 +19,7 @@ function goBack(){
 <!-- Trend chart for overall spending -->
 <script>
 $(function () {
+    var testdata = [[Date.UTC(2012, 2, 6, 10), 5], [Date.UTC(2012, 2, 6, 11), 6], [Date.UTC(2012, 2, 6, 12), 4]]
     $('#container').highcharts({
         chart: {
             zoomType: 'x'
@@ -71,7 +72,7 @@ $(function () {
         series: [{
             type: 'area',
             name: 'USD to EUR',
-            data: [[Date.UTC(2012, 2, 6, 10), 5], [Date.UTC(2012, 2, 6, 11), 6], [Date.UTC(2012, 2, 6, 12), 4]]
+            data: testdata
         }]
     });
 });
