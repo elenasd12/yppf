@@ -21,7 +21,7 @@ end
 TYPE = ['Rent', 'Electric', 'Heat', 'TV', 'Internet', 'Groceries', 'Eating Out', 'Entertainment', 'Clothing', 'Transportation']
 
 
-(0..10).each do |i|
+(0..9).each do |i|
 
   # Expense.create(expenseid: Faker::Commerce.department, user_id: 1, expensetype: Faker::Lorem.word, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: Faker::Number.between(from = 1, to =12), year: Faker::Number.between(from = 1901, to=2016))
   Expense.create(expenseid: "IDIDIDID", user_id: 1, expensetype: TYPE[i], frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 1, year: Date.today.year)

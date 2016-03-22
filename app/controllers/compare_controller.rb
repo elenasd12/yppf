@@ -13,16 +13,16 @@ class CompareController < ApplicationController
 
   def create
     # the months selected by the user
-    month1select = params[:month1select]
-    month2select = params[:month2select]
+    @month1select = params[:month1select]
+    @month2select = params[:month2select]
 
     # queries for initial pie chart and bar chart with expenses for each month
-    @month1expenses = Expense.where("month LIKE ?", "%#{month1select}").group(:expensetype).sum(:projvalue)
-    @month2expenses = Expense.where("month LIKE ?", "%#{month2select}").group(:expensetype).sum(:projvalue)
+    @month1expenses = Expense.where(month: @month1select.to_i).group(:expensetype).sum(:projvalue)
+    @month2expenses = Expense.where(month: @month2select.to_i).group(:expensetype).sum(:projvalue)
     @category = ""
 
     # all the expense types for both months
-    alltypes = Expense.where(:month => [month1select, month2select]).group(:expensetype)
+    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expensetype)
     @selectedtypes = []
     # values for these expenses for each month
     @month1values = []
@@ -34,8 +34,8 @@ class CompareController < ApplicationController
       @selectedtypes.append(x)
 
       # queries to find values for expense type x
-      month1query = Expense.where("month LIKE ?", "%#{month1select}").where(expensetype: x)
-      month2query = Expense.where("month LIKE ?", "%#{month2select}").where(expensetype: x)
+      month1query = Expense.where(month: @month1select.to_i).where(expensetype: x)
+      month2query = Expense.where(month: @month2select.to_i).where(expensetype: x)
 
       # if no expense type x for month 1
       if month1query.empty?
@@ -60,8 +60,8 @@ class CompareController < ApplicationController
     }
 
     # month 1 and 2 in string (ex. January) instead of ints
-    @month1name = MONTHS[month1select.to_i]
-    @month2name = MONTHS[month2select.to_i]
+    @month1name = MONTHS[@month1select.to_i]
+    @month2name = MONTHS[@month2select.to_i]
 
   end
 
