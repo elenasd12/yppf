@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exp_name: MyString
+  exp_parent: 1
+  exp_description: MyText
+
+two:
+  exp_name: MyString
+  exp_parent: 1
+  exp_description: MyText

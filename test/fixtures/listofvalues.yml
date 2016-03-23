@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lov_domain: MyString
+  lov_key: 1
+  lov_value: MyString
+  lov_description: MyText
+
+two:
+  lov_domain: MyString
+  lov_key: 1
+  lov_value: MyString
+  lov_description: MyText

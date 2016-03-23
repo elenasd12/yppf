@@ -11,32 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303194714) do
+ActiveRecord::Schema.define(version: 20160323055844) do
 
   create_table "bills", force: :cascade do |t|
-    t.text     "expenseid"
     t.integer  "day_month"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.decimal  "amount"
+    t.integer  "expire_month"
+    t.integer  "expire_year"
   end
 
   add_index "bills", ["user_id"], name: "index_bills_on_user_id"
 
+  create_table "expense_categories", force: :cascade do |t|
+    t.string   "exp_name"
+    t.integer  "exp_parent"
+    t.text     "exp_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+  end
+
+  create_table "expense_details", force: :cascade do |t|
+    t.datetime "expdet_date"
+    t.decimal  "expdate_value"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "expense_id"
+  end
+
   create_table "expenses", force: :cascade do |t|
-    t.text     "expenseid"
-    t.text     "expensetype"
+    t.integer  "expensetype"
     t.text     "frequency"
     t.decimal  "projvalue"
     t.decimal  "actvalue"
     t.integer  "percent"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
+    t.integer  "bill_id"
+    t.integer  "expense_category_id"
   end
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
@@ -56,13 +77,22 @@ ActiveRecord::Schema.define(version: 20160303194714) do
 
   add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
 
+  create_table "listofvalues", force: :cascade do |t|
+    t.string   "lov_domain"
+    t.integer  "lov_key"
+    t.string   "lov_value"
+    t.text     "lov_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.text     "user"
     t.text     "email"
-    t.text     "password"
     t.text     "state"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -72,7 +102,6 @@ ActiveRecord::Schema.define(version: 20160303194714) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
