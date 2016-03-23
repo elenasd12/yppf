@@ -15,10 +15,11 @@
 
         <div class = "row">
           <%key = @x.keys[0]%>
+          <%name = ExpenseCategory.find(key)%>
           <%value = @x.values[0]%>
           <div class = "well vertical-align">
             <div class = "col-md-3">
-              <b><%=key.to_s%></b>
+              <b><%=name.exp_name%></b>
             </div>
             <div class = "col-md-3">
               $<%= value.to_f %>/year
@@ -30,10 +31,11 @@
         </div>
         <div class = "row">
           <%key = @x.keys[1]%>
+          <%name = ExpenseCategory.find(key)%>
           <%value = @x.values[1]%>
           <div class = "well vertical-align">
             <div class = "col-md-3">
-              <b><%=key.to_s%></b>
+              <b><%=name.exp_name%></b>
             </div>
             <div class = "col-md-3">
               $<%= value.to_f %>/year
@@ -45,10 +47,11 @@
         </div>
         <div class = "row">
           <%key = @x.keys[2]%>
+          <%name = ExpenseCategory.find(key)%>
           <%value = @x.values[2]%>
           <div class = "well vertical-align">
             <div class = "col-md-3">
-              <b><%=key.to_s%></b>
+              <b><%=name.exp_name%></b>
             </div>
             <div class = "col-md-3">
               $<%= value.to_f %>/year

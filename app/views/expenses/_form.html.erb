@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-2">
       <%= f.label "Type" %><br>
-      <%= f.select(:expensetype, options_for_select(@categories)) %>
+      <%= f.select(:expense_category_id, options_for_select(@categories)) %>
     </div>
     <div class="col-md-1">
       <%= f.label :frequency %><br>
