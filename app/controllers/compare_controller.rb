@@ -17,25 +17,37 @@ class CompareController < ApplicationController
     @month2select = params[:month2select]
 
     # queries for initial pie chart and bar chart with expenses for each month
-    @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expensetype).sum(:projvalue)
-    @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expensetype).sum(:projvalue)
+    @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expense_category_id).sum(:projvalue)
+    # @series1 = []
+    # @month1expenses.each{ |m|
+    #   category_id = m[0]
+    #   query = ExpenseCategory.find(category_id)
+    #   x = {name: query.exp_name.to_s, y: m[1].to_f}
+    #   @series1.append(x)
+    # }
+    # puts @series1
+
+
+    @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expense_category_id).sum(:projvalue)
     @category = ""
 
     # all the expense types for both months
-    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expensetype)
+    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id)
     @selectedtypes = []
     # values for these expenses for each month
     @month1values = []
     @month2values = []
 
     alltypes.each { |t|
-      # adding expense types to global array
-      x = t.expensetype
-      @selectedtypes.append(x)
+      # adding expense categories to global array
+      x = t.expense_category_id
+      y = ExpenseCategory.find(x)
+
+      @selectedtypes.append(y.exp_name)
 
       # queries to find values for expense type x
-      month1query = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).where(expensetype: x)
-      month2query = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).where(expensetype: x)
+      month1query = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).where(expense_category_id: x)
+      month2query = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).where(expense_category_id: x)
 
       # if no expense type x for month 1
       if month1query.empty?

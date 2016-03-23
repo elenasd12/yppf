@@ -15,6 +15,12 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    array = ExpenseCategory.all
+    @categories = []
+    array.each { |a|
+      e = [a.exp_name, a.id]
+      @categories.append(e)
+    }
   end
 
   # GET /expenses/1/edit
