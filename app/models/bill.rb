@@ -1,9 +1,9 @@
 class Bill < ActiveRecord::Base
   belongs_to :user
-  validates :day_month, :month, :amount, :expires_month, :expires_year, presence: true
+  validates :day_month, :month, :amount, :expire_month, :expire_year, presence: true
   validates :day_month, numericality: {greater_than_or_equal_to: 1}
   validates :month, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 12}
-  validates :expires_month, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 12}
+  validates :expire_month, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 12}
 
   validates :year,
     presence: true,
@@ -16,7 +16,7 @@ class Bill < ActiveRecord::Base
       message: "should be a four-digit year"
     }
 
-  validates :expires_year,
+  validates :expire_year,
     presence: true,
     inclusion: {
       in: 1900..Date.today.year,
