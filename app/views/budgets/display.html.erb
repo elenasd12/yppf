@@ -48,7 +48,8 @@
 <br>
 
 <% @expenses.each do |expense| %>
-  <%= "#{expense.expensetype} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
+  <% x= ExpenseCategory.find(expense.expense_category_id) %>
+  <%= "#{x.exp_name} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
   <div class="progress">
     <div class="progress-bar <%= get_progress_type((expense.actvalue / expense.projvalue) * 100) %>" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
     </div>
@@ -74,8 +75,7 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>Expense</th>
-      <th>Type</th>
+      <th>Name</th>
       <th>Frequency</th>
       <th>Projected Value</th>
       <th>Actual Value</th>
@@ -89,7 +89,8 @@
   <tbody>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.expensetype %></td>
+        <% x= ExpenseCategory.find(expense.expense_category_id) %>
+        <td><%= x.exp_name %></td>
         <td><%= expense.frequency %></td>
         <td><%= expense.projvalue %></td>
         <td><%= expense.actvalue %></td>
