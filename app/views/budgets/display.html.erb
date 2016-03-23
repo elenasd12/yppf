@@ -74,8 +74,7 @@
 <table style = "width:100%">
   <thead>
     <tr>
-      <th>Expense</th>
-      <th>Type</th>
+      <th>Name</th>
       <th>Frequency</th>
       <th>Projected Value</th>
       <th>Actual Value</th>
@@ -89,8 +88,7 @@
   <tbody>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.expenseid %></td>
-        <td><%= expense.expensetype %></td>
+        <td><%= expense.expense_category_name %></td>
         <td><%= expense.frequency %></td>
         <td><%= expense.projvalue %></td>
         <td><%= expense.actvalue %></td>
