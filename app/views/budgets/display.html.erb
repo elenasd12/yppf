@@ -47,6 +47,7 @@
 <b>Total income for <%=@get_month_year%>: $<%=sum%></b>
 <br>
 
+
 <% @expenses.each do |expense| %>
   <% x= ExpenseCategory.find(expense.expense_category_id) %>
   <%= "#{x.exp_name} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
