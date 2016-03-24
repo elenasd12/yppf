@@ -18,19 +18,25 @@ class CompareController < ApplicationController
 
     # queries for initial pie chart and bar chart with expenses for each month
     @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expense_category_id).sum(:projvalue)
-    # @series1 = []
-    # @month1expenses.each{ |m|
-    #   category_id = m[0]
-    #   query = ExpenseCategory.find(category_id)
-    #   x = {name: query.exp_name.to_s, y: m[1].to_f}
-    #   @series1.append(x)
-    # }
-    # puts @series1
-
+    @series1 = []
+    @month1expenses.each{ |m|
+      category_id = m[0]
+      query = ExpenseCategory.find(category_id)
+      x = [query.exp_name.to_s, m[1].to_f]
+      @series1.append(x)
+    }
 
     @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expense_category_id).sum(:projvalue)
-    @category = ""
+    @series2 = []
+    @month2expenses.each{ |m|
+      category_id = m[0]
+      query = ExpenseCategory.find(category_id)
+      x = [query.exp_name.to_s, m[1].to_f]
+      @series2.append(x)
+    }
 
+
+    # Bar chart
     # all the expense types for both months
     alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id)
     @selectedtypes = []
@@ -74,10 +80,6 @@ class CompareController < ApplicationController
     # month 1 and 2 in string (ex. January) instead of ints
     @month1name = MONTHS[@month1select.to_i]
     @month2name = MONTHS[@month2select.to_i]
-
-  end
-
-  def category
 
   end
 
