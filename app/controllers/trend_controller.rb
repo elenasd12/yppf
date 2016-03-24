@@ -13,7 +13,9 @@ class TrendController < ApplicationController
 
     x = Expense.select(:year, :month, 'sum_actvalue').group(:year, :month).order(:year, :month).sum(:actvalue)
     x.each {|y|
-      @chartarray.append([y[0][0], y[0][1], y[1]])
+      @chartarray.append([[y[0][0].to_i, y[0][1].to_i], y[1].to_i])
     }
+
+    puts @chartarray.to_s
   end
 end
