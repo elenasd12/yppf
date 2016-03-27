@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323055844) do
+ActiveRecord::Schema.define(version: 20160327000700) do
 
   create_table "bills", force: :cascade do |t|
     t.integer  "day_month"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.decimal  "amount"
     t.integer  "expire_month"
     t.integer  "expire_year"
+    t.integer  "expense_category_id"
+    t.integer  "bill_status"
   end
 
   add_index "bills", ["user_id"], name: "index_bills_on_user_id"
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160323055844) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.integer  "exp_type"
   end
 
   create_table "expense_details", force: :cascade do |t|
@@ -45,8 +48,19 @@ ActiveRecord::Schema.define(version: 20160323055844) do
     t.integer  "expense_id"
   end
 
+  create_table "expense_references", force: :cascade do |t|
+    t.decimal  "ref_value"
+    t.integer  "ref_status"
+    t.integer  "ref_type"
+    t.integer  "ref_month"
+    t.integer  "ref_year"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "user_id"
+    t.integer  "expense_category_id"
+  end
+
   create_table "expenses", force: :cascade do |t|
-    # bill or non bill (0 or 1)
     t.integer  "expensetype"
     t.text     "frequency"
     t.decimal  "projvalue"
@@ -54,11 +68,12 @@ ActiveRecord::Schema.define(version: 20160323055844) do
     t.integer  "percent"
     t.integer  "month"
     t.integer  "year"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "user_id"
     t.integer  "bill_id"
     t.integer  "expense_category_id"
+    t.integer  "expense_reference_id"
   end
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
