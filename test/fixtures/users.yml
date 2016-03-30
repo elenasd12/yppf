@@ -3,7 +3,7 @@
 one:
   id: 1
   email: "yppf2016@gmail.com"
-  encrypted_password: 'xhbdhdsgvjhsvfhfvhjegfs'
+  encrypted_password: '$2a$10$.dgdYOHYxdKSxknXlDKNqeOGe8PPN5iHT6PZuk/RKZRHyF59LdxOq'
   state: nil
   created_at: January 8 04:05:06 2016 UTC
   updated_at: January 8 04:05:06 2016 UTC
