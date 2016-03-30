@@ -2,13 +2,10 @@
 
 one:
   id: 1
-  user: nil
-  email: "mojirsamimi@brandeis.com"
-  password: nil
+  email: "yppf2016@gmail.com"
   state: nil
   created_at: Wed, 02 Mar 2016 20:01:17 UTC +00:00
   updated_at: Wed, 02 Mar 2016 20:01:17 UTC +00:00
-  encrypted_password: "$2a$10$a8FW4RoRYcixdLWNTX9jBeGpr8X6inAS7iC8qtvi2HdoJjefwMvyO"
   reset_password_token: nil
   reset_password_sent_at: nil
   remember_created_at: nil
@@ -17,4 +14,4 @@ one:
   last_sign_in_at: Wed, 02 Mar 2016 20:01:17 UTC +00:00
   current_sign_in_ip: "127.0.0.1"
   last_sign_in_ip: "127.0.0.1"
-  name: "Mojir"
+  name: "yppf"

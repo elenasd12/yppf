@@ -5,7 +5,7 @@ class ExpenseTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "expense fields must be positive" do
-    expense = Expense.new(expenseid: "Transportation", userid: "elena", expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: 2016)
+    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: 2016)
     # test invalid with negative number
     expense.actvalue = -1
     assert expense.invalid?
@@ -18,7 +18,7 @@ class ExpenseTest < ActiveSupport::TestCase
   end
 
   test "year must be positive" do
-    expense = Expense.new(expenseid: "Transportation", userid: "elena", expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: -1)
+    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: -1)
 
     assert expense.invalid?
 
