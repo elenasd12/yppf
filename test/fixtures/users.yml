@@ -7,7 +7,7 @@ one:
   created_at: January 8 04:05:06 2016 UTC
   updated_at: January 8 04:05:06 2016 UTC
   reset_password_token: nil
-  reset_password_sent_at: nil
+  reset_password_sent_at: January 8 04:05:06 2016 UTC
   remember_created_at: January 8 04:05:06 2016 UTC
   sign_in_count: 1
   current_sign_in_at: January 8 04:05:06 2016 UTC
