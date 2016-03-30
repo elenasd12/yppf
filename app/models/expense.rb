@@ -1,8 +1,8 @@
 class Expense < ActiveRecord::Base
   belongs_to :user
-
   # validate positive fields
-  validates :projvalue, :percent, :month, numericality: {greater_than_or_equal_to: 0}
+  validates :projvalue, :month, numericality: {greater_than_or_equal_to: 0}
+  #validates :bill_id
   # validate valid year
   validates :year,
     presence: true,

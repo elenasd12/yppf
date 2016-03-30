@@ -1,5 +1,5 @@
 class Bill < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :expense
   validates :day_month, :month, :amount, :expire_month, :expire_year, presence: true
   validates :day_month, numericality: {greater_than_or_equal_to: 1}
   validates :month, numericality: {greater_than_or_equal_to: 1, less_than_or_equal_to: 12}
