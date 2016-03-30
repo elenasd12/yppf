@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'expense_categories/new'
+
+  get 'expense_categories/create'
+
+  get 'expense_categories/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get 'welcome/index'

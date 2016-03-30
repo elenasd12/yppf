@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20160323055844) do
   end
 
   create_table "expenses", force: :cascade do |t|
-    # bill or non bill (0 or 1)
     t.integer  "expensetype"
     t.text     "frequency"
     t.decimal  "projvalue"
