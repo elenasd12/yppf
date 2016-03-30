@@ -14,6 +14,5 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     assert_equal '/', path
     assert_equal 'Signed in successfully.', flash.first[1]
  
-
   end
 end
