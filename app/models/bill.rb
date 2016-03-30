@@ -27,4 +27,9 @@ class Bill < ActiveRecord::Base
       message: "should be a four-digit year"
     }
 
+    def start_time
+      datetime = "#{1 + rand(28)}/#{self.month}/#{self.year} 16:29:30 +0100".to_datetime
+      return datetime
+    end
+
 end

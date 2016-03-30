@@ -38,9 +38,11 @@ class Expense < ActiveRecord::Base
     end
     return actual
   end
+
 def expense_category_name
   ExpenseCategory.find(expense_category_id).exp_name
 end
+
   MONTHS = [0, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 end
