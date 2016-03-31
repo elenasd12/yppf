@@ -1,5 +1,5 @@
 class ExpenseReferencesController < ApplicationController
-  before_action :set_expense_ref, only: [:destroy]
+  before_action :set_expense_ref, only: [:destroy,:edit]
 before_action :authenticate_user!
  helper_method :expense_category_options
  
@@ -8,6 +8,10 @@ before_action :authenticate_user!
     @expense_refs_once=ExpenseReference.where(user_id: current_user.id,ref_type: 1).order(created_at: :desc)
     @expense_refs_every=ExpenseReference.where(user_id: current_user.id,ref_type: 2).order(created_at: :desc)
     @destroy_warning_msg="All history associated with this expense will be removed. Are you sure?"
+  end
+  
+  def edit
+    
   end
   
   def new
