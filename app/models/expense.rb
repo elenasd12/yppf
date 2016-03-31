@@ -1,5 +1,9 @@
 class Expense < ActiveRecord::Base
   belongs_to :user
+  belongs_to :expense_reference
+  belongs_to :bill
+  has_many :expense_details, dependent: :destroy
+  has_one :expense_category
 
   # validate positive fields
   validates :projvalue, :percent, :month, numericality: {greater_than_or_equal_to: 0}

@@ -27,3 +27,4 @@
 .alert-notice {
   @extend .alert-info;
 }
+.field_with_errors { display: flex; }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327000700) do
+ActiveRecord::Schema.define(version: 20160327233700) do
 
   create_table "bills", force: :cascade do |t|
     t.integer  "day_month"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160327000700) do
     t.integer  "expire_year"
     t.integer  "expense_category_id"
     t.integer  "bill_status"
+    t.string   "bill_name"
   end
 
   add_index "bills", ["user_id"], name: "index_bills_on_user_id"
@@ -41,11 +42,12 @@ ActiveRecord::Schema.define(version: 20160327000700) do
 
   create_table "expense_details", force: :cascade do |t|
     t.datetime "expdet_date"
-    t.decimal  "expdate_value"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.decimal  "expdet_value"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
     t.integer  "expense_id"
+    t.text     "expdet_description"
   end
 
   create_table "expense_references", force: :cascade do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160327000700) do
     t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.integer  "expense_category_id"
+    t.string   "ref_name"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -74,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160327000700) do
     t.integer  "bill_id"
     t.integer  "expense_category_id"
     t.integer  "expense_reference_id"
+    t.string   "expensename"
   end
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
