@@ -31,39 +31,7 @@ function goBack(){
   window.history.back();
 }
 </script>
-<!-- <script>
-$(function () {
-    $(document).ready(function () {
-        // Build the chart
-        $('#container2').highcharts({
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
-            },
-            title: {
-                text: '<%= @month1name %>'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: false
-                    },
-                    showInLegend: true
-                }
-            },
-            series: <%= @series.to_json.html_safe %>
 
-        });
-    });
-});
-</script> -->
 <!-- Pie Chart for month 1 -->
 <script>
 $(function () {

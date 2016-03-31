@@ -53,4 +53,34 @@ module ExpensesHelper
     end
   end
 
+  def get_percentage(category)
+    sumAct = get_sumAct(category)
+    sumProj = get_sumProj(category)
+    if sumProj > 0
+      return sumAct/sumProj
+    else
+      return 0
+    end
+  end
+
+  def get_sumAct(category)
+    sumAct = 0
+    @expenses.each do |expense|
+      if ExpenseCategory.find(expense.expense_category_id) == category
+        sumAct = sumAct + expense.actvalue
+      end
+    end
+    return sumAct
+  end
+
+  def get_sumProj(category)
+    sumProj = 0
+    @expenses.each do |expense|
+      if ExpenseCategory.find(expense.expense_category_id) == category
+        sumProj = sumProj + expense.projvalue
+      end
+    end
+    return sumProj
+  end
+
 end

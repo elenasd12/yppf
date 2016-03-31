@@ -1,4 +1,11 @@
 <h1><center>Calendar</center></h1>
-<%= month_calendar do |date| %>
+
+<%= month_calendar events: @bills do |date, bills| %>
   <%= date %>
+
+  <% bills.each do |bill| %>
+    <div>
+      <%= bill.amount %>
+    </div>
+  <% end %>
 <% end %>

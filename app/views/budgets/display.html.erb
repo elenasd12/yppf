@@ -42,20 +42,38 @@
 </table>
 
 <br>
-<%= link_to 'New Income', new_income_path %>
-<br>
 <b>Total income for <%=@get_month_year%>: $<%=sum%></b>
 <br>
+<%= link_to 'New Income', new_income_path %>
 
+<br>
+<br>
 
-<% @expenses.each do |expense| %>
-  <% x= ExpenseCategory.find(expense.expense_category_id) %>
-  <%= "#{x.exp_name} - #{((expense.actvalue / expense.projvalue) * 100).to_i}% of monthly budget used" %>
-  <div class="progress">
-    <div class="progress-bar <%= get_progress_type((expense.actvalue / expense.projvalue) * 100) %>" role="progressbar" aria-valuenow="<%= expense.actvalue%>" aria-valuemin="0" aria-valuemax="<%= expense.projvalue %>" style="width: <%= (expense.actvalue / expense.projvalue) * 100 %>%">
-    </div>
-  </div>
-<% end %>
+<table width = "100%">
+  <% @expense_categories = ExpenseCategory.all %>
+  <% something = true %>
+  <% @expense_categories.each do |categories| %>
+    <% if something %>
+      <tr>
+    <% end %>
+    <td>
+      <% value = get_percentage(categories) %>
+      <% if value > 0 %>
+        <%= "#{categories.exp_name} - #{(value * 100).to_i}% of monthly budget used" %>
+        <div class="progress" style="width:550px;">
+          <div class="progress-bar <%= get_progress_type(value * 100) %>" role="progressbar" aria-valuenow="<%= get_sumAct(categories)%>" aria-valuemin="0" aria-valuemax="<%= get_sumProj(categories) %>" style="width: <%= value * 100 %>%">
+          </div>
+        </div>
+      <% end %>
+    </td>
+    <% if something %>
+      <% something = false %>
+    <% else %>
+      </tr>
+      <% something = true %>
+    <% end %>
+  <% end %>
+</table>
 
 <%= get_total_expenditure_message(Date.today.month, Date.today.year) %>
 <div class="progress">

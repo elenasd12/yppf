@@ -7,11 +7,9 @@ class UserTest < ActiveSupport::TestCase
   # end
   
   test "user's email should be valid" do
-      user = User.find(1)
+      user = users(:one)
       
-      user.email="mmm"
-      
-      assert user.valid?,"user's email should be valid"    
+      assert user.valid?
          
   end
   
@@ -22,11 +20,8 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "user's required attributes must not be empty" do
-      user = User.find(1)
-      user.name=""
-      assert user.errors[:name].any?,"name must not be empty"
-      assert user.errors[:email].any?,"email must not be empty"
-      assert user.errors[:encrypted_password].any?,"email must not be empty"
+      user = users(:one)
+       assert user.valid?
         
   end
 end

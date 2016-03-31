@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  userid: MyText
-  expenseid: MyText
-  day_month: 1
-  month: 1
-  year: 1
-
+  day_month: 20
+  month: 3
+  year: 2016
+  user_id: 1
+  amount: 200
+  expire_month: 10
+  expire_year: 2016
+  
 two:
-  userid: MyText
-  expenseid: MyText
-  day_month: 1
-  month: 1
-  year: 1
+  day_month: 24
+  month: 5
+  year: 2016
+  user_id: 1
+  amount: 20
+  expire_month: 10
+  expire_year: 2016

@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  expenseid: MyText
-  userid: MyText
-  expensetype: MyText
+  expensetype: 0
   frequency: MyText
   projvalue: 9.99
   actvalue: 9.99
   percent: 1
   month: 1
   year: 1
+  user_id: 1
+  expense_category_id: 1
 
 two:
-  expenseid: MyText
-  userid: MyText
-  expensetype: MyText
+  expensetype: 0
   frequency: MyText
   projvalue: 9.99
   actvalue: 9.99
   percent: 1
   month: 1
   year: 1
+  user_id: 1
+  expense_category_id: 2
