@@ -1,53 +1,35 @@
+<head>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
 <h1><center>Compare Months</center></h1>
 
 <div class = row>
-  <div class = "col-md-4">
+  <div class = "col-md-3">
   </div>
   <div class="col-md-6">
-    <%= form_for(@compare, url: {:controller => "compare", :action => "create"}) do |f|%>
-      <%= f.label "Month 1" %>
-      <%= f.select(:month1select, options_for_select(
-        @months
-      )) %>
+    <%= form_tag(compare_create_path, method: "get", remote: true, role: "form", class: "form") do %>
+      <div class="form-group">
+        <label class="control-label">Month 1:</label>
+        <%= select_tag(:month1select,
+            options_for_select(
+              @months), class: "form-control") %>
+      </div>
 
-      <%= f.label "Month 2" %>
-      <%= f.select(:month2select, options_for_select(
-        @months
-      )) %>
+      <div class="form-group">
+        <label class="control-label">Month 1:</label>
+        <%= select_tag(:month1select,
+            options_for_select(
+              @months), class: "form-control") %>
+      </div>
 
-      <%= f.submit %>
+
+      <%= submit_tag("Search", class: "btn btn-default" ) %>
     <% end %>
-    <!-- <%= label_tag 'Month 1' %><br>
-    <%= collection_select(:post, nil, Expense.select(:month, :year).group(:month, :year).order(:year).reverse_order, :id, :combined_value)  %> -->
-  </div>
-
-  <div class = "col-md-2">
   </div>
 </div>
 
-
-
-<u1>
-  <% if @month1.nil?  && @month2.nil?%>
-  <div class = "row">
-    <div class = "col-md-4">
-    </div>
-    <div class = "col-md-4">
-    </div>
-    <div class = "col-md-4">
-    </div>
-  </div>
-
-  <% else %>
-  <div class = "row">
-    <div class = "col-md-6">
-      <%= column_chart @month1 %>
-    </div>
-    <div class="col-md-6">
-      <%=pie_chart @month1%>
-      <%=pie_chart @month2%>
-    </div>
-    <br>
-    </div>
-  <%end%>
-</u1>
+<div class="row col-md-offset-1 col-md-11">
+  <div id="search_results"> </div>
+</div>

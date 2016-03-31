@@ -13,15 +13,15 @@ Rails.application.routes.draw do
   resources :expenses
   resources :bills
   resources :incomes
-  
+
   resources :expense_references
 
   root 'dashboard#new'
   #root to: 'pages#index'
   #Expense Reference
-  
+
   #get 'manageexpenses/index' => 'expense_references#index'
-  
+
   get 'dashboard/new' => 'dashboard#new'
   get 'datas/add' => 'datas#add'
   get 'incomes/new' => 'incomes#new'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'calendar/new' => 'calendar#new'
 
   get 'compare/new' => 'compare#new'
-  post 'compare/create' => 'compare#create'
+  get 'compare/create' => 'compare#create'
 
   get 'trend/new' => 'trend#new'
 
