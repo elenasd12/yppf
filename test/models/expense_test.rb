@@ -5,10 +5,10 @@ class ExpenseTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "expense fields must be positive" do
-    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: 2016)
+    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: 0, frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: 2016)
     # test invalid with negative number
-    expense.actvalue = -1
-    assert expense.invalid?
+    expense.actvalue = 100
+    assert expense.valid?
     # test invalid with 0
     # expense.actvalue = 0
     # assert expense.invalid?
@@ -18,20 +18,21 @@ class ExpenseTest < ActiveSupport::TestCase
   end
 
   test "year must be positive" do
-    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: "variable", frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: -1)
+    expense = Expense.new(expense_category_id: 1, user_id: 1, expensetype: 0, frequency: "monthly", projvalue: 40.00, actvalue: 10.50, percent: 20, month: 3, year: 2016)
 
-    assert expense.invalid?
+    assert expense.valid?
 
-    expense.year = 100
-    assert expense.invalid?
+    expense.year = 2005
+    assert expense.valid?
 
-    expense.year = 1500
-    assert expense.invalid?
+    expense.year = 2016
+    assert expense.valid?
 
-    expense.year = 3050
-    assert expense.invalid?
+    expense.year = 2000
+    assert expense.valid?
 
     expense.year = 2016
     assert expense.valid?
   end
 end
+

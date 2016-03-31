@@ -4,7 +4,7 @@ gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 gem 'minitest-spec-rails'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
-
+#test branch
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
