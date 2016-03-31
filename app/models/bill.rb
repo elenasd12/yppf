@@ -28,7 +28,7 @@ class Bill < ActiveRecord::Base
     }
 
     def start_time
-      datetime = "#{1 + rand(28)}/#{self.month}/#{self.year} 16:29:30 +0100".to_datetime
+      datetime = "#{self.day_month}/#{self.month}/#{self.year} 16:29:30 +0100".to_datetime
       return datetime
     end
 
