@@ -1,1 +1,109 @@
+
 $('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
+
+function goBack(){
+  window.history.back();
+}
+
+//<!-- Pie Chart for month 1 -->
+$(function () {
+    $('#pie1').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: '<%=@month1name%>'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>${point.y}</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Spent',
+            colorByPoint: true,
+            data: <%= @series1.to_json.html_safe %>
+        }]
+    });
+});
+
+
+
+//<!-- Pie Chart for month 2 -->
+$(function () {
+    $('#pie2').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: '<%=@month2name%>'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>${point.y}</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Spent',
+            colorByPoint: true,
+            data: <%= @series2.to_json.html_safe %>
+        }]
+    });
+});
+
+//<!--High Charts bar chart  -->
+$(function () {
+    $('#bar').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Expense Comparison'
+        },
+        xAxis: {
+            categories: <%= @selectedtypes.to_json.html_safe %>
+        },
+        yAxis: {
+            title: {
+                text: 'Money Spent'
+                // y axis - how much money
+            }
+        },
+        series: [{
+            // months
+            name: '<%= @month1name %>',
+            data: <%= @month1values.to_json.html_safe %>
+        }, {
+            name: '<%= @month2name %>',
+            data: <%= @month2values.to_json.html_safe %>
+        }]
+    });
+});

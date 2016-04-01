@@ -1,8 +1,3 @@
-<head>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-</head>
-
 <h1><center>Compare Months</center></h1>
 
 <div class = row>
@@ -18,8 +13,8 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label">Month 1:</label>
-        <%= select_tag(:month1select,
+        <label class="control-label">Month 2:</label>
+        <%= select_tag(:month2select,
             options_for_select(
               @months), class: "form-control") %>
       </div>
