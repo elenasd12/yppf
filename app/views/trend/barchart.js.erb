@@ -1,0 +1,27 @@
+$('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
+
+//<!--High Charts bar chart  -->
+$(function () {
+    $('#bar').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Expense Comparison'
+        },
+        xAxis: {
+            categories: <%= @months.to_json.html_safe %>
+        },
+        yAxis: {
+            title: {
+                text: 'Money Spent'
+                // y axis - how much money
+            }
+        },
+        series: [{
+            // months
+            name: '<%= @category_name %>',
+            data: <%= @values.to_json.html_safe %>
+        }]
+    });
+});
