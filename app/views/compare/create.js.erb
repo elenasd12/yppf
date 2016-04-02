@@ -1,39 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<head>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-</head>
+$('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
 
-
-<h1>Compare</h1>
-
-<div class = "row">
-  <div class = "col-md-6">
-    <!-- <div id="container2" style="width:100%; height:400px;"></div> -->
-    <div id="pie1" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-  </div>
-  <div class = "col-md-6">
-    <!-- <div id="container2" style="width:100%; height:400px;"></div> -->
-    <div id="pie2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-  </div>
-  <br>
-</div>
-
-<div class = "row">
-  <div id="bar" style="width:100%; height:400px;"></div>
-</div>
-
-<button onclick="goBack()">Back</button>
-
-<script>
 function goBack(){
   window.history.back();
 }
-</script>
 
-<!-- Pie Chart for month 1 -->
-<script>
+//<!-- Pie Chart for month 1 -->
 $(function () {
     $('#pie1').highcharts({
         chart: {
@@ -68,12 +40,10 @@ $(function () {
         }]
     });
 });
-</script>
 
 
 
-<!-- Pie Chart for month 2 -->
-<script>
+//<!-- Pie Chart for month 2 -->
 $(function () {
     $('#pie2').highcharts({
         chart: {
@@ -108,11 +78,8 @@ $(function () {
         }]
     });
 });
-</script>
 
-
-<!--High Charts bar chart  -->
-<script>
+//<!--High Charts bar chart  -->
 $(function () {
     $('#bar').highcharts({
         chart: {
@@ -140,4 +107,3 @@ $(function () {
         }]
     });
 });
-</script>

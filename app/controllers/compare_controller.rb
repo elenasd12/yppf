@@ -81,6 +81,10 @@ class CompareController < ApplicationController
     @month1name = MONTHS[@month1select.to_i]
     @month2name = MONTHS[@month2select.to_i]
 
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   MONTHS = [0, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
