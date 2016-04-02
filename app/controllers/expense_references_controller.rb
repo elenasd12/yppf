@@ -1,5 +1,5 @@
 class ExpenseReferencesController < ApplicationController
-  before_action :set_expense_ref, only: [:destroy,:edit]
+  before_action :set_expense_ref, only: [:destroy,:edit,:update]
 before_action :authenticate_user!
  helper_method :expense_category_options
  
@@ -12,6 +12,17 @@ before_action :authenticate_user!
   
   def edit
     
+  end
+  
+  def update
+    respond_to do |format|
+      if @expense_ref.update(expense_reference_params_update)
+        format.html { redirect_to expense_references_path, notice: 'Expense was successfully updated.' }
+        
+      else
+        format.html { render :edit }
+      end
+    end
   end
   
   def new
@@ -48,6 +59,10 @@ before_action :authenticate_user!
     # Use callbacks to share common setup or constraints between actions.
     def set_expense_ref
       @expense_ref = ExpenseReference.find(params[:id])
+    end
+    
+    def expense_reference_params_update
+      params.require(:expense_reference).permit(:ref_name,:ref_value)
     end
     
     def expense_reference_params
