@@ -1,9 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<head>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-</head>
-
 <!-- Top 3 expenses -->
 <center><h1>Spending Trends over <%=Date.today.year%></h1></center>
 
@@ -27,7 +21,7 @@
             <div class = "col-md-6">
               <%=((value.to_f/@total)*100).round(2)%>% of all spending
             </div>
-            
+
           </div>
         </div>
         <div class = "row">
@@ -70,6 +64,23 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
   </div>
 
+</div>
+
+<div class = row>
+  <div class = "col-md-3">
+  </div>
+  <div class="col-md-6">
+    <%= form_tag(trend_barchart_path, method: "get", remote: true, role: "form", class: "form") do %>
+      <div class="form-group">
+        <label class="control-label">Month 1:</label>
+        <%= select_tag(:expenseselect,
+            options_for_select(
+              @expensedropdown), class: "form-control") %>
+      </div>
+
+      <%= submit_tag("Select", class: "btn btn-default" ) %>
+    <% end %>
+  </div>
 </div>
 
 <button onclick="goBack()">Back</button>
