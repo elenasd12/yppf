@@ -42,7 +42,7 @@ end
 #Expense Reference
 #ref_type 1=Once, 2=Every Month
 (0..9).each do |i|
-ExpenseReference.create(id: i+1,user_id: 1, ref_value: Faker::Commerce.price,ref_type: (i%2)+1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1+i)
+ExpenseReference.create(ref_name: 'its just a name',id: i+1,user_id: 1, ref_value: Faker::Commerce.price,ref_type: (i%2)+1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1+i)
 end
 
 # 5.times do
