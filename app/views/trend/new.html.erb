@@ -77,7 +77,14 @@
     <%end%>
   </div>
   <div class="col-md-10">
-    <div id="search_results"> </div>
+    <!-- <% if !@months2.empty? %>
+      <div id="initial_results"> </div>
+      Initial RESULTS
+    <% end %> -->
+    <!-- <% if @months2.empty? %> -->
+      SEARCH RESULTS????
+      <div id="search_results"> </div>
+    <!-- <% end %> -->
   </div>
 </div>
 
@@ -88,6 +95,36 @@ function goBack(){
   window.history.back();
 }
 </script>
+
+<script>
+$(function () {
+    $('#initial_results').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Expense Comparison'
+        },
+        xAxis: {
+            categories: <%= @months2.to_json.html_safe %>
+        },
+        yAxis: {
+            title: {
+                text: 'Money Spent'
+                // y axis - how much money
+            }
+        },
+        series: [{
+            // months
+            name: '<%= @category_name2 %>',
+            data: <%= @values2.to_json.html_safe %>
+        }]
+    });
+});
+
+
+</script>
+
 
 
 <!-- Trend chart for overall spending -->
