@@ -67,20 +67,32 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <div class="row">
     <%= form_tag(trend_barchart_path, method: "get", remote: true, role: "form", class: "form", id: "form") do %>
     <div class="form-group">
-      <label class="control-label">Category:</label>
+      <div class="col-md-6">
+      <label class="control-label">Compare spending for: </label>
+      </div>
+      <div class="col-md-3">
       <%= select_tag(:categoryselect, options_for_select(@categories), class: "form-control", :onchange => ("$('#form').submit();")) %>
+      </div>
     </div>
     <%end%>
+    </div>
   </div>
+  <div class="col-md-4">
+  </div>
+</div>
 
-  <div class="col-md-10">
+<div class="row">
+  <div class="col-md-12">
       <div class="initial_results search_results"> </div>
   <div>
-
 </div>
+
 
 <button onclick="goBack()">Back</button>
 
@@ -97,7 +109,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Expense Comparison'
+            text: ''
         },
         xAxis: {
             categories: <%= @months2.to_json.html_safe %>
