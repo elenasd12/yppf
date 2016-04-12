@@ -6,7 +6,7 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-html, body { background: #ffe0a7; }
+html, body { background: #ffffe6; }
 
 div{
 
@@ -16,4 +16,8 @@ div{
         /* OLD IE */
         zoom: 1;
     }
+}
+p{
+  color: #00b3b3;
+  text-align: center;
 }

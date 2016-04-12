@@ -16,15 +16,15 @@
 <body>
 <%= stylesheet_link_tag    'dashboard', media: 'all'%>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-custom">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'YPPF: Young Professional Personal Finance', root_path, class: 'navbar-brand' %>
+      <h4><%= link_to 'YPPF: Young Professional Personal Finance', root_path, class: 'navbar-header' %></h4>
     </div>
     <div id="navbar">
-      <ul class="nav navbar-nav">
+      <!-- <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
-      </ul>
+      </ul> -->
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
           <li class="dropdown">

@@ -15,12 +15,26 @@
  *= require_self
  *= require jquery-ui
  */
-html, body { background: #ffa85a; }
-
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
+
+.navbar-custom {
+   background-color: #339966;
+}
+
+.navbar-custom .navbar-header {
+  color: #ffffe6;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffe6;
+}
+
+.navbar-custom .navbar-toggle {
+  background-color: #eeeeee;
+}
 
 .alert-alert {
   @extend .alert-warning;
