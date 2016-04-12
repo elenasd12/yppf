@@ -18,6 +18,46 @@ div{
     }
 }
 p{
-  color: #52b5d0;
+  color: #241563;
   text-align: center;
+}
+
+h4{
+  color: #241563;
+  text-align: center;
+}
+
+.style_image {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 200px
+}
+
+#style_image {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.btn {
+  border-color: #ED6A5A;
+  background-color: #ED6A5A;
+  color: #ffffe6;
+
+}
+
+.btn-custom {
+  border-color: #ED6A5A;
+  background-color: #ED6A5A;
+  color: #ffffe6 !important;
+
+}
+
+.btn-custom:hover {
+  border-color: #ED6A5A;
+  background-color: #ED6A5A;
+  color: #ffffe6;
+
 }

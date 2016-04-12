@@ -1,50 +1,30 @@
 <div class="row">
 
   <div class = "col-md-12">
-    <center><img src="Logo.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
-    <p>Keep track of your expenses, income and help manage your money responsibly and effectively</p>
+    <center><%= image_tag("Logo2.png", :class => "style_image")%></center>
+    <h4>Keep track of your expenses, income</h4>
+    <h4>and manage your money responsibly and effectively</h4>
   </div>
 
 </div>
 
 <div class="container text-center">
-  <!-- <div class="row">
-    <div class="col-sm-12">
-      <div class="well well-sm">
-        <p><%= link_to "Compare Months", compare_new_path%>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="well well-sm">
-        <p><%= link_to "Trends", trend_new_path%>
-      </div>
-    </div>
-
-  </div> -->
-
-
   <div class="row">
     <div class="col-sm-3">
-      <center><img src="Budget.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
-      <!-- <p><%= link_to image_tag('Budget.png', class: "img-responsive"), budgets_display_path%></p> -->
-      <!-- <p><%= link_to image_tag("http://placehold.it/150x80?text=IMAGE", class: "img-responsive"), budgets_display_path%></p> -->
-      <p><%= link_to "Budget", budgets_display_path, class: "btn btn-default"%>
+      <center><%= link_to image_tag("Budget2.png", class: "img-responsive", id: "style_image"), budgets_display_path%></center>
+      <%= link_to "Budget", budgets_display_path, class: "btn btn-custom"%>
     </div>
     <div class="col-sm-3">
-      <center><img src="Calendar.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
-      <p><%= link_to "Calendar", calendar_new_path, class: "btn btn-default"%></p>
+      <center><%= link_to image_tag("Calendar2.png", class: "img-responsive", id: "style_image"), calendar_new_path%></center
+      <p><%= link_to "Calendar", calendar_new_path, class: "btn btn-custom"%></p>
     </div>
     <div class="col-sm-3">
-      <center><img src="Compare.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
-      <p><%= link_to "Compare", compare_new_path, class: "btn btn-default"%>
+      <center><%= link_to image_tag("Compare2.png", class: "img-responsive", id: "style_image"), compare_new_path%></center
+      <p><%= link_to "Compare", compare_new_path, class: "btn btn-custom"%></p>
     </div>
     <div class="col-sm-3">
-      <center><img src="Trend.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
-      <p><%= link_to "Trend", trend_new_path, class: "btn btn-default"%>
+      <center><%= link_to image_tag("Trend2.png", class: "img-responsive", id: "style_image"), trend_new_path%></center
+      <p><%= link_to "Trend", trend_new_path, class: "btn btn-custom"%></p>
     </div>
   </div>
 </div><br>
