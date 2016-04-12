@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w( Calendar3.png )
 Rails.application.config.assets.precompile += %w( Compare.png )
 Rails.application.config.assets.precompile += %w( Compare2.png )
 Rails.application.config.assets.precompile += %w( Compare3.png )
+Rails.application.config.assets.precompile += ['rollover.js', 'highcharts.js']
 
 
 # Add additional assets to the asset load path
