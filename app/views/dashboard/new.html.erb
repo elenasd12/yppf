@@ -8,7 +8,7 @@
 </div>
 
 <div class="container text-center">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-12">
       <div class="well well-sm">
         <p><%= link_to "Compare Months", compare_new_path%>
@@ -24,30 +24,27 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
 
   <div class="row">
-    <div class="col-sm-4">
-      <p><%= link_to image_tag("http://mediad.publicbroadcasting.net/p/wesa/files/201510/7932571974_0dc16cc081_o.jpg", class: "img-responsive"), budgets_display_path%></p>
+    <div class="col-sm-3">
+      <center><img src="Budget.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
+      <!-- <p><%= link_to image_tag('Budget.png', class: "img-responsive"), budgets_display_path%></p> -->
       <!-- <p><%= link_to image_tag("http://placehold.it/150x80?text=IMAGE", class: "img-responsive"), budgets_display_path%></p> -->
       <p><%= link_to "Budget", budgets_display_path, class: "btn btn-default"%>
     </div>
-    <div class="col-sm-4">
-      <%= link_to image_tag("http://www.tollestech.com/wp-content/uploads/2015/08/o-CALENDAR-facebook.jpg", class:"img-responsive"), calendar_new_path%>
-      <!-- <p><%= link_to image_tag("http://placehold.it/150x80?text=IMAGE", class:"img-responsive"), datas_add_path%></p> -->
+    <div class="col-sm-3">
+      <center><img src="Calendar.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
       <p><%= link_to "Calendar", calendar_new_path, class: "btn btn-default"%></p>
     </div>
-    <div class="col-sm-4">
-      <div class="well well-sm">
-       <p><%=link_to "Add Income", incomes_new_path%></p>
-      </div>
-      <div class="well well-sm">
-       <p><%=link_to "Manage Expenses", expense_references_path%></p>
-      </div>
-      <div class="well well-sm">
-       <p><%=link_to "Add Bill", bills_new_path%></p>
-      </div>
+    <div class="col-sm-3">
+      <center><img src="Compare.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
+      <p><%= link_to "Compare", compare_new_path, class: "btn btn-default"%>
+    </div>
+    <div class="col-sm-3">
+      <center><img src="Trend.png" style="width: auto; height: auto; max-width: 300px; max-height: 200px"></center>
+      <p><%= link_to "Trend", trend_new_path, class: "btn btn-default"%>
     </div>
   </div>
 </div><br>
