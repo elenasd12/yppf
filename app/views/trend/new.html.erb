@@ -79,7 +79,7 @@
       <label class="control-label">Compare spending for: </label>
       </div>
       <div class="col-md-3">
-      <%= select_tag(:categoryselect, options_for_select(@categories), class: "form-control", :onchange => ("$('#form').submit();")) %>
+      <%= select_tag(:categoryselect, options_for_select(@categories), :style => "min-width: 125px;", class: "form-control", :onchange => ("$('#form').submit();")) %>
       </div>
     </div>
     <%end%>
