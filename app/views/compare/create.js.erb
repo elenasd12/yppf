@@ -92,7 +92,7 @@ $(function () {
             text: 'Expense Comparison'
         },
         xAxis: {
-            categories: <%= @selectedtypes.to_json.html_safe %>
+            categories: []
         },
         yAxis: {
             title: {
@@ -103,12 +103,12 @@ $(function () {
         series: [{
             // months
             name: '<%= @month1name %>',
-            data: <%= @month1values.to_json.html_safe %>,
+            data: <%= @series1.to_json.html_safe %>,
             color: '#ED6A5A'
 
         }, {
             name: '<%= @month2name %>',
-            data: <%= @month2values.to_json.html_safe %>,
+            data: <%= @series2.to_json.html_safe %>,
             color: '#36c9c6'
         }]
     });
