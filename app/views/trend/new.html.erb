@@ -1,5 +1,7 @@
 <!-- Top 3 expenses -->
-<center><h1>Spending Trends over <%=Date.today.year%></h1></center>
+<!-- <h1>Spending Trends over <%=Date.today.year%></h1> -->
+
+<h1 id = "h1ex">Spending Trends</h1>
 
 <div class="row vertical-align">
   <div class="col-md-5">
@@ -67,26 +69,32 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2">
-    <%= form_tag(trend_barchart_path, method: "get", remote: true, role: "form", class: "form") do %>
-    <div class="form-group">
-      <label class="control-label">Category:</label>
-      <%= select_tag(:categoryselect, options_for_select(@categories), class: "form-control") %>
-    </div>
-    <%= submit_tag("Search", class: "btn btn-default" ) %>
-    <%end%>
+  <div class="col-md-4">
   </div>
-  <div class="col-md-10">
-    <!-- <% if !@months2.empty? %>
-      <div id="initial_results"> </div>
-      Initial RESULTS
-    <% end %> -->
-    <!-- <% if @months2.empty? %> -->
-      SEARCH RESULTS????
-      <div id="search_results"> </div>
-    <!-- <% end %> -->
+  <div class="col-md-4">
+    <div class="row">
+    <%= form_tag(trend_barchart_path, method: "get", remote: true, role: "form", class: "form", id: "form") do %>
+    <div class="form-group">
+      <div class="col-md-6">
+      <label class="control-label">Compare spending for: </label>
+      </div>
+      <div class="col-md-3">
+      <%= select_tag(:categoryselect, options_for_select(@categories), class: "form-control", :onchange => ("$('#form').submit();")) %>
+      </div>
+    </div>
+    <%end%>
+    </div>
+  </div>
+  <div class="col-md-4">
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="initial_results search_results"> </div>
+  <div>
+</div>
+
 
 <button onclick="goBack()">Back</button>
 
@@ -98,12 +106,13 @@ function goBack(){
 
 <script>
 $(function () {
-    $('#initial_results').highcharts({
+    $('.initial_results').highcharts({
         chart: {
+            backgroundColor: '#ffffe6',
             type: 'column'
         },
         title: {
-            text: 'Expense Comparison'
+            text: ''
         },
         xAxis: {
             categories: <%= @months2.to_json.html_safe %>
@@ -117,7 +126,8 @@ $(function () {
         series: [{
             // months
             name: '<%= @category_name2 %>',
-            data: <%= @values2.to_json.html_safe %>
+            data: <%= @values2.to_json.html_safe %>,
+            color: '#ED6A5A'
         }]
     });
 });
@@ -139,7 +149,9 @@ $(function () {
     }
     $('#container').highcharts({
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+            backgroundColor: '#ffffe6',
+            type: 'area'
         },
         title: {
             text: 'Spending'
@@ -169,8 +181,10 @@ $(function () {
                         y2: 1
                     },
                     stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        // [0, Highcharts.getOptions().colors[0]],
+                        // [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        [0, '#ED6A5A'],
+                        [1, '#fbe1de']
                     ]
                 },
                 marker: {
@@ -189,7 +203,8 @@ $(function () {
         series: [{
             type: 'area',
             name: 'Money',
-            data: touse
+            data: touse,
+            color: '#ED6A5A'
         }]
     });
 });

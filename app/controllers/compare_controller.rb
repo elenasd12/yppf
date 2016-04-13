@@ -2,7 +2,7 @@ class CompareController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month)
+    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month, :year)
     @months = []
     array.each { |a|
       e = [MONTHS[a.month]+' '+a.year.to_s, a.month]
@@ -38,7 +38,7 @@ class CompareController < ApplicationController
 
     # Bar chart
     # all the expense types for both months
-    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id)
+    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id, :id)
     @selectedtypes = []
     # values for these expenses for each month
     @month1values = []
