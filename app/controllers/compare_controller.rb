@@ -38,7 +38,7 @@ class CompareController < ApplicationController
 
     # Bar chart
     # all the expense types for both months
-    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id)
+    alltypes = Expense.where(:month => [@month1select, @month2select]).group(:expense_category_id, :id)
     @selectedtypes = []
     # values for these expenses for each month
     @month1values = []
