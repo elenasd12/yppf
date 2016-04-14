@@ -32,7 +32,7 @@ $(function () {
                     enabled: true,
                     format: '<b>{point.name}</b>',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#241563'
                     }
                 }
             }
@@ -49,6 +49,11 @@ $(function () {
 
 //<!-- Pie Chart for month 2 -->
 $(function () {
+    Highcharts.getOptions().plotOptions.pie.colors = (function () {
+        var colors = ['#e72760', '#36c9c6', '#fbbb4f', '#aa71de', '#ffff00', '#ed6a5a', '#90e86c', '#3a8fca', '#d071d9', '#432ba7']
+
+        return colors;
+    }());
     $('#pie2').highcharts({
         chart: {
             backgroundColor: '#ffffe6',
@@ -74,7 +79,7 @@ $(function () {
                     enabled: true,
                     format: '<b>{point.name}</b>',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#241563'
                     }
                 }
             }

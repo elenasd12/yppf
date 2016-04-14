@@ -7,7 +7,7 @@
   <div class="col-md-5">
     <div class = "panel panel-default">
       <div class = "panel-body">
-        <h4>Top 3 Expenses for <%=Date.today.year %> are:</h4>
+        <h4 id="h4ex">Top 3 Expenses for <%=Date.today.year %> are:</h4>
 
         <div class = "row">
           <%key = @x.keys[0]%>
@@ -162,7 +162,7 @@ $(function () {
             // months
             name: '<%= @category_name2 %>',
             data: <%= @values2.to_json.html_safe %>,
-            color: '#ED6A5A'
+            color: '#36c9c6'
         }]
     });
 });
