@@ -9,6 +9,8 @@ module ExpensesHelper
     end
   end
 
+
+
   def get_total_expenditure_message(month, year)
     if @expenses[0] == nil
       return "You have not uploaded sufficient data to make calculations for this month"
