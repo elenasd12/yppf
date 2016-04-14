@@ -45,3 +45,37 @@
   @extend .alert-info;
 }
 .field_with_errors { display: flex; }
+
+.bar-wrap {
+    position: relative;
+}
+.progress-marker {
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    background: black;
+    bottom: -5px;
+}
+.time-axis {
+    display: block;
+    float: left;
+    width: 100%;
+    /*margin: 0px 0 10px 0;*/
+}
+.time-spot {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.time-spot-begin {
+    display: block;
+    float: left;
+    width: 12.5%;
+}
+
+.time-spot-end {
+    display: block;
+    float: right;
+    width: 12.5%;
+}
