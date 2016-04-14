@@ -24,22 +24,29 @@ class TrendController < ApplicationController
 
     # attempting to make graph appear before search, but didn't work
 
-    # selected_category = @categories[0][1]
-    # @category_name = ExpenseCategory.find(selected_category).exp_name
-    # query = Expense.where(user_id: current_user.id).where(expense_category_id: selected_category).where(year: Date.today.year).group(:month).order(:month).sum(:actvalue)
-    #
-    # @months = []
-    # @values = []
-    # query.each { |y|
-    #   # months
-    #   @months.append(MONTHS[y[0]])
-    #   # actual value
-    #   @values.append(y[1].to_f)
-    # }
+    selected_category = @categories[0][1]
+    @category_name2 = ExpenseCategory.find(selected_category).exp_name
+    query = Expense.where(user_id: current_user.id).where(expense_category_id: selected_category).where(year: Date.today.year).group(:month).order(:month).sum(:actvalue)
+
+    @months2 = []
+    @values2 = []
+    query.each { |y|
+      # months
+      @months2.append(MONTHS[y[0]])
+      # actual value
+      @values2.append(y[1].to_f)
+    }
 
   end
 
   def barchart
+
+    @months2=[]
+
+    puts "******"
+    puts @months2.empty?
+    puts "******"
+
     selected_category = params[:categoryselect]
     @category_name = ExpenseCategory.find(selected_category).exp_name
     query = Expense.where(user_id: current_user.id).where(expense_category_id: selected_category).where(year: Date.today.year).group(:month).order(:month).sum(:actvalue)

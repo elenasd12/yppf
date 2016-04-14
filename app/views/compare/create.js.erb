@@ -9,6 +9,7 @@ function goBack(){
 $(function () {
     $('#pie1').highcharts({
         chart: {
+            backgroundColor: '#ffffe6',
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
@@ -47,6 +48,7 @@ $(function () {
 $(function () {
     $('#pie2').highcharts({
         chart: {
+            backgroundColor: '#ffffe6',
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
@@ -83,13 +85,14 @@ $(function () {
 $(function () {
     $('#bar').highcharts({
         chart: {
+            backgroundColor: '#ffffe6',
             type: 'column'
         },
         title: {
             text: 'Expense Comparison'
         },
         xAxis: {
-            categories: <%= @selectedtypes.to_json.html_safe %>
+            categories: []
         },
         yAxis: {
             title: {
@@ -100,10 +103,13 @@ $(function () {
         series: [{
             // months
             name: '<%= @month1name %>',
-            data: <%= @month1values.to_json.html_safe %>
+            data: <%= @series1.to_json.html_safe %>,
+            color: '#ED6A5A'
+
         }, {
             name: '<%= @month2name %>',
-            data: <%= @month2values.to_json.html_safe %>
+            data: <%= @series2.to_json.html_safe %>,
+            color: '#36c9c6'
         }]
     });
 });

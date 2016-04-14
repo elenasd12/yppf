@@ -1,6 +1,53 @@
 <h1><center>Calendar</center></h1>
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
 
-<%= month_calendar events: @bills do |date, bills| %>
+<script>
+$(document).ready(function() {
+  $('#calendar').fullCalendar({
+    contentHeight: 450,
+
+    events: [
+      <% @bills.each do |bill| %>
+      <% if (bill.expire_month <= Time.now.month) %>
+      {
+        title : <%= bill.amount %>,
+        start : "<%= "#{bill.year.to_s}-#{bill.month.to_s}-#{bill.day_month.to_s}" %>",
+        repeat : 'monthly',
+        allDay : true
+      },
+      <% end %>
+      <% end %>
+    ],
+    dayClick: function() {
+        alert('a day has been clicked!');
+    },
+  });
+
+
+})
+</script>
+
+<div id='calendar'></div>
+<table>
+<tbody>
+  <% @bills.each do |bill| %>
+    <tr>
+      <td><%= bill.amount %></td>
+      <td><%= bill.day_month %></td>
+      <td><%= bill.month %></td>
+      <td><%= bill.year %></td>
+      <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+      <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
+</tbody>
+</table>
+
+<!-- <%= month_calendar events: @bills do |date, bills| %>
   <%= date %>
 
   <% bills.each do |bill| %>
@@ -8,4 +55,4 @@
       <%= bill.amount %>
     </div>
   <% end %>
-<% end %>
+<% end %> -->

@@ -20,3 +20,5 @@
 
 
 //= require bootstrap/dropdown
+//= require moment
+//= require fullcalendar

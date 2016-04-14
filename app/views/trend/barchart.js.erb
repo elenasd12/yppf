@@ -1,13 +1,14 @@
-$('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
+$('.search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
 
 //<!--High Charts bar chart  -->
 $(function () {
     $('#bar').highcharts({
         chart: {
+            backgroundColor: '#ffffe6',
             type: 'column'
         },
         title: {
-            text: 'Expense Comparison'
+            text: ''
         },
         xAxis: {
             categories: <%= @months.to_json.html_safe %>
@@ -21,7 +22,8 @@ $(function () {
         series: [{
             // months
             name: '<%= @category_name %>',
-            data: <%= @values.to_json.html_safe %>
+            data: <%= @values.to_json.html_safe %>,
+            color: '#ED6A5A'
         }]
     });
 });
