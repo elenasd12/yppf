@@ -1,5 +1,25 @@
 <h1 id = "h1ex">Compare Months</h1>
 
+<div class="row">
+  <div class="col-md-12">
+  </div>
+</div>
+
+<% if @months.empty? %>
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+
+    <div class = "col-md-6">
+      <center> You do not have enough data to compare months. </center>
+    </div>
+
+    <div class="col-md-3">
+    </div>
+  </div>
+
+<% else %>
+
 <div class = row>
   <div class = "col-md-3">
   </div>
@@ -25,3 +45,17 @@
 <div class="row col-md-offset-1 col-md-11">
   <div id="search_results"> </div>
 </div>
+
+<% end %>
+
+<div class="row">
+  <h1> </h1>
+  <center><button onclick="goBack()">Back</button></center>
+</div>
+
+
+<script>
+function goBack(){
+  window.history.back();
+}
+</script>
