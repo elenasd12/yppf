@@ -109,18 +109,53 @@ $(function () {
     $('.initial_results').highcharts({
         chart: {
             backgroundColor: '#ffffe6',
-            type: 'column'
+            type: 'column',
+            style: {
+              color: "#241563"
+            }
+        },
+        legend: {
+          itemStyle: {
+            color: '#241563'
+          },
+          itemHoverStyle: {
+            color: '#241563'
+          }
         },
         title: {
-            text: ''
+            text: '',
+            style: {
+              color: "#241563"
+            }
         },
         xAxis: {
-            categories: <%= @months2.to_json.html_safe %>
+            categories: <%= @months2.to_json.html_safe %>,
+            // lineColor: "#241563",
+            tickColor: "#241563",
+            labels: {
+              style: {
+                color: "#241563"
+              }
+            },
+            title: {
+              style: {
+                color: "#241563"
+              }
+            }
         },
         yAxis: {
             title: {
-                text: 'Money Spent'
+                text: 'Money Spent',
+                style: {
+                  color: "#241563"
+                }
                 // y axis - how much money
+            },
+            // gridLineColor: "#241563",
+            labels: {
+              style: {
+                color: "#241563"
+              }
             }
         },
         series: [{
@@ -154,18 +189,43 @@ $(function () {
             type: 'area'
         },
         title: {
-            text: 'Spending'
+            text: 'Spending',
+            style: {
+              color: "#241563"
+            }
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
-                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+                    'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in',
+            style: {
+              color: "#241563"
+            }
         },
         xAxis: {
-            type: 'datetime'
+            type: 'datetime',
+            tickColor: "#241563",
+            labels: {
+              style: {
+                color: "#241563"
+              }
+            },
+            title: {
+              style: {
+                color: "#241563"
+              }
+            }
         },
         yAxis: {
             title: {
-                text: '$$$'
+                text: '$$$',
+                style: {
+                  color: "#241563"
+                }
+            },
+            labels: {
+              style: {
+                color: "#241563"
+              }
             }
         },
         legend: {
