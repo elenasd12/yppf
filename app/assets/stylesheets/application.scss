@@ -54,7 +54,7 @@
     height: 10px;
     position: absolute;
     background: black;
-    bottom: -5px;
+    top: -5px;
 }
 .time-axis {
     display: block;
@@ -71,11 +71,27 @@
 .time-spot-begin {
     display: block;
     float: left;
-    width: 12.5%;
+    width: .5%;
 }
 
 .time-spot-end {
     display: block;
     float: right;
     width: 12.5%;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.nopad{
+  padding: 0px;
 }
