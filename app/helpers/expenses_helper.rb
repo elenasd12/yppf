@@ -66,23 +66,12 @@ module ExpensesHelper
   end
 
   def get_sumAct(category)
-    sumAct = 0
-    @expenses.each do |expense|
-      if ExpenseCategory.find(expense.expense_category_id) == category
-        sumAct = sumAct + expense.actvalue
-      end
-    end
-    return sumAct
+    Expense.where(user_id: current_user.id,month: Date.today.month,year: Date.today.year,expense_category_id: category).sum(:actvalue)
+    
   end
 
   def get_sumProj(category)
-    sumProj = 0
-    @expenses.each do |expense|
-      if ExpenseCategory.find(expense.expense_category_id) == category
-        sumProj = sumProj + expense.projvalue
-      end
-    end
-    return sumProj
+    Expense.where(user_id: current_user.id,month: Date.today.month,year: Date.today.year,expense_category_id: category).sum(:projvalue)
   end
 
 end

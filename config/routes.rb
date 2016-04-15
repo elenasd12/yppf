@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users
-  resources :expenses
+  resources :expenses do
+    resources :expense_details
+  end
   resources :bills
   resources :incomes
 

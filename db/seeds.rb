@@ -62,17 +62,17 @@ ExpenseCategory.create(exp_name: 'Phone Bill', id: 11,exp_type: 2)
 #Expenses
 (0..9).each do |i|
   Expense.create(expense_reference_id: 1,user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 1, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 2, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 3, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 4, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 5, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 6, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 7, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 8, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 9, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 10, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 11, year: Date.today.year)
-  Expense.create(user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 12, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 2, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 3, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 4, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 5, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 6, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 7, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 8, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 9, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 10, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 11, year: Date.today.year)
+  Expense.create(expensename: "exp name",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 12, year: Date.today.year)
 end
 
 

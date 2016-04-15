@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'devise', '3.4.1'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass','~> 3.3.6'
 gem 'jquery-turbolinks'
 gem 'minitest-spec-rails'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
