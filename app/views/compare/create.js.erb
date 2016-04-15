@@ -13,10 +13,13 @@ $(function () {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            type: 'pie'
+            type: 'pie',
         },
         title: {
-            text: '<%=@month1name%>'
+            text: '<%=@month1name%>',
+            style: {
+              color: "#241563"
+            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>${point.y}</b>'
@@ -29,7 +32,7 @@ $(function () {
                     enabled: true,
                     format: '<b>{point.name}</b>',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#241563'
                     }
                 }
             }
@@ -46,6 +49,11 @@ $(function () {
 
 //<!-- Pie Chart for month 2 -->
 $(function () {
+    Highcharts.getOptions().plotOptions.pie.colors = (function () {
+        var colors = ['#e72760', '#36c9c6', '#fbbb4f', '#aa71de', '#ffff00', '#ed6a5a', '#90e86c', '#3a8fca', '#d071d9', '#432ba7']
+
+        return colors;
+    }());
     $('#pie2').highcharts({
         chart: {
             backgroundColor: '#ffffe6',
@@ -55,7 +63,10 @@ $(function () {
             type: 'pie'
         },
         title: {
-            text: '<%=@month2name%>'
+            text: '<%=@month2name%>',
+            style: {
+              color: "#241563"
+            }
         },
         tooltip: {
           pointFormat: '{series.name}: <b>${point.y}</b>'
@@ -68,7 +79,7 @@ $(function () {
                     enabled: true,
                     format: '<b>{point.name}</b>',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#241563'
                     }
                 }
             }
@@ -86,18 +97,52 @@ $(function () {
     $('#bar').highcharts({
         chart: {
             backgroundColor: '#ffffe6',
-            type: 'column'
+            type: 'column',
+            style: {
+              color: "#241563"
+            }
         },
         title: {
-            text: 'Expense Comparison'
+            text: 'Expense Comparison',
+            style: {
+              color: "#241563"
+            }
+        },
+        legend: {
+          itemStyle: {
+            color: '#241563'
+          },
+          itemHoverStyle: {
+            color: '#241563'
+          }
         },
         xAxis: {
-            categories: []
+            categories: [],
+            tickColor: "#241563",
+            labels: {
+              style: {
+                color: "#241563"
+              }
+            },
+            title: {
+              style: {
+                color: "#241563"
+              }
+            }
         },
         yAxis: {
             title: {
-                text: 'Money Spent'
+                text: 'Money Spent',
+                style: {
+                  color: "#241563"
+                }
                 // y axis - how much money
+            },
+            // gridLineColor: "#241563",
+            labels: {
+              style: {
+                color: "#241563"
+              }
             }
         },
         series: [{
