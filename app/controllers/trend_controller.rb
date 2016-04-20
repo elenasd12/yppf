@@ -23,7 +23,7 @@ class TrendController < ApplicationController
 
 
     # attempting to make graph appear before search, but didn't work
-
+    if !@categories.empty?
     selected_category = @categories[0][1]
     @category_name2 = ExpenseCategory.find(selected_category).exp_name
     query = Expense.where(user_id: current_user.id).where(expense_category_id: selected_category).where(year: Date.today.year).group(:month).order(:month).sum(:actvalue)
@@ -36,6 +36,7 @@ class TrendController < ApplicationController
       # actual value
       @values2.append(y[1].to_f)
     }
+    end
 
   end
 
