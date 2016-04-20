@@ -43,10 +43,6 @@ class TrendController < ApplicationController
 
     @months2=[]
 
-    puts "******"
-    puts @months2.empty?
-    puts "******"
-
     selected_category = params[:categoryselect]
     @category_name = ExpenseCategory.find(selected_category).exp_name
     query = Expense.where(user_id: current_user.id).where(expense_category_id: selected_category).where(year: Date.today.year).group(:month).order(:month).sum(:actvalue)
