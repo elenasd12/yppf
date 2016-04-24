@@ -18,9 +18,14 @@
 				<div class="col-xs-1 text-left nopad">
 					$0
 				</div>
+
+
+
 				<div class="col-xs-10 text-center nopad">
 					<a role="button" data-toggle="collapse" href="#collapse-<%= categories1.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= "#{categories1.exp_name}" %></a>
 				</div>
+
+
 				<div class="col-xs-1 text-right nopad">
 					$<%= "#{get_sumProj(categories1)}" %>
 				</div>
@@ -41,7 +46,7 @@
 			</div>
 			<div class="row">
 				<div class="collapse" id="collapse-<%= categories1.id%>">
-					<div class="panel panel-success">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title"><%= categories1.exp_name%> Details</h3>
 						</div>
@@ -99,9 +104,13 @@
                 <div class="col-xs-1 text-left nopad">
                     $0
                 </div>
+
+
                 <div class="col-xs-10 text-center nopad">
                     <a role="button" data-toggle="collapse" href="#collapse-<%= categories2.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= "#{categories2.exp_name}" %></a>
                 </div>
+
+
                 <div class="col-xs-1 text-right nopad">
                     $<%= get_sumProj(categories2) %>
                 </div>
@@ -122,9 +131,11 @@
             </div>
             <div class="row">
                 <div class="collapse" id="collapse-<%= categories2.id%>">
-                    
-                        
-                        <div class="well">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title"><%= categories2.exp_name%> Details</h3>
+                      </div>
+                      <div class="panel-body">
 
                             <%expenses_by_category(categories2.id).each do |expense|%>
                             <div class="row">
@@ -164,16 +175,18 @@
                             <%end%>
 
                         </div>
-                   
+
                 </div>
             </div>
         </div>
+      </div>
 		<% end %>
 	</div>
 </div>
 
 <% end %>
 
+<!-- Total Expenditure details -->
 <div class="col-md-12">
 	<div class="row">
 		<div class="col-xs-1 text-left nopad">
@@ -219,7 +232,7 @@
 			</div>
 			<div class="modal-body">
 				<div id="expense-detail-form">
-				    
+
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -247,10 +260,10 @@
 			type : "GET"
 		});
 	})
-	
+
 	$('#save-transaction').click(function() {
-	    
+
         $("#new_expense_detail").submit();
-        
+
     })
 </script>
