@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home' => 'home#new'
+
   get 'expense_categories/new'
 
   get 'expense_categories/create'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :expense_references
 
-  root 'dashboard#new'
+  root 'home#new'
   #root to: 'pages#index'
   #Expense Reference
 

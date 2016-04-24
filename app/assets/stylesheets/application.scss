@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require simple_calendar
+ *= require_tree .
+ *= require_self
  *= require jquery-ui
  *= require fullcalendar
  */

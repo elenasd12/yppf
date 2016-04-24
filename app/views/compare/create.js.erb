@@ -1,12 +1,23 @@
 
 $('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
 
-function goBack(){
-  window.history.back();
-}
+
 
 //<!-- Pie Chart for month 1 -->
 $(function () {
+  Highcharts.getOptions().plotOptions.pie.colors = (function () {
+      // var colors = ['#e72760', '#36c9c6', '#fbbb4f', '#aa71de', '#ffff00', '#ed6a5a', '#90e86c', '#60a0cc', '#cb72d3', '#7a61e4']
+      // var colors = ['#36C9C6', '#227F7E', '#45FFFB', '#11403F', '#3EE5E2', '#ED6A5A', '#7F3930', '#FF7261', '#401D18', '#E56757']
+      // var colors = ['#36C9C6', '#227F7E', '#45FFFB', '#11403F', '#3EE5E2']
+      var colors = ['#ed6a5a', '#eda35a', '#eded5a', '#a3ed5a', '#5aed7e', '#5aedc8', '#5ac8ed', '#5a7eed', '#7e5aed', '#ed5aa3']
+
+
+      // var colors = ['#f08475', '#86dfdd']
+
+
+
+      return colors;
+  }());
     $('#pie1').highcharts({
         chart: {
             backgroundColor: '#ffffe6',
@@ -50,7 +61,15 @@ $(function () {
 //<!-- Pie Chart for month 2 -->
 $(function () {
     Highcharts.getOptions().plotOptions.pie.colors = (function () {
-        var colors = ['#e72760', '#36c9c6', '#fbbb4f', '#aa71de', '#ffff00', '#ed6a5a', '#90e86c', '#3a8fca', '#d071d9', '#432ba7']
+        // var colors = ['#e72760', '#36c9c6', '#fbbb4f', '#aa71de', '#ffff00', '#ed6a5a', '#90e86c', '#60a0cc', '#cb72d3', '#7a61e4']
+        // var colors = ['#36C9C6', '#227F7E', '#45FFFB', '#11403F', '#3EE5E2', '#ED6A5A', '#7F3930', '#FF7261', '#401D18', '#E56757']
+        // var colors = ['#36C9C6', '#227F7E', '#45FFFB', '#11403F', '#3EE5E2']
+        var colors = ['#ed6a5a', '#eda35a', '#eded5a', '#a3ed5a', '#5aed7e', '#5aedc8', '#5ac8ed', '#5a7eed', '#7e5aed', '#ed5aa3']
+
+
+        // var colors = ['#f08475', '#86dfdd']
+
+
 
         return colors;
     }());
