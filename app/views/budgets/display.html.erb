@@ -246,38 +246,6 @@
 		</div>
 	</div>
 </div>
-<script>
-	$('#ExpenseDetailModal').on('show.bs.modal', function(event) {
-		var button = $(event.relatedTarget)// Button that triggered the modal
-		var expense_detail_url = button.data('url')// Extract info from data-* attributes
-		var expense_name = button.data('expname')
-		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-		var modal = $(this)
-		modal.find('.modal-title').text('New transaction for ' + expense_name)
-		$.ajax({
-			url : expense_detail_url,
-			type : "GET"
-		});
-	})
-
-	$('#save-transaction').click(function() {
-
-        $("#new_expense_detail").submit();
-
-    })
-</script>
-
-
-
-<!-- Triggers the update budget modal on first of month, currently set to today's date -->
-<script type="text/javascript">
-    $(window).load(function(){
-      if('<%= @get_day %>' == 27){
-        $('#myModal').modal('show');
-      }
-    });
-</script>
 
 
 
@@ -336,7 +304,7 @@
           </div>
           <div class="col-md-2 text-center nopad">
               <!-- <%= link_to 'Add', '/expense_references/new' %> -->
-              <a  data-toggle="modal" href="#ExpenseReferenceModal" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+              <a  data-toggle="modal" href="#ExpenseReferenceModal" data-url="<%=expense_references_allinone_new_path%>" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
               <!-- <a  data-toggle="modal" data-url="<%= "/expense_references/new2"%>" href="#ExpenseReferenceModal" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a> -->
             </div>
           <div class="col-md-3 text-center">
@@ -400,7 +368,7 @@
 				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 			</div>
 			<div class="modal-body">
-				<div>
+				<div id="allinone-expense-reference-form">
 
 
           <!-- This is where the expense-references form needs to be generated...somehow...with magic -->
@@ -428,7 +396,7 @@
 		var modal = $(this)
 		modal.find('.modal-title').text('New transaction')
 		$.ajax({
-			url : "/expense_references",
+			url : expense_detail_url,
 			type : "GET"
 		});
 	})
@@ -439,3 +407,37 @@
 
     })
 </script>
+
+<script>
+    $('#ExpenseDetailModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget)// Button that triggered the modal
+        var expense_detail_url = button.data('url')// Extract info from data-* attributes
+        var expense_name = button.data('expname')
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New transaction for ' + expense_name)
+        $.ajax({
+            url : expense_detail_url,
+            type : "GET"
+        });
+    })
+
+    $('#save-transaction').click(function() {
+
+        $("#new_expense_detail").submit();
+
+    })
+</script>
+
+
+
+<!-- Triggers the update budget modal on first of month, currently set to today's date -->
+<script type="text/javascript">
+    $(window).load(function(){
+      if('<%= @get_day %>' == 27){
+        $('#myModal').modal('show');
+      }
+    });
+</script>
+

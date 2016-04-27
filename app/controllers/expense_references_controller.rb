@@ -9,6 +9,9 @@ before_action :authenticate_user!
     @expense_refs_every=ExpenseReference.where(user_id: current_user.id,ref_type: 2).order(created_at: :desc)
     @destroy_warning_msg="All history associated with this expense will be removed. Are you sure?"
   end
+  def show
+    
+  end
 
   def edit
 
@@ -27,6 +30,13 @@ before_action :authenticate_user!
 
   def new
     @expense_ref = ExpenseReference.new
+  end
+  
+  def allinonenew
+    @expense_ref = ExpenseReference.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
