@@ -267,3 +267,175 @@
 
     })
 </script>
+
+
+
+<!-- Triggers the update budget modal on first of month, currently set to today's date -->
+<script type="text/javascript">
+    $(window).load(function(){
+      if('<%= @get_day %>' == 27){
+        $('#myModal').modal('show');
+      }
+    });
+</script>
+
+
+
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Test budget update</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Time to update your Budget for the month!</h4>
+      </div>
+      <div class="modal-body">
+
+
+
+
+        <div class="row">
+      		<div class="col-md-2 text-center nopad">
+            <b> Category </b>
+          </div>
+          <div class="col-md-2 text-center nopad">
+            <b> Suggestion </b>
+          </div>
+          <div class="col-md-2 text-center nopad">
+            <b> General Value </b>
+          </div>
+          <div class="col-md-2 text-center nopad">
+            <b> Detailed Value </b>
+          </div>
+          <div class="col-md-3 text-center nopad">
+            <b> List Details </b>
+          </div>
+        </div>
+        <% @expense_categories = ExpenseCategory.all %>
+        <% @expense_categories.each do |categories| %>
+        <div class="row">
+      		<div class="col-md-2 text-center nopad">
+            <%= categories.exp_name %>
+          </div>
+          <div class="col-md-2 text-center nopad">
+            <%= get_sumProj(categories) %>
+          </div>
+          <div class="col-md-2 text-center nopad">
+            <div class="col-md-9 text-center nopad">
+              <input type="decimal">
+            </div>
+            <div class="col-md-3 text-center nopad">
+              <%= link_to 'Add', '/expense_references/new' %>
+            </div>
+          </div>
+          <div class="col-md-2 text-center nopad">
+              <!-- <%= link_to 'Add', '/expense_references/new' %> -->
+              <a  data-toggle="modal" href="#ExpenseReferenceModal" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+              <!-- <a  data-toggle="modal" data-url="<%= "/expense_references/new2"%>" href="#ExpenseReferenceModal" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a> -->
+            </div>
+          <div class="col-md-3 text-center">
+            <a role="button" data-toggle="collapse" href="#collapse-2-<%= categories.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= "#{categories.exp_name}" %></a>
+            <div class="collapse" id="collapse-2-<%= categories.id%>">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+
+                        <%expenses_by_category(categories.id).each do |expense|%>
+                        <div class="row">
+                            <div class="col-md-8 nopad">
+                              <script>
+                              function myFunction() {
+                              if('<%= expense.expensename %>' == ''){
+                                document.write("General");
+                              }
+                              else{
+                                document.write("<%= expense.expensename%>");
+                              }}
+                              </script>
+                              <script>
+                              window.myFunction();
+                              </script>
+
+                            </div>
+                            <div class="col-md-1 text-right nopad">
+                                $<%= expense.projvalue %>
+                            </div>
+                            <div class="col-md-2 text-right"></div>
+                        </div>
+
+
+                        <%end%>
+
+                    </div>
+
+            </div>
+            </div>
+          </div>
+
+
+        </div>
+        <% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="ExpenseReferenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				<div>
+
+
+          <!-- This is where the expense-references form needs to be generated...somehow...with magic -->
+
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Close
+				</button>
+				<button type="button" id="save-transaction" class="btn btn-primary" data-dismiss="modal">
+					Save changes
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$('#ExpenseReferenceModal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget)// Button that triggered the modal
+		var expense_detail_url = button.data('url')// Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('New transaction')
+		$.ajax({
+			url : "/expense_references",
+			type : "GET"
+		});
+	})
+
+	$('#save-transaction').click(function() {
+
+        $("#new_expense_reference").submit();
+
+    })
+</script>

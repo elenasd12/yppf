@@ -9,7 +9,7 @@ before_action :authenticate_user!
     @expense_refs_every=ExpenseReference.where(user_id: current_user.id,ref_type: 2).order(created_at: :desc)
     @destroy_warning_msg="All history associated with this expense will be removed. Are you sure?"
   end
-  
+
   def edit
 
   end

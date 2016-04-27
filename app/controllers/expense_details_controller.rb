@@ -1,13 +1,13 @@
 class ExpenseDetailsController < ApplicationController
-  
+
   before_action :authenticate_user!
-  
+
   def new
-    
+
     @expense_detail = ExpenseDetail.new
     respond_to do |format|
       format.js
-    end    
+    end
   end
   def create
     @exp_detail = ExpenseDetail.new(expense_detail_params)
@@ -16,17 +16,17 @@ class ExpenseDetailsController < ApplicationController
     respond_to do |format|
       if @exp_detail.save
         @category_act_value=0
-        
-        format.js        
-            
+
+        format.js
+
       end
     end
   end
-  
+
   private
   def expense_detail_params
-    
-    puts params  
+
+    puts params
     params.require(:expense_detail).permit(:user_id, :expdet_date, :expdet_value, :expense_id,:expdet_description)
     end
 end
