@@ -39,6 +39,13 @@ before_action :authenticate_user!
     end
   end
 
+  def justgeneral
+    @expense_ref = ExpenseReference.new
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @expense_ref = ExpenseReference.new(expense_reference_params)
     @expense_ref.user_id=current_user.id

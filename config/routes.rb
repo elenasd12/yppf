@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :expense_references
   get 'expense_references/allinone/new' => 'expense_references#allinonenew'
+  get 'expense_references/justgeneral/new' => 'expense_references#justgeneral'
 
   root 'home#new'
   #root to: 'pages#index'
