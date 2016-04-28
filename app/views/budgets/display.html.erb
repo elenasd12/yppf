@@ -224,23 +224,23 @@
 <div class="modal fade" id="ExpenseDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header modal-header-custom">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel"><font color="white">Modal title</font></h4>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body modal-body-custom">
 				<div id="expense-detail-form">
 
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">
-					Close
-				</button>
-				<button type="button" id="save-transaction" class="btn btn-primary" data-dismiss="modal">
+        <button type="button" id="save-transaction" class="btn btn-primary" data-dismiss="modal">
 					Save changes
+				</button>
+				<button type="button" class="btn btn-black" data-dismiss="modal">
+					Close
 				</button>
 			</div>
 		</div>
@@ -259,11 +259,11 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header modal-header-custom">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Time to update your Budget for the month!</h4>
+        <h4 class="modal-title"><font color="white">Time to update your Budget for the month!</font></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-body-custom">
 
 
 
@@ -276,10 +276,10 @@
             <b> Suggestion </b>
           </div>
           <div class="col-md-2 text-center nopad">
-            <b> General Value </b>
+            <b> General Expense </b>
           </div>
           <div class="col-md-2 text-center nopad">
-            <b> Detailed Value </b>
+            <b> Specific Expenses </b>
           </div>
           <div class="col-md-3 text-center nopad">
             <b> List Details </b>
@@ -304,7 +304,7 @@
           </div>
           <div class="col-md-2 text-center nopad">
               <!-- <%= link_to 'Add', '/expense_references/new' %> -->
-              <a  data-toggle="modal" href="#ExpenseReferenceModal" data-url="<%=expense_references_allinone_new_path%>" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+              <a  data-toggle="modal" href="#ExpenseReferenceModal" data-url="<%=expense_references_allinone_new_path%>" aria-hidden="true">Add</a>
               <!-- <a  data-toggle="modal" data-url="<%= "/expense_references/new2"%>" href="#ExpenseReferenceModal" aria-hidden="true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a> -->
             </div>
           <div class="col-md-3 text-center">
@@ -351,7 +351,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -361,28 +361,16 @@
 <div class="modal fade" id="ExpenseReferenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header modal-header-custom">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel"><font color="white">Modal title</font></h4>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body modal-body-custom">
 				<div id="allinone-expense-reference-form">
 
-
-          <!-- This is where the expense-references form needs to be generated...somehow...with magic -->
-
-
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">
-					Close
-				</button>
-				<button type="button" id="save-transaction" class="btn btn-primary" data-dismiss="modal">
-					Save changes
-				</button>
 			</div>
 		</div>
 	</div>
@@ -440,4 +428,3 @@
       }
     });
 </script>
-

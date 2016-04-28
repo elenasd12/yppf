@@ -124,9 +124,29 @@
   background: #ffffe6;
 }
 
+.modal-header-custom{
+  background-color: #ED6A5A;
+}
+
+.modal-body-custom{
+  background-color: #ffffe6;
+}
+
+.modal-footer-custom{
+  background-color: #ffffe6;
+}
+
 .pad {
     // padding-top: 50px;
     padding-right: 30px;
     // padding-bottom: 50px;
     padding-left: 30px;
+}
+
+.btn-black{
+  background: red;
+}
+
+.btn-primary{
+  border: 0;
 }

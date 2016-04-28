@@ -10,7 +10,7 @@ before_action :authenticate_user!
     @destroy_warning_msg="All history associated with this expense will be removed. Are you sure?"
   end
   def show
-    
+
   end
 
   def edit
@@ -31,7 +31,7 @@ before_action :authenticate_user!
   def new
     @expense_ref = ExpenseReference.new
   end
-  
+
   def allinonenew
     @expense_ref = ExpenseReference.new
     respond_to do |format|
@@ -46,10 +46,8 @@ before_action :authenticate_user!
 
     respond_to do |format|
       if @expense_ref.save
-        format.html { redirect_to expense_references_path, notice: 'Expense was successfully created.' }
 
-      else
-        format.html { render :new }
+        format.js
 
       end
     end
