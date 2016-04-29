@@ -29,23 +29,9 @@ class Expense < ActiveRecord::Base
     "#{MONTHS[month]} #{year}"
   end
 
-  def projvalue_sum(month, year)
-    @expenses = Expense.where(month:month).where(year:year)
-    projected = 0
-    @expenses.each do |expense|
-      projected = projected + expense.projvalue
-    end
-    return projected
-  end
+ 
 
-  def actvalue_sum(month, year)
-    @expenses = Expense.where(month:month).where(year:year)
-    actual = 0
-    @expenses.each do |expense|
-      actual = actual + expense.actvalue
-    end
-    return actual
-  end
+ 
 
 def expense_category_name
   ExpenseCategory.find(expense_category_id).exp_name

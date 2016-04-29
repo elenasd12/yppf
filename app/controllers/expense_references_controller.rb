@@ -70,6 +70,31 @@ before_action :authenticate_user!
   def expense_category_options
     ExpenseCategory.where("(user_id="+current_user.id.to_s+" or user_id is null) and exp_type=1").order(:exp_name).pluck(:exp_name,:id)
   end
+  
+  def newone
+    
+    @one_exp_ref = ExpenseReference.new
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def createone
+    @one_exp_ref = ExpenseReference.new(expense_reference_params)
+    @one_exp_ref.user_id=current_user.id
+    @one_exp_ref.ref_status=1 #active
+    @one_exp_ref.ref_type=1 #once
+    @one_exp_ref.ref_month=Date.today.month
+    @one_exp_ref.ref_year=Date.today.year
+    respond_to do |format|
+      if @one_exp_ref.save
+
+        format.js
+
+      end
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expense_ref

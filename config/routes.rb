@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   end
   resources :bills
   resources :incomes
-
+  post 'expense_references/createone' => 'expense_references#createone'
+  get 'expense_references/newone' => 'expense_references#newone'
   resources :expense_references
   get 'expense_references/allinone/new' => 'expense_references#allinonenew'
   get 'expense_references/justgeneral/new' => 'expense_references#justgeneral'
+  
+  
 
   root 'home#new'
   #root to: 'pages#index'

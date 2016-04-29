@@ -26,7 +26,7 @@ class ExpenseDetailsController < ApplicationController
   private
   def expense_detail_params
 
-    puts params
+    
     params.require(:expense_detail).permit(:user_id, :expdet_date, :expdet_value, :expense_id,:expdet_description)
     end
 end

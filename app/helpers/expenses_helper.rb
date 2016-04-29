@@ -15,7 +15,7 @@ module ExpensesHelper
     if @expenses[0] == nil
       return "You have not uploaded sufficient data to make calculations for this month"
     else
-      projected = @expenses[0].projvalue_sum(month, year)
+      projected = projvalue_sum(month, year)
       if projected == 0
         return "You have not uploaded sufficient data to make calculations for this month"
       else
@@ -23,26 +23,31 @@ module ExpensesHelper
       end
     end
   end
-
-  def get_total_expenditure(month, year)
-    if @expenses[0] == nil
-      return 0
-    else
-      projected = @expenses[0].projvalue_sum(month, year)
-      actual = @expenses[0].actvalue_sum(month, year)
-      if projected == 0
-        return 0
-      else
-        return ((actual/projected) * 100).to_i
-      end
-    end
+  
+  def get_sumProj(category)
+    Expense.where(user_id: current_user.id,month: Date.today.month,year: Date.today.year,expense_category_id: category).sum(:projvalue)
   end
 
+  def get_total_expenditure(month,year)
+      projected = projvalue_sum(month, year)
+      if projected == 0
+        return 0
+      end
+      actual = actvalue_sum(month, year)
+      return ((actual/projected) * 100).to_i 
+  end
+  
+  def projvalue_sum(month, year)
+   Expense.where(user_id: current_user.id,month: month,year: year).sum(:projvalue)
+  end
+ def actvalue_sum(month, year)
+    Expense.where(user_id: current_user.id,month: month,year: year).sum(:actvalue)
+ end
   def get_actvalue(month, year)
     if @expenses[0] == nil
       return 0
     else
-      return @expenses[0].actvalue_sum(month,year)
+      return actvalue_sum(month,year)
     end
   end
 
@@ -51,7 +56,7 @@ module ExpensesHelper
     if @expenses[0] == nil
       return 0
     else
-      return @expenses[0].projvalue_sum(month,year)
+      return projvalue_sum(month,year)
     end
   end
 
@@ -70,8 +75,5 @@ module ExpensesHelper
     
   end
 
-  def get_sumProj(category)
-    Expense.where(user_id: current_user.id,month: Date.today.month,year: Date.today.year,expense_category_id: category).sum(:projvalue)
-  end
-
+  
 end

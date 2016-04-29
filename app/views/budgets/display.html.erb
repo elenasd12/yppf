@@ -1,10 +1,23 @@
 <%=render(partial: 'title')%>
 <br/>
-<%=render(partial: 'toolbar')%>
+<div class="panel panel-warning">
+    <div class="panel-heading"><%=render(partial: 'toolbar')%></div>
+    <div class="row">
+    <div class="col-lg-1">
+        </div>
+    <div class="col-lg-10">
+    
+
 <%=render(partial: 'incomes')%>
 <br/>
+<div id="expense-facet">
 <%=render(partial: 'expenses')%>
+</div>
 <br/>
+</div>
+<div class="col-lg-1"/>
+</div>
+</div>
 <%=render(partial: 'allinone')%>
 
 
