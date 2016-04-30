@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :expense_details
   end
   resources :bills
+  get 'bills/cal/new' => 'bills#calnew'
   resources :incomes
   post 'expense_references/createone' => 'expense_references#createone'
   get 'expense_references/newone' => 'expense_references#newone'
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   get 'expense_references/allinone/new' => 'expense_references#allinonenew'
   get 'expense_references/justgeneral/new' => 'expense_references#justgeneral'
   post 'expense_references/create' => 'expense_references#create'
+
 
   root 'home#new'
   #root to: 'pages#index'
