@@ -11,3 +11,8 @@ $("#expense-details-table-<%=@exp.id%>").pageMe({pagerSelector:"#expense-details
 
 $('#expense-instance-badge-<%=@exp.id%>').html("<%= @exp.expense_details.size%>");
 
+$('#expenditure-message').html("<%= get_total_expenditure_message(Date.today.month, Date.today.year)%>");
+
+$('#progress-bar-expenditure').prop('aria-valuenow', '<%= get_actvalue(Date.today.month, Date.today.year)%>');
+$('#progress-bar-expenditure').prop('style', 'width: <%= get_total_expenditure(Date.today.month, Date.today.year)%>%');
+

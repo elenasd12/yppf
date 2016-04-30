@@ -12,14 +12,15 @@ module ExpensesHelper
 
 
   def get_total_expenditure_message(month, year)
-    if @expenses[0] == nil
+    exp=Expense.where(user_id: current_user.id,month: month,year: year)
+    if exp.size == 0
       return "You have not uploaded sufficient data to make calculations for this month"
     else
       projected = projvalue_sum(month, year)
       if projected == 0
         return "You have not uploaded sufficient data to make calculations for this month"
       else
-        return "Total Expenditure - #{get_total_expenditure(Date.today.month, Date.today.year)}% of monthly budget used"
+        return "Total Expenditure - #{get_total_expenditure(month, year)}% of monthly budget used"
       end
     end
   end
@@ -44,20 +45,16 @@ module ExpensesHelper
     Expense.where(user_id: current_user.id,month: month,year: year).sum(:actvalue)
  end
   def get_actvalue(month, year)
-    if @expenses[0] == nil
-      return 0
-    else
+   
       return actvalue_sum(month,year)
-    end
+    
   end
 
 
   def get_projvalue(month, year)
-    if @expenses[0] == nil
-      return 0
-    else
+    
       return projvalue_sum(month,year)
-    end
+    
   end
 
   def get_percentage(category)
