@@ -10,7 +10,6 @@ module ExpensesHelper
   end
 
 
-
   def get_total_expenditure_message(month, year)
     exp=Expense.where(user_id: current_user.id,month: month,year: year)
     if exp.size == 0
