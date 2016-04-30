@@ -20,6 +20,8 @@ Listofvalue.delete_all
 Listofvalue.reset_pk_sequence
 ExpenseReference.delete_all
 ExpenseReference.reset_pk_sequence
+ExpenseDetail.delete_all
+ExpenseDetail.reset_pk_sequence
 
 MONTHS = [0, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 TYPE = ['Rent', 'Electric', 'Heat', 'TV', 'Internet', 'Groceries', 'Eating Out', 'Entertainment', 'Clothing', 'Transportation']

@@ -87,6 +87,7 @@ before_action :authenticate_user!
     @one_exp_ref.ref_type=1 #once
     @one_exp_ref.ref_month=Date.today.month
     @one_exp_ref.ref_year=Date.today.year
+    @is_new_category=Expense.where(user_id: @one_exp_ref.user_id,month:@one_exp_ref.ref_month,year:@one_exp_ref.ref_year,expense_category_id:@one_exp_ref.expense_category_id).size==0
     respond_to do |format|
       if @one_exp_ref.save
 

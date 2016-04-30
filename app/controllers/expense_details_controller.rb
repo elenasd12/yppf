@@ -12,6 +12,7 @@ class ExpenseDetailsController < ApplicationController
   def create
     @exp_detail = ExpenseDetail.new(expense_detail_params)
     @exp_detail.expense_id=params["expense_id"]
+    @exp_detail.user_id=current_user.id
     @exp=@exp_detail.expense
     respond_to do |format|
       if @exp_detail.save

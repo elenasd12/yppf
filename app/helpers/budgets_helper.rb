@@ -23,4 +23,5 @@ module BudgetsHelper
     Expense.where(user_id: current_user.id,month:Date.today.month,year:Date.today.year,expense_category_id: category_id).size
 
   end
-end
+  
+  end

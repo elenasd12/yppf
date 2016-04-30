@@ -1,3 +1,7 @@
-
+<% if @is_new_category%>
 $('#expense-facet').html("<%= escape_javascript (render(partial: '/budgets/expenses')) %>");
+<%else%>
+$('#expense-instance-collapse-<%=@one_exp_ref.expense_category_id%>').html("<%= escape_javascript (render(partial: '/budgets/expense_instance',locals: { category: categories2 })) %>");
+ 
+<%end%>
 
