@@ -73,14 +73,14 @@
           </div>
           <div class="col-md-4 text-center nopad">
             <div class="col-md-12 text-center nopad">
-              <form action="new_expense_reference_path" method="post" remote="true">
+              <form action="/expense_references/create" method="post" remote="true">
                 <input type="text" id="ref_name" size="11">
                 <input type="integer" id="ref_value" size="11">
                 <input type="hidden" id="ref_type" value="1">
                 <input type="hidden" id="ref_month" value="<%= Date.today.month%>">
                 <input type="hidden" id="ref_year" value="<%= Date.today.year%>">
                 <input type="hidden" id="expense_category_id" value="<%= categories.id %>">
-                <input type="submit" id="foobar" value="Add">
+                <input type="submit" value="Add">
               </form>
             </div>
           </div>
