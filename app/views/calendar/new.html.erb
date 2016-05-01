@@ -13,7 +13,8 @@ $(document).ready(function() {
       <% @bills.each do |bill| %>
       <% if (bill.expire_month <= Time.now.month) %>
       {
-        title : <%= bill.amount %>,
+        title : "Bill Due",
+        data : <%= bill.amount %>,
         start : "<%= "#{bill.year.to_s}-#{bill.month.to_s}-#{bill.day_month.to_s}" %>",
         repeat : 'monthly',
         allDay : true
@@ -22,37 +23,124 @@ $(document).ready(function() {
       <% end %>
     ],
     dayClick: function() {
-        alert('a day has been clicked!');
+    $('#fullCalModal').modal();
     },
+    eventRender: function (event, element) {
+        element.attr('href', 'javascript:void(0);');
+        element.click(function() {
+            $("#value").html(event.data);
+            $("#duedate").html(moment(event.start).format('MMM Do h:mm A'));
+            $("#eventInfo").html(event.description);
+            $("#eventLink").attr('href', event.url);
+            $("#eventContent").dialog({ modal: true, title: event.title, width:350});
+        });
+    }
   });
 
 
 })
 </script>
 
+<div id="eventContent" title="Event Details" style="display:none;">
+    Bill Value: $<span id="value"></span><br>
+    Due Date: <span id="duedate"></span><br><br>
+    <p id="eventInfo"></p>
+    <p><strong><a id="eventLink" href="/bills" target="_blank">Pay Bill</a></strong></p>
+</div>
+
 <div id='calendar'></div>
-<table>
-<tbody>
-  <% @bills.each do |bill| %>
-    <tr>
-      <td><%= bill.amount %></td>
-      <td><%= bill.day_month %></td>
-      <td><%= bill.month %></td>
-      <td><%= bill.year %></td>
-      <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-      <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
 
-</tbody>
-</table>
+<!-- <div id="bootstrapModalFullCalendar"></div> -->
 
-<!-- <%= month_calendar events: @bills do |date, bills| %>
-  <%= date %>
+<div class="modal fade" id="fullCalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-header-custom">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><font color="#ffffe6">Modal title</font></h4>
+            </div>
+            <div class="modal-body modal-body-custom">
+              <div id="cal-bill-form">
 
-  <% bills.each do |bill| %>
-    <div>
-      <%= bill.amount %>
+              </div>
+            </div>
+        </div>
     </div>
-  <% end %>
-<% end %> -->
+</div>
+
+
+<script>
+    $('#fullCalModal').on('show.bs.modal', function(event) {
+        // var button = $(event.relatedTarget)// Button that triggered the modal
+
+        // button.data('url')// Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New Bill')
+        $.ajax({
+            url : "<%=bills_cal_new_path%>",
+            type : "GET"
+        });
+    })
+
+    $('#save-transaction').click(function() {
+
+        $("#new_bill").submit();
+
+    })
+</script>
+
+<!-- <div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <script>
+$(document).ready(function() {
+    $('#bootstrapModalFullCalendar').fullCalendar({
+      events: [
+        <% @bills.each do |bill| %>
+        <% if (bill.expire_month <= Time.now.month) %>
+        {
+          title : "Bill Due",
+          data : <%= bill.amount %>,
+          start : "<%= "#{bill.year.to_s}-#{bill.month.to_s}-#{bill.day_month.to_s}" %>",
+          repeat : 'monthly',
+          allDay : true
+        },
+        <% end %>
+        <% end %>
+      ],
+        header: {
+            left: '',
+            center: 'prev title next',
+            right: ''
+        },
+        dayClick: function() {
+          $('#fullCalModal').modal();
+        },
+        eventClick:  function(event, jsEvent, view) {
+            $('#modalTitle').html(event.title);
+            $('#modalBody').html(event.description);
+            $('#eventUrl').attr('href',event.url);
+            $('#fullCalModal').modal();
+        }
+    });
+});
+</script> -->

@@ -48,11 +48,11 @@ end
 ExpenseReference.create(ref_name: 'its just a name',id: i+1,user_id: 1, ref_value: Faker::Commerce.price,ref_type: (i%2)+1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1+i)
 end
 
-# 5.times do
-#   # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
-#   Bill.create(day_month: Faker::Number.number(2), month: Date.today.month, year: Date.today.year, user_id: 1)
-#
-# end
+5.times do
+  # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
+  Bill.create(day_month: Faker::Number.number(2), month: Date.today.month, year: Date.today.year, user_id: 1)
+
+end
 
 
 #Expense Categories
