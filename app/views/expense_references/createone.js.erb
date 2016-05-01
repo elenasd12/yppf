@@ -1,5 +1,6 @@
 <% if @is_new_category%>
 $('#expense-facet').html("<%= escape_javascript (render(partial: '/budgets/expenses')) %>");
+
 <%else%>
 $('#expense-instance-collapse-<%=@one_exp_ref.expense_category_id%>').html("<%= escape_javascript (render(partial: '/budgets/expense_instance',locals: { category: ExpenseCategory.find(@one_exp_ref.expense_category_id) })) %>");
 
@@ -7,7 +8,7 @@ $('#progress-bar-cat-<%=@one_exp_ref.expense_category_id%>').prop('class', 'prog
 $('#progress-bar-cat-<%=@one_exp_ref.expense_category_id%>').prop('aria-valuenow', '<%= get_sumAct(@one_exp_ref.expense_category_id)%>');
 $('#progress-bar-cat-<%=@one_exp_ref.expense_category_id%>').prop('style', 'width: <%=get_percentage(@one_exp_ref.expense_category_id) * 100%>%');
 
-$('#expense-category-badge-<%=@one_exp_ref.expense_category_id%>').html("<%= expenses_size_by_category(@one_exp_ref.expense_category_id)%>"); 
+
 $('#sum-proj-category-<%=@one_exp_ref.expense_category_id%>').html("<%= get_sumProj(@one_exp_ref.expense_category_id)%>");
 
 $('#expenditure-message').html("<%= get_total_expenditure_message(Date.today.month, Date.today.year)%>");
@@ -18,4 +19,4 @@ $('#progress-bar-expenditure').prop('style', 'width: <%= get_total_expenditure(D
 
  
 <%end%>
-
+$('#expense-category-badge-<%=@one_exp_ref.expense_category_id%>').updateMyNumber(); 

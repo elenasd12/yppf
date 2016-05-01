@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-xs-10 text-center nopad">
-                    <a role="button" data-toggle="collapse" href="#expense-instance-collapse-<%= categories1.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= "#{categories1.exp_name}" %></a> <span class="badge" id="expense-category-badge-<%=categories1.id%>"><%=expenses_size_by_category(categories1.id)%></span>
+                    <a role="button" onclick="clearBadge('expense-category-badge-<%=categories1.id%>');" data-toggle="collapse" href="#expense-instance-collapse-<%= categories1.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= "#{categories1.exp_name}" %></a> <span class="badge" id="expense-category-badge-<%=categories1.id%>"></span>
                 </div>
 
 
@@ -54,7 +54,7 @@
 
 
                 <div class="col-xs-10 text-center nopad">
-                    <a role="button" data-toggle="collapse" href="#expense-instance-collapse-<%= categories2.id%>" aria-expanded="false" aria-controls="collapseExample"><%= "#{categories2.exp_name}" %></a> <span class="badge" id="expense-category-badge-<%=categories2.id%>"><%=expenses_size_by_category(categories2.id)%></span>
+                    <a onclick="clearBadge('expense-category-badge-<%=categories2.id%>');" role="button" data-toggle="collapse" href="#expense-instance-collapse-<%= categories2.id%>" aria-expanded="false" aria-controls="collapseExample"><%= "#{categories2.exp_name}" %></a> <span class="badge" id="expense-category-badge-<%=categories2.id%>"></span>
                 </div>
 
 
@@ -330,6 +330,29 @@ $(".expense-instance-name").click(function() {
        
     })
 
+$.fn.updateMyNumber = function(){
+    var badge=jQuery(this);
+    var cat_badge=badge.text();
 
+if (cat_badge=="")
+{
+   
+var num=1;
+}else
+{
+    
+   var num=parseInt(cat_badge)+1;
+   
+}
+badge.html(num);  
+badge.prop('style','opacity: 1')
+};
 
+function clearBadge(badgeId) {
+   var badge=document.getElementById(badgeId); 
+   var s=badge.style;
+   s.opacity = 1;
+    (function fade() {(s.opacity-=.05)<.05?badge.innerHTML="":setTimeout(fade,40)})();
+    
+};
 </script>

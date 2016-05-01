@@ -10,7 +10,7 @@
 					$0
 				</div>
 				<div class="col-md-8 text-center nopad">
-				     <a class="expense-instance-name" role="button"  data-expenseid="<%=expense.id%>" data-toggle="collapse" href="#expense-details-collapse-<%= expense.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= expense.expensename%></a> <span class="badge" id="expense-instance-badge-<%=expense.id%>"><%=expense.expense_details.size%></span>
+				     <a class="expense-instance-name" onclick="clearBadge('expense-instance-badge-<%=expense.id%>');" role="button"  data-expenseid="<%=expense.id%>" data-toggle="collapse" href="#expense-details-collapse-<%= expense.id%>" aria-expanded="false" aria-controls="collapseExample"> <%= expense.expensename%></a> <span class="badge" id="expense-instance-badge-<%=expense.id%>"></span>
 					
 				</div>
 				<div class="col-md-1 text-right nopad">
