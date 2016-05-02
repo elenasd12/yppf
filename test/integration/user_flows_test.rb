@@ -10,7 +10,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     get "/users/sign_in"
     assert_response :success
  
-    post_via_redirect "/users/sign_in", :user => { :email => 'yppf2016@gmail.com', :password => 'brandeis16'}
+    post_via_redirect "/users/sign_in", :user => { :email => 'samtheman@yppf.com', :password => 'brandeis16'}
     assert_equal '/', path
     assert_equal 'Signed in successfully.', flash.first[1]
  
