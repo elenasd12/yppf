@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
+# Background Processing => Sidekiq
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
@@ -96,17 +96,27 @@ ExpenseReference.create(ref_name: 'Casual Cloths',id: 33,user_id: 1, ref_value: 
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
 
   exp1.each do |exp|
-  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 1),expdet_value: rand(5..30),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
+  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(5..30),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
   end
 end
 #(0..9).each do |i|
 #ExpenseReference.create(ref_name: 'its just a name',id: i+1,user_id: 1, ref_value: Faker::Commerce.price,ref_type: (i%2)+1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1+i)
 #end
 
-5.times do
+(1..5).each do |i|
   # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
-  Bill.create(day_month: Faker::Number.number(2), month: Date.today.month, year: Date.today.year, user_id: 1)
-
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 3, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+ 
+end
+(6..10).each do |i|
+  # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 4, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+  
+end
+(11..15).each do |i|
+  # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 5, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+  
 end
 
 
