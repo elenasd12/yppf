@@ -9,7 +9,7 @@ $('#progress-bar-cat-<%=@exp.expense_category_id%>').prop('style', 'width: <%=ge
 $('#expense-details-collapse-<%=@exp.id%>').html("<%= escape_javascript (render(partial: '/budgets/expense_details',locals: { expense: @exp })) %>");
 $("#expense-details-table-<%=@exp.id%>").pageMe({pagerSelector:"#expense-details-pager-<%=@exp.id%>",showPrevNext:true,hidePageNumbers:false,perPage:4,expenseid:<%=@exp.id%>});
 
-$('#expense-instance-badge-<%=@exp.id%>').html("<%= @exp.expense_details.size%>");
+$('#expense-instance-badge-<%=@exp.id%>').updateMyNumber();
 
 $('#expenditure-message').html("<%= get_total_expenditure_message(Date.today.month, Date.today.year)%>");
 
