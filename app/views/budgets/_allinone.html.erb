@@ -182,7 +182,7 @@
 <!-- Triggers the update budget modal on first of month, currently set to today's date -->
 <script type="text/javascript">
     $(window).load(function(){
-      if('<%= @get_day %>' == 30){
+      if('<%= @get_day %>' == 1){
         $('#myModal').modal('show');
       }
     });
