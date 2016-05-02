@@ -96,7 +96,7 @@ ExpenseReference.create(ref_name: 'Casual Cloths',id: 33,user_id: 1, ref_value: 
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
   
   exp1.each do |exp|
-  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 1),expdet_value: rand(5..30),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
+  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(5..30),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
   end
 end
 #(0..9).each do |i|
