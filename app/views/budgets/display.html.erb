@@ -1,22 +1,72 @@
 <%=render(partial: 'title')%>
 <br/>
 <div class="panel panel-plain">
-    <div class="panel-heading"><%=render(partial: 'toolbar')%></div>
+    <div class="panel-heading"><%=render(partial: 'toolbar')%>
+    </div>
     <div class="row">
-    <div class="col-lg-1">
-        </div>
-    <div class="col-lg-10">
+      <div class="col-lg-1">
+      </div>
+      <div class="col-lg-10">
 
 
-<%=render(partial: 'incomes')%>
-<br/>
-<div id="expense-facet">
-<%=render(partial: 'expenses')%>
-</div>
-<br/>
-</div>
-<div class="col-lg-1">
+        <%=render(partial: 'incomes')%>
+        <br/>
+        <div id="expense-facet">
+          <%=render(partial: 'expenses')%>
         </div>
-</div>
+        <br/>
+      </div>
+      <div class="col-lg-1">
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modal-header-custom">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><font color="#ffffe6">Time to update your Budget for the month!</font></h4>
+      </div>
+      <div class="modal-body modal-body-custom">
+        <div id="allinone-facet">
 <%=render(partial: 'allinone')%>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="ExpenseReferenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-header-custom">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><font color="#ffffe6">Modal title</font></h4>
+            </div>
+            <div class="modal-body modal-body-custom">
+                <div id="allinone-expense-reference-form">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+        <button type="button" id="save-allinone" class="btn btn-primary" data-dismiss="modal">
+                    Save changes
+                </button>
+                <button type="button" class="btn btn-black" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <button type="button" class="btn btn-temp btn-sm" data-toggle="modal" data-target="#myModal">Test budget update</button>
