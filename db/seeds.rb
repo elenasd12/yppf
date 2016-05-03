@@ -53,7 +53,7 @@ ExpenseCategory.create(exp_name: 'Phone Bill', id: 11,exp_type: 2)
 #Rent
 ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1)
 ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 1)
-ExpenseReference.create(ref_name: 'Home Rent',id: 3,user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 1)
+ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 1)
 
 #Electric
 ExpenseReference.create(ref_name: 'Home Eversource',user_id: 1, ref_value: 40,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 2)
