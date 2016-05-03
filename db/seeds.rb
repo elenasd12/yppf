@@ -92,6 +92,7 @@ ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 60,ref_
 ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
 ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 55,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
 
+
 (1..33).each do |i|
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
 
