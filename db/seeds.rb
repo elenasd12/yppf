@@ -51,46 +51,46 @@ ExpenseCategory.create(exp_name: 'Phone Bill', id: 11,exp_type: 2)
 #Expense Reference
 #ref_type 1=Once, 2=Every Month
 #Rent
-ExpenseReference.create(ref_name: 'Home Rent',id: 1,user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1)
-ExpenseReference.create(ref_name: 'Home Rent',id: 2,user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 1)
+ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1)
+ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 1)
 ExpenseReference.create(ref_name: 'Home Rent',id: 3,user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 1)
 
 #Electric
-ExpenseReference.create(ref_name: 'Home Eversource',id: 4,user_id: 1, ref_value: 40,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 2)
-ExpenseReference.create(ref_name: 'Home Eversource',id: 5,user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 2)
-ExpenseReference.create(ref_name: 'Home Eversource',id: 6,user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 2)
+ExpenseReference.create(ref_name: 'Home Eversource',user_id: 1, ref_value: 40,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 2)
+ExpenseReference.create(ref_name: 'Home Eversource',user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 2)
+ExpenseReference.create(ref_name: 'Home Eversource',user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 2)
 #Heat
-ExpenseReference.create(ref_name: 'Home Heat',id: 7,user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 3)
-ExpenseReference.create(ref_name: 'Home Heat',id: 8,user_id: 1, ref_value: 45,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 3)
-ExpenseReference.create(ref_name: 'Home Heat',id: 9,user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 3)
+ExpenseReference.create(ref_name: 'Home Heat',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 3)
+ExpenseReference.create(ref_name: 'Home Heat',user_id: 1, ref_value: 45,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 3)
+ExpenseReference.create(ref_name: 'Home Heat',user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 3)
 #Groceries
-ExpenseReference.create(ref_name: 'Dog Food',id: 10,user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 6)
-ExpenseReference.create(ref_name: 'Dog Food',id: 11,user_id: 1, ref_value: 30,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 6)
-ExpenseReference.create(ref_name: 'Dog Food',id: 12,user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 6)
-ExpenseReference.create(ref_name: 'Dairy',id: 13,user_id: 1, ref_value: 100,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 6)
-ExpenseReference.create(ref_name: 'Dairy',id: 14,user_id: 1, ref_value: 125,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 6)
-ExpenseReference.create(ref_name: 'Dairy',id: 15,user_id: 1, ref_value: 90,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dog Food',user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dog Food',user_id: 1, ref_value: 30,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dog Food',user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dairy',user_id: 1, ref_value: 100,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dairy',user_id: 1, ref_value: 125,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 6)
+ExpenseReference.create(ref_name: 'Dairy',user_id: 1, ref_value: 90,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 6)
 #Eating Out
-ExpenseReference.create(ref_name: 'Restaurant',id: 16,user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 7)
-ExpenseReference.create(ref_name: 'Restaurant',id: 17,user_id: 1, ref_value: 60,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 7)
-ExpenseReference.create(ref_name: 'Restaurant',id: 18,user_id: 1, ref_value: 70,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 7)
-ExpenseReference.create(ref_name: 'Coffee Shop',id: 19,user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 7)
-ExpenseReference.create(ref_name: 'Coffee Shop',id: 20,user_id: 1, ref_value: 30,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 7)
-ExpenseReference.create(ref_name: 'Coffee Shop',id: 21,user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Restaurant',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Restaurant',user_id: 1, ref_value: 60,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Restaurant',user_id: 1, ref_value: 70,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Coffee Shop',user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Coffee Shop',user_id: 1, ref_value: 30,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 7)
+ExpenseReference.create(ref_name: 'Coffee Shop',user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 7)
 #Entertainment
-ExpenseReference.create(ref_name: 'Cinema',id: 22,user_id: 1, ref_value: 10,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 8)
-ExpenseReference.create(ref_name: 'Cinema',id: 23,user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 8)
-ExpenseReference.create(ref_name: 'Cinema',id: 24,user_id: 1, ref_value: 15,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 8)
-ExpenseReference.create(ref_name: 'Museum',id: 25,user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 8)
-ExpenseReference.create(ref_name: 'Museum',id: 26,user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 8)
-ExpenseReference.create(ref_name: 'Museum',id: 27,user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Cinema',user_id: 1, ref_value: 10,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Cinema',user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Cinema',user_id: 1, ref_value: 15,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Museum',user_id: 1, ref_value: 20,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Museum',user_id: 1, ref_value: 35,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 8)
+ExpenseReference.create(ref_name: 'Museum',user_id: 1, ref_value: 25,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 8)
 #Clothing
-ExpenseReference.create(ref_name: 'Sport Cloths',id: 28,user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 9)
-ExpenseReference.create(ref_name: 'Sport Cloths',id: 29,user_id: 1, ref_value: 100,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
-ExpenseReference.create(ref_name: 'Sport Cloths',id: 30,user_id: 1, ref_value: 75,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
-ExpenseReference.create(ref_name: 'Casual Cloths',id: 31,user_id: 1, ref_value: 60,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 9)
-ExpenseReference.create(ref_name: 'Casual Cloths',id: 32,user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
-ExpenseReference.create(ref_name: 'Casual Cloths',id: 33,user_id: 1, ref_value: 55,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Sport Cloths',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Sport Cloths',user_id: 1, ref_value: 100,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Sport Cloths',user_id: 1, ref_value: 75,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 60,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
+ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 55,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
 
 (1..33).each do |i|
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
@@ -105,17 +105,17 @@ end
 
 (1..5).each do |i|
   # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
-  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 3, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,day_month: rand(1..25), month: 3, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
  
 end
 (6..10).each do |i|
   # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
-  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 4, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,day_month: rand(1..25), month: 4, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
   
 end
 (11..15).each do |i|
   # Bill.create(expenseid: Faker::Commerce.department, day_month: Faker::Number.number(2), month: Faker::Number.between(from =1, to =12), year: Faker::Number.between(from = 1901, to=2016), user_id: 1)
-  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,id: i,day_month: rand(1..25), month: 5, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
+  Bill.create(bill_status: 1,expire_month:10,expire_year:Date.today.year,day_month: rand(1..25), month: 5, year: Date.today.year, user_id: 1,amount: rand(50..100),expense_category_id: 1,bill_name: 'rent')
   
 end
 
