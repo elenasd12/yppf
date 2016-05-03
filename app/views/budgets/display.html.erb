@@ -87,8 +87,20 @@
     })
 
     $('#save-allinone').click(function() {
-      alert('working');
+     
         $("#allinonenew_expense_reference").submit();
 
     })
+</script>
+<script type="text/javascript">
+    $(window).load(function(){
+      if('<%= @get_day %>' == 1){
+        $('#myModal').modal('show');
+      }
+    });
+</script>
+<script>
+  $('#foobar').click(function() {
+    $("#new_expense_reference").submit();
+  })
 </script>
