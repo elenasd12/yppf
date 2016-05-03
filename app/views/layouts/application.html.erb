@@ -16,16 +16,16 @@
 
 <nav class="navbar navbar-custom">
   <div class="container">
-    <div class="navbar-header">
-      <h4><%= link_to 'YPPF: Young Professional Personal Finance', dashboard_new_path, class: 'navbar-header' %>
-      <%= link_to 'Budget', budgets_display_path, class: 'navbar-subheading' %>
-      <%= link_to 'Calendar', calendar_new_path, class: 'navbar-subheading' %>
-      <%= link_to 'Compare', compare_new_path, class: 'navbar-subheading' %>
-      <%= link_to 'Trend', trend_new_path, class: 'navbar-subheading' %></h4>
-    </div>
+    
 
     <div id="navbar">
-
+ <h4><%= link_to 'YPPF: Young Professional Personal Finance', home_path, class: 'navbar-header' %>
+<ul class="nav nav-pills pull-left">
+  <li role="presentation" class="active"><%= link_to 'Budget', budgets_display_path, class: 'navbar-subheading' %></li>
+  <li role="presentation"><%= link_to 'Calendar', calendar_new_path, class: 'navbar-subheading' %></li>
+  <li role="presentation"><%= link_to 'Compare', compare_new_path, class: 'navbar-subheading' %></li>
+  <li role="presentation"><%= link_to 'Trend', trend_new_path, class: 'navbar-subheading' %></li>
+</ul>
       <!-- <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
       </ul> -->
