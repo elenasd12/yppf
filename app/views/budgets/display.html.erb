@@ -87,7 +87,23 @@
     })
 
     $('#save-allinone').click(function() {
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 127a7cafc885fa3be0d0ea13a7523ee9049ddc74
         $("#allinonenew_expense_reference").submit();
 
     })
+</script>
+<script type="text/javascript">
+    $(window).load(function(){
+      if('<%= @get_day %>' == 1){
+        $('#myModal').modal('show');
+      }
+    });
+</script>
+<script>
+  $('#foobar').click(function() {
+    $("#new_expense_reference").submit();
+  })
 </script>
