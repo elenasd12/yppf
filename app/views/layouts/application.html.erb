@@ -16,16 +16,22 @@
 
 <nav class="navbar navbar-custom">
   <div class="container">
-    
+    <div class="navbar-header">
+        
+       <%= link_to image_tag("Logo3.png",class: "brand_image img-responsive"),home_path%>
+     
+        </div>
 
     <div id="navbar">
- <h4><%= link_to 'YPPF: Young Professional Personal Finance', home_path, class: 'navbar-header' %>
-<ul class="nav nav-pills pull-left">
-  <li role="presentation" class="active"><%= link_to 'Budget', budgets_display_path, class: 'navbar-subheading' %></li>
-  <li role="presentation"><%= link_to 'Calendar', calendar_new_path, class: 'navbar-subheading' %></li>
-  <li role="presentation"><%= link_to 'Compare', compare_new_path, class: 'navbar-subheading' %></li>
-  <li role="presentation"><%= link_to 'Trend', trend_new_path, class: 'navbar-subheading' %></li>
+   
+  <% if user_signed_in? %>
+<ul class="nav nav-pills navbar-left">
+  <li role="presentation" class="<%=current_page?(budgets_display_path)?'active':'' %>"><%= link_to 'Budget', budgets_display_path, class: 'navbar-subheading' %></li>
+  <li role="presentation" class="<%=current_page?(calendar_new_path)?'active':'' %>"><%= link_to 'Calendar', calendar_new_path, class: 'navbar-subheading' %></li>
+  <li role="presentation" class="<%=current_page?(compare_new_path)?'active':'' %>"><%= link_to 'Compare', compare_new_path, class: 'navbar-subheading' %></li>
+  <li role="presentation" class="<%=current_page?(trend_new_path)?'active':'' %>"><%= link_to 'Trend', trend_new_path, class: 'navbar-subheading' %></li>
 </ul>
+<%end%>
       <!-- <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
       </ul> -->
