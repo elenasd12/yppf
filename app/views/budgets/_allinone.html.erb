@@ -24,12 +24,7 @@
                         <%expenses_by_category(categories.id).each do |expense|%>
                         <div class="row">
                             <div class="col-md-8 nopad">
-<<<<<<< HEAD
                               <%= expense.expensename%>
-=======
-                                <%= expense.expensename%>
-                           
->>>>>>> 127a7cafc885fa3be0d0ea13a7523ee9049ddc74
                             </div>
                             <div class="col-md-1 text-right nopad">
                                 $<%= expense.projvalue %>
@@ -37,12 +32,8 @@
                             <div class="col-md-2 text-right">
                             </div>
                         </div>
-
-
                         <%end%>
-
                     </div>
-
             </div>
             </div>
           </div>
@@ -64,17 +55,8 @@
           </div>
 
           <div class="col-md-2 text-center nopad">
-            
               <a  data-toggle="modal" href="#ExpenseReferenceModal" data-url="<%=expense_references_allinone_new_path%>" aria-hidden="true">Add</a>
-              
             </div>
-
-
 
         </div>
         <% end %>
-
-
-
-
-
