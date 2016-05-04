@@ -4,26 +4,12 @@
 <script src='lib/moment.min.js'></script>
 <script src='fullcalendar/fullcalendar.js'></script>
 <script>
-
-<% @bills = Bill.all %>
 $(document).ready(function() {
-
 
   $('#calendar').fullCalendar({
     contentHeight: 450,
 
     events: [
-      <% @bills.each do |bill| %>
-      <% if (bill.expire_month <= Time.now.month) %>
-      {
-        title : "Bill Due",
-        data : <%= bill.amount %>,
-        start : "<%= "#{bill.year.to_s}-#{bill.month.to_s}-#{bill.day_month.to_s}" %>",
-        repeat : 'monthly',
-        allDay : true
-      },
-      <% end %>
-      <% end %>
       {
         title : "Bill Due",
         data : 250,
@@ -65,7 +51,18 @@ $(document).ready(function() {
         start : "2016-05-09",
         repeat : 'monthly',
         allDay : true
-      }
+      },
+      <% @bills.each do |bill| %>
+      <% if (bill.expire_month <= Time.now.month) %>
+      {
+        title : "Bill Due",
+        data : <%= bill.amount %>,
+        start : "<%= "#{bill.year.to_s}-#{bill.month.to_s}-#{bill.day_month.to_s}" %>",
+        repeat : 'monthly',
+        allDay : true
+      },
+      <% end %>
+      <% end %>
     ],
     dayClick: function() {
     $('#fullCalModal').modal();

@@ -28,7 +28,7 @@
       <script>
       $(document).ready(function() {
           $("#selection").datepicker();
-          $("button").click(function() {
+          $("#calnew_bill").submit(function() {
           	  var selection = $("#selection").val();
               var res = selection.split("/");
               var month = res[0].split("0");
@@ -62,7 +62,7 @@
     <script>
     $(document).ready(function() {
         $("#selection2").datepicker();
-        $("button").click(function() {
+        $("#calnew_bill").submit(function() {
             var selection = $("#selection2").val();
             var res = selection.split("/");
             var month = res[0].split("0");
@@ -87,8 +87,4 @@
   </div>
 </div>
   <h1></h1>
-
-  <!-- <button type="submit" id="submission" id="submission2">
-    Create Bill
-  </button> -->
 <% end %>
