@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
   resources :bills
   get 'bills/cal/new' => 'bills#calnew'
+  post 'bills/create' => 'bills#create'
   resources :incomes
   post 'expense_references/createone' => 'expense_references#createone'
   get 'expense_references/newone' => 'expense_references#newone'

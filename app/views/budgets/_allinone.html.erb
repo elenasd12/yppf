@@ -26,24 +26,13 @@
                         <%expenses_by_category(categories.id).each do |expense|%>
                         <div class="row">
                             <div class="col-md-8 nopad">
-                              <script>
-                              function myFunction() {
-                              if('<%= expense.expensename %>' == ''){
-                                document.write("General");
-                              }
-                              else{
-                                document.write("<%= expense.expensename%>");
-                              }}
-                              </script>
-                              <script>
-                              window.myFunction();
-                              </script>
-
+                              <%= expense.expensename%>
                             </div>
                             <div class="col-md-1 text-right nopad">
                                 $<%= expense.projvalue %>
                             </div>
-                            <div class="col-md-2 text-right"></div>
+                            <div class="col-md-2 text-right">
+                            </div>
                         </div>
 
 

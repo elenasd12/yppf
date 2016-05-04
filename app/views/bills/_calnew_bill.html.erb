@@ -1,4 +1,4 @@
-<%= form_for(@bill) do |f| %>
+<%= form_for(@bill,:url => { :action => "create" },:html => {:class => 'form-horizontal',:id => 'calnew_bill'}) do |f| %>
   <% if @bill.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
@@ -88,7 +88,7 @@
 </div>
   <h1></h1>
 
-  <button type="submit" id="submission" id="submission2">
+  <!-- <button type="submit" id="submission" id="submission2">
     Create Bill
-  </button>
+  </button> -->
 <% end %>

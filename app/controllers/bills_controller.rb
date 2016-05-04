@@ -37,6 +37,12 @@ class BillsController < ApplicationController
       @bill.user_id = current_user.id
     end
 
+    # respond_to do |format|
+    #   if @bill.save
+    #     format.js
+    #   end
+    # end
+
     respond_to do |format|
       if @bill.save
         format.html { redirect_to '/calendar/new', notice: 'Bill was successfully created.' }
