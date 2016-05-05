@@ -27,7 +27,7 @@ ExpenseDetail.reset_pk_sequence
 MONTHS = [0, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 TYPE = ['Rent', 'Electric', 'Heat', 'TV', 'Internet', 'Groceries', 'Eating Out', 'Entertainment', 'Clothing', 'Transportation']
 #User
-User.create(email: "samtheman@yppf.com", state: "MA", name: "Sam", password: 'brandeis16', password_confirmation: 'brandeis16', id: 1)
+User.create(email: "samtheman@yppf.com", state: "MA", name: "Sam", password: 'brandeis16', password_confirmation: 'brandeis16')
 
 #List of Values
 Listofvalue.create(lov_domain: "exp_ref_type",lov_key: 1,lov_value: 'Once')
@@ -97,7 +97,7 @@ ExpenseReference.create(ref_name: 'Casual Cloths',user_id: 1, ref_value: 55,ref_
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
 
   exp1.each do |exp|
-  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(5..30),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
+  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(5..20),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
   end
 end
 #(0..9).each do |i|
@@ -139,19 +139,8 @@ end
 #  Expense.create(expensename: "General",user_id: 1, expense_category_id: 1+i, expensetype: 0, frequency: "biweekly", projvalue: Faker::Commerce.price, actvalue: Faker::Commerce.price, percent: Faker::Number.number(2), month: 12, year: Date.today.year)
 #end
 
+  Income.create(user_id: 1, income: "Stipend", incometype: "salary", value: 2000, frequency: "biweekly", day_rec: Faker::Number.number(2), month: Date.today.month, year: Date.today.year)
+  Income.create(user_id: 1, income: "Family", incometype: "salary", value: 500, frequency: "biweekly", day_rec: Faker::Number.number(2), month: Date.today.month, year: Date.today.year)
+  Income.create(user_id: 1, income: "TA", incometype: "salary", value: 400, frequency: "biweekly", day_rec: Faker::Number.number(2), month: Date.today.month, year: Date.today.year)
+  
 
-5.times do
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 1, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 2, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 3, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 4, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 5, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 6, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 7, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 8, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 9, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 10, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 11, year: Date.today.year)
-  Income.create(user_id: 1, income: "Money", incometype: "salary", value: Faker::Commerce.price, frequency: "biweekly", day_rec: Faker::Number.number(2), month: 12, year: Date.today.year)
-
-end

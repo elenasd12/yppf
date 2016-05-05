@@ -151,7 +151,7 @@
             type: 'pie',
             name: 'Browser share',
             innerSize: '50%',
-            data: <%=@income_chart_data.to_json.html_safe%>
+            data: <%=get_incomes(Date.today.year,Date.today.month).to_json.html_safe%>
         }]
     });
 });

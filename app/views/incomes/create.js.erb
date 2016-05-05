@@ -39,7 +39,7 @@ $(function () {
             type: 'pie',
             name: 'Browser share',
             innerSize: '50%',
-            data: <%=get_incomes(year,month).to_json.html_safe%>
+            data: <%=get_incomes(Date.today.year,Date.today.month).to_json.html_safe%>
         }]
     });
 });
