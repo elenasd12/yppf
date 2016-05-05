@@ -2,7 +2,7 @@ class CompareController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month, :year)
+    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month, :year).order(:month, :year)
     @months = []
     array.each { |a|
       e = [MONTHS[a.month]+' '+a.year.to_s, a.month]
