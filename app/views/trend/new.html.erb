@@ -201,7 +201,7 @@ $(function () {
     var touse = []
 
     for (i = 0; i < mdata.length; i++) {
-      var x = [Date.UTC(mdata[i][0][0], mdata[i][0][1]), mdata[i][1]]
+      var x = [Date.UTC(mdata[i][0][0], mdata[i][0][1]-1), mdata[i][1]]
       touse.push(x)
     }
     $('#container').highcharts({
