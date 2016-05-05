@@ -16,6 +16,9 @@ class TrendController < ApplicationController
       @chartarray.append([[y[0][0].to_i, y[0][1].to_i], y[1].to_i])
     }
 
+
+    puts @chartarray.to_s
+
     # information for search category bar chart
     x2 = Expense.select(:expense_category_id).where(user_id: current_user.id).where(year: Date.today.year).group(:expense_category_id)
     @categories = []
