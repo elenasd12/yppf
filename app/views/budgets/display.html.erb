@@ -109,6 +109,13 @@
   })
 
   $(function () {
+		Highcharts.getOptions().plotOptions.pie.colors = (function () {
+      var colors = [ '#ED6A5A', '#36c9c6', '#241563']
+
+
+
+      return colors;
+  }());
     $('#income-container').highcharts({
         chart: {
             plotBackgroundColor: null,

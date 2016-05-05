@@ -1,4 +1,11 @@
 $(function () {
+  Highcharts.getOptions().plotOptions.pie.colors = (function () {
+      var colors = [ '#ED6A5A', '#36c9c6', '#241563']
+
+
+
+      return colors;
+  }());
     $('#income-container').highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -17,7 +24,7 @@ $(function () {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         plotOptions: {
-            
+
             pie: {
                 dataLabels: {
                     enabled: true,
@@ -28,12 +35,12 @@ $(function () {
                         textShadow: '0px 1px 2px black'
                     }
                 },
-                size: 300,            
+                size: 300,
                 startAngle: -90,
                 endAngle: 90,
                 center: ['50%', '100%']
             }
-            
+
         },
         series: [{
             type: 'pie',

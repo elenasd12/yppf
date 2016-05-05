@@ -2,7 +2,7 @@ class CompareController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month, :year)
+    array = Expense.select(:month, :year).where(user_id: current_user.id).group(:month, :year).order(:month, :year)
     @months = []
     array.each { |a|
       e = [MONTHS[a.month]+' '+a.year.to_s, a.month]
@@ -17,7 +17,7 @@ class CompareController < ApplicationController
     @month2select = params[:month2select]
 
     # queries for initial pie chart and bar chart with expenses for each month
-    @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expense_category_id).sum(:projvalue)
+    @month1expenses = Expense.where(user_id: current_user.id).where(month: @month1select.to_i).group(:expense_category_id).sum(:actvalue)
     @series1 = []
     @month1expenses.each{ |m|
       category_id = m[0]
@@ -26,7 +26,7 @@ class CompareController < ApplicationController
       @series1.append(x)
     }
 
-    @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expense_category_id).sum(:projvalue)
+    @month2expenses = Expense.where(user_id: current_user.id).where(month: @month2select.to_i).group(:expense_category_id).sum(:actvalue)
     @series2 = []
     @month2expenses.each{ |m|
       category_id = m[0]
@@ -61,7 +61,7 @@ class CompareController < ApplicationController
       else
         month1query.each { |a|
           # value of expense type x in month1
-          @month1values.append(a.projvalue.to_f)
+          @month1values.append(a.actvalue.to_f)
         }
       end
 
@@ -71,7 +71,7 @@ class CompareController < ApplicationController
       else
         month2query.each { |a|
           # value of expense type x in month2
-          @month2values.append(a.projvalue.to_f)
+          @month2values.append(a.actvalue.to_f)
         }
       end
 
