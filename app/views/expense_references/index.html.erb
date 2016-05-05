@@ -1,18 +1,19 @@
  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"%>
   <%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"%>
 <div class="panel panel-default">
-    <div class="panel-heading">Manage Expenses</div>
+    <div class="panel-heading">Manage Recurrent Expenses</div>
     <div class="panel-body">
     <button type="button" class="btn btn-success" onclick="window.location.href='<%=new_expense_reference_path%>'">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Expense</button>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Recurrent Expense</button>
   </div>
   <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a data-toggle="tab" href="#once">Once</a></li>
-  <li role="presentation"><a data-toggle="tab" href="#everymonth">Every Month</a></li>
+  <!--li role="presentation" class="active"><a data-toggle="tab" href="#once">Once</a></li-->
+  <li role="presentation"><a data-toggle="tab" href="#everymonth">Recurrent Expenses</a></li>
  
 </ul>
 <div class="tab-content">
-     <div id="once" class="tab-pane fade in active">
+    <%if false%>
+     <div id="once" class="tab-pane fade in active" >
 <table class="table">
   <thead>
     <tr>
@@ -52,7 +53,8 @@
   </tbody>
 </table>
 </div>
- <div id="everymonth" class="tab-pane fade">
+ <%end%>
+ <div id="everymonth" class="tab-pane fade in active">
      <table class="table">
   <thead>
     <tr>

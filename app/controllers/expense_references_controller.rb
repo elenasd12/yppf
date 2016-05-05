@@ -46,7 +46,19 @@ before_action :authenticate_user!
       format.js
     end
   end
+def createrecurrent
+  @expense_ref = ExpenseReference.new(expense_reference_params)
+    @expense_ref.user_id=current_user.id
+    @expense_ref.ref_status=1
+    @expense_ref.ref_type=2
+    if @expense_ref.save
 
+        respond_to do |format|
+      format.html { redirect_to expense_references_url, notice: 'New recurrent expense created successfully.' }
+      end
+
+      end
+end
   def create
     @expense_ref = ExpenseReference.new(expense_reference_params)
     @expense_ref.user_id=current_user.id
