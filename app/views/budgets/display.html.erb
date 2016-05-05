@@ -7,7 +7,7 @@
 	<div class="row">
 	    <div class="col-lg-1"></div>
         <div class="col-lg-10">
-           
+
             <div id="income-facet">
                 <%= render(partial: 'incomes')%>
             </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="col-lg-1"></div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-10">
@@ -79,9 +79,7 @@
 	</div>
 </div>
 
-<button type="button" class="btn btn-temp btn-sm" data-toggle="modal" data-target="#myModal">
-	Test budget update
-</button>
+
 <script>
     $('#ExpenseReferenceModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)// Button that triggered the modal
@@ -109,7 +107,7 @@
   $('#foobar').click(function() {
     $("#new_expense_reference").submit();
   })
-  
+
   $(function () {
     $('#income-container').highcharts({
         chart: {
@@ -129,7 +127,7 @@
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         plotOptions: {
-            
+
             pie: {
                 dataLabels: {
                     enabled: true,
@@ -140,12 +138,12 @@
                         textShadow: '0px 1px 2px black'
                     }
                 },
-                size: 300,            
+                size: 300,
                 startAngle: -90,
                 endAngle: 90,
                 center: ['50%', '100%']
             }
-            
+
         },
         series: [{
             type: 'pie',
