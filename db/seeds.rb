@@ -51,8 +51,8 @@ ExpenseCategory.create(exp_name: 'Phone Bill', id: 11,exp_type: 2)
 #Expense Reference
 #ref_type 1=Once, 2=Every Month
 #Rent
-ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 900,ref_type: 1,ref_status: 1,ref_month: 1,ref_year: Date.today.year,expense_category_id: 1)
-ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 900,ref_type: 1,ref_status: 1,ref_month: 2,ref_year: Date.today.year,expense_category_id: 1)
+ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 1,ref_year: Date.today.year,expense_category_id: 1)
+ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 2,ref_year: Date.today.year,expense_category_id: 1)
 ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 3,ref_year: Date.today.year,expense_category_id: 1)
 ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 1)
 ExpenseReference.create(ref_name: 'Home Rent',user_id: 1, ref_value: 1325,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 1)
@@ -114,12 +114,23 @@ ExpenseReference.create(ref_name: 'Casual Clothes',user_id: 1, ref_value: 60,ref
 ExpenseReference.create(ref_name: 'Casual Clothes',user_id: 1, ref_value: 50,ref_type: 1,ref_status: 1,ref_month: 4,ref_year: Date.today.year,expense_category_id: 9)
 ExpenseReference.create(ref_name: 'Casual Clothes',user_id: 1, ref_value: 55,ref_type: 1,ref_status: 1,ref_month: 5,ref_year: Date.today.year,expense_category_id: 9)
 
-
-(1..55).each do |i|
+(1..5).each do |i|
   exp1=Expense.where(user_id: 1,expense_reference_id: i)
 
   exp1.each do |exp|
-  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(5..20),user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
+  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: exp.projvalue,user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
+  end
+end
+(6..55).each do |i|
+  exp1=Expense.where(user_id: 1,expense_reference_id: i)
+
+  exp1.each do |exp|
+    if exp.month!=Date.today.month || exp.year!=Date.today.year
+      prcnt=(75..100)
+    else
+      prcnt=(20..75)
+    end 
+  ExpenseDetail.create(expdet_date: DateTime.new(exp.year, exp.month, 2),expdet_value: rand(prcnt)*exp.projvalue/100,user_id: 1,expense_id:exp.id,expdet_description: "it was fun.")
   end
 end
 #(0..9).each do |i|
