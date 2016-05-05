@@ -3,6 +3,9 @@
 <div class="panel panel-plain">
 	<div class="panel-heading">
 		<%= render(partial: 'toolbar')%>
+		<button type="button" class="btn btn-custom btn-sm" data-toggle="modal" data-target="#myModal">
+			Test budget update
+		</button>
 	</div>
 	<div class="row">
 		<div class="col-lg-1"></div>
@@ -69,9 +72,7 @@
 	</div>
 </div>
 
-<button type="button" class="btn btn-temp btn-sm" data-toggle="modal" data-target="#myModal">
-	Test budget update
-</button>
+
 <script>
     $('#ExpenseReferenceModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)// Button that triggered the modal
